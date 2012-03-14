@@ -114,7 +114,7 @@ class Where extends \Peyote\Base
 	 */
 	public function compile()
 	{
-		if (count($this->where) === 0)
+		if (empty($this->where) === true)
 		{
 			return "";
 		}

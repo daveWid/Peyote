@@ -112,7 +112,7 @@ class Insert extends \Peyote\Base
 	 */
 	public function select(\Peyote\Select $select)
 	{
-		if (count($this->values) > 0)
+		if (empty($this->values) === false)
 		{
 			throw new \Peyote\Exception("Attempting to set INSERT...SELECT when values are already set");
 		}
@@ -152,7 +152,7 @@ class Insert extends \Peyote\Base
 		$sql[] = $this->table();
 
 		// Columns?
-		if (count($this->columns) > 0)
+		if (empty($this->columns) === false)
 		{
 			$sql[] = "(".implode(",", $this->columns).")";
 		}

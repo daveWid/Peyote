@@ -37,7 +37,7 @@ class OrderBy implements \Peyote\Builder
 	public function compile()
 	{
 		// Make sure there are column
-		if (count($this->columns) === 0)
+		if (empty($this->columns) === true)
 		{
 			return "";
 		}
