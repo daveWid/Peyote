@@ -11,14 +11,9 @@ namespace Peyote;
 class OrderBy implements \Peyote\Builder
 {
 	/**
-	 * @var string  The column used in ordering
+	 * @var array  An array of string holding column DIRECTION
 	 */
-	private $column = null;
-
-	/**
-	 * @var string  The direction used in sorting
-	 */
-	private $direction = "ASC";
+	private $columns = array();
 
 	/**
 	 * Sets the ORDER BY for the query.
@@ -29,8 +24,9 @@ class OrderBy implements \Peyote\Builder
 	 */
 	public function order_by($column, $direction = "ASC")
 	{
-		$this->column = $column;
-		$this->direction = ($direction === "DESC") ? "DESC" : "ASC";
+		$direction = ($direction === "DESC") ? "DESC" : "ASC";
+		$this->columns[] = "{$column} {$direction}";
+
 		return $this;
 	}
 
@@ -41,8 +37,8 @@ class OrderBy implements \Peyote\Builder
 	 */
 	public function compile()
 	{
-		return ($this->column === null) ?
-			"" :
-			"ORDER BY {$this->column} {$this->direction}";
+		return (count($this->columns) > 0) ?
+			"ORDER BY ".implode(", ", $this->columns) :
+			"";
 	}
 }
