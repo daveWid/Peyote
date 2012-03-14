@@ -11,24 +11,24 @@ namespace Peyote;
 abstract class Base implements \Peyote\Builder
 {
 	/**
-	 * @var string  The name of the database table
+	 * @var mixed  The name of the database table OR array($table, $alias)
 	 */
 	private $table;
 
 	/**
 	 * Getter/Setter for the name of the database table.
 	 *
-	 * @param  string $name  The name of the table [set]
+	 * @param  mixed $table  The name of the table OR array($table, $alias) [set]
 	 * @return mixed         The name of the table [get] OR $this
 	 */
-	public function table($name = null)
+	public function table($table = null)
 	{
-		if ($name === null)
+		if ($table === null)
 		{
 			return $this->table;
 		}
 
-		$this->table = $name;
+		$this->table = $table;
 		return $this;
 	}
 	
@@ -49,7 +49,7 @@ abstract class Base implements \Peyote\Builder
 	 * be called and $this returned. If the method is not found and \Execption
 	 * will be thrown.
 	 *
-	 * @throws \Exeption
+	 * @throws \Peyote\Exeption
 	 *
 	 * @param  string $method  The name of the method
 	 * @param  array  $params  The passed in parameters
@@ -66,7 +66,7 @@ abstract class Base implements \Peyote\Builder
 			}
 		}
 
-		throw new \Exception("{$method} does not exist in ".get_called_class());
+		throw new \Peyote\Exception("{$method} does not exist in ".get_called_class());
 	}
 
 	/**

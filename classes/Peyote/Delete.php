@@ -15,22 +15,17 @@ class Delete extends \Peyote\Base
 	/**
 	 * @var \Peyote\Where  The where clause
 	 */
-	private $where;
+	protected $where;
 
 	/**
 	 * @var \Peyote\OrderBy  The order by clause
 	 */	
-	private $order_by;
+	protected $order_by;
 
 	/**
 	 * @var \Peyote\Limit  The limit clause
 	 */
-	private $limit;
-
-	/**
-	 * @var mixed   The table name OR array($table, $alias)
-	 */
-	private $table;
+	protected $limit;
 
 	/**
 	 * Create a new Delete instance.
@@ -40,7 +35,7 @@ class Delete extends \Peyote\Base
 	 */
 	public function __construct($table = null, \Peyote\Where $where = null)
 	{
-		$this->table = $table;
+		$this->table($table);
 		$this->where = ($where !== null) ? $where : new \Peyote\Where;
 		$this->order_by = new \Peyote\OrderBy;
 		$this->limit = new \Peyote\Limit;
@@ -82,6 +77,16 @@ class Delete extends \Peyote\Base
 		}
 
 		return $sql;
+	}
+
+	/**
+	 * Get the class properties to use as "traits".
+	 *
+	 * @return array
+	 */
+	protected function traits()
+	{
+		return array("where","order_by","limit");
 	}
 
 }
