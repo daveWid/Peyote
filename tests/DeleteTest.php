@@ -32,6 +32,18 @@ class DeleteTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
+	 * Make sure that where clauses are being picked up correctly.
+	 * Full testing of the where clauses is in its own class.
+	 */
+	public function testWhere()
+	{
+		$delete = new \Peyote\Delete("testing");
+		$delete->where("name", "=", "Dave");
+
+		$this->assertEquals("DELETE FROM testing WHERE name = Dave", $delete->compile());
+	}
+
+	/**
 	 * Make sure that order_by is being picked up correctly.
 	 */
 	public function testOrderBy()
