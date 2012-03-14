@@ -48,12 +48,7 @@ class Delete extends \Peyote\Base
 	 */
 	public function compile()
 	{
-		$sql = "DELETE FROM ";
-
-		$table = $this->table();
-		$sql .= (is_array($table)) ?
-			"{$table[0]} AS {$table[1]}" :
-			$table;
+		$sql = "DELETE FROM {$this->table()}";
 
 		// Where
 		$where = $this->where->compile();

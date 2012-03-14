@@ -28,7 +28,7 @@ abstract class Base implements \Peyote\Builder
 			return $this->table;
 		}
 
-		$this->table = $table;
+		$this->table = (is_array($table)) ? "{$table[0]} AS {$table[1]}" : $table;
 		return $this;
 	}
 	
