@@ -28,7 +28,7 @@ class InsertTest extends PHPUnit_Framework_TestCase
 			->columns(array_keys($this->names[0]))
 			->values(array_values($this->names[0]));
 
-		$this->assertEquals("INSERT INTO testing (name) VALUES (Larry)", $insert->compile());
+		$this->assertEquals("INSERT INTO testing (name) VALUES ('Larry')", $insert->compile());
 	}
 
 	/**
@@ -47,7 +47,7 @@ class InsertTest extends PHPUnit_Framework_TestCase
 			->columns(array_keys($this->names[0]))
 			->values($names);
 
-		$this->assertEquals("INSERT INTO testing (name) VALUES (Larry), (Curly), (Moe)", $insert->compile());
+		$this->assertEquals("INSERT INTO testing (name) VALUES ('Larry'), ('Curly'), ('Moe')", $insert->compile());
 	}
 
 	/**
@@ -61,7 +61,7 @@ class InsertTest extends PHPUnit_Framework_TestCase
 			->columns(array_keys($this->names[0]))
 			->values(array_values($this->names[0]));
 
-		$this->assertEquals("INSERT IGNORE INTO testing (name) VALUES (Larry)", $insert->compile());
+		$this->assertEquals("INSERT IGNORE INTO testing (name) VALUES ('Larry')", $insert->compile());
 	}
 
 	// TODO: Test the errors that are thrown by mixing and matching values() and select()

@@ -40,7 +40,7 @@ class DeleteTest extends PHPUnit_Framework_TestCase
 		$delete = new \Peyote\Delete("testing");
 		$delete->where("name", "=", "Dave");
 
-		$this->assertEquals("DELETE FROM testing WHERE name = Dave", $delete->compile());
+		$this->assertEquals("DELETE FROM testing WHERE name = 'Dave'", $delete->compile());
 	}
 
 	/**

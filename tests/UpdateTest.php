@@ -25,7 +25,7 @@ class UpdateTest extends PHPUnit_Framework_TestCase
 		$update = new \Peyote\Update;
 		$update->table("heroes")->set($this->hero);
 
-		$this->assertEquals("UPDATE heroes SET name = Frank Castle, alias = Punisher", $update->compile());
+		$this->assertEquals("UPDATE heroes SET name = 'Frank Castle', alias = 'Punisher'", $update->compile());
 	}
 
 }
