@@ -16,18 +16,13 @@ class Limit implements \Peyote\Builder
 	private $limit = null;
 
 	/**
-	 * Getter/Setter for the limit number.
+	 * Sets for the limit number.
 	 *
-	 * @param  int $num  The limit number [set]
-	 * @return int       The limit number [get] OR $this [set]
+	 * @param  int $num  The limit number
+	 * @return $this
 	 */
 	public function limit($num = null)
 	{
-		if ($num === null)
-		{
-			return $this->limit;
-		}
-
 		$this->limit = (int) $num;
 		return $this;
 	}
