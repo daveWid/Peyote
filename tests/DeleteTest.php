@@ -76,4 +76,15 @@ class DeleteTest extends PHPUnit_Framework_TestCase
 		$delete->doesnotexist();
 	}
 
+	/**
+	 * Makes sure that a delete object is still \Peyote\Delete after a lot of chaining.
+	 */
+	public function testChaining()
+	{
+		$delete = new \Peyote\Delete;
+		$delete->table("testing")->where("name", '=', 'Dave')->order_by("name")->limit(1);
+
+		$this->assertInstanceOf("\\Peyote\\Delete", $delete);
+	}
+
 }
