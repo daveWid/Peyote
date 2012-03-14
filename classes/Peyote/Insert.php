@@ -45,6 +45,8 @@ class Insert extends \Peyote\Base
 	public function __construct($table = "")
 	{
 		$this->table($table);
+
+		parent::__construct();
 	}
 
 	/**
@@ -165,6 +167,7 @@ class Insert extends \Peyote\Base
 			$data = array();
 			foreach ($this->values as $row)
 			{
+				$row = array_map(array($this, "quote") , $row);
 				$data[] = "(".implode(", ", $row).")";
 			}
 

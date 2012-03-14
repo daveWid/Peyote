@@ -39,6 +39,8 @@ class Delete extends \Peyote\Base
 		$this->where = ($where !== null) ? $where : new \Peyote\Where;
 		$this->order_by = new \Peyote\OrderBy;
 		$this->limit = new \Peyote\Limit;
+
+		parent::__construct();
 	}
 
 	/**

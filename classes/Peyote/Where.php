@@ -40,7 +40,7 @@ class Where extends \Peyote\Base
 	public function and_where($column, $op, $value)
 	{
 		$this->where[] = "AND";
-		$this->where[] = "{$column} {$op} {$value}";
+		$this->where[] = "{$column} {$op} {$this->quote($value)}";
 
 		return $this;
 	}
@@ -56,7 +56,7 @@ class Where extends \Peyote\Base
 	public function or_where($column, $op, $value)
 	{
 		$this->where[] = "OR";
-		$this->where[] = "{$column} {$op} {$value}";
+		$this->where[] = "{$column} {$op} {$this->quote($value)}";
 
 		return $this;
 	}

@@ -16,6 +16,40 @@ abstract class Base implements \Peyote\Builder
 	private $table;
 
 	/**
+	 * @var function  A function that can be used to escape table values.
+	 */
+	public $escape = null;
+
+	/**
+	 * By default, we will use a mysql style escaping function.
+	 *
+	 * @link http://us.php.net/manual/en/function.mysql-real-escape-string.php#101248
+	 */
+	public function __construct()
+	{
+		if ($this->escape === null)
+		{
+			$this->escape = function($value) {
+				$search = array('\\', "\0", "\n", "\r", "'", '"', "\x1a");
+				$replace = array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z');
+
+				return str_replace($search, $replace, $value);
+			};
+		}
+	}
+
+	/**
+	 * Quotes/Escapes a value for the database.
+	 *
+	 * @param  string $value  The value to quote
+	 * @return string         The quoted/escaped variable
+	 */
+	public function quote($value)
+	{
+		return "'".call_user_func($this->escape, $value)."'";
+	}
+
+	/**
 	 * Getter/Setter for the name of the database table.
 	 *
 	 * @param  mixed $table  The name of the table OR array($table, $alias) [set]

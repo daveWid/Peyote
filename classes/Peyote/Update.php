@@ -43,6 +43,8 @@ class Update extends \Peyote\Base
 		$this->where = ($where !== null) ? $where : new \Peyote\Where;
 		$this->order_by = new \Peyote\OrderBy;
 		$this->limit = new \Peyote\Limit;
+
+		parent::__construct();
 	}
 
 	/**
@@ -71,7 +73,7 @@ class Update extends \Peyote\Base
 		$data = array();
 		foreach ($this->data as $column => $value)
 		{
-			$data[] = "{$column} = {$value}";
+			$data[] = "{$column} = {$this->quote($value)}";
 		}
 
 		$sql[] = implode(", ", $data);
