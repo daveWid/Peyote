@@ -33,7 +33,7 @@ class Delete extends \Peyote\Base
 	 * @param mixed         $table   The table name OR array($table, $alias)
 	 * @param \Peyote\Where $where
 	 */
-	public function __construct($table = null, \Peyote\Where $where = null)
+	public function __construct($table = "", \Peyote\Where $where = null)
 	{
 		$this->table($table);
 		$this->where = ($where !== null) ? $where : new \Peyote\Where;

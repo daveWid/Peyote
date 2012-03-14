@@ -38,11 +38,11 @@ class Insert extends \Peyote\Base
 	private $duplicate = null;
 
 	/**
-	 * Create a new Delete instance.
+	 * Create a new Insert instance.
 	 *
 	 * @param mixed $table   The table name OR array($table, $alias)
 	 */
-	public function __construct($table = null)
+	public function __construct($table = "")
 	{
 		$this->table($table);
 	}
