@@ -22,10 +22,9 @@ class OrderBy implements \Peyote\Builder
 	 * @param  string $direction  The sort direction
 	 * @return $this
 	 */
-	public function order_by($column, $direction = "ASC")
+	public function order_by($column, $direction = null)
 	{
-		$direction = ($direction === "DESC") ? "DESC" : "ASC";
-		$this->columns[] = "{$column} {$direction}";
+		$this->columns[] = array($column, $direction);
 
 		return $this;
 	}
@@ -37,8 +36,25 @@ class OrderBy implements \Peyote\Builder
 	 */
 	public function compile()
 	{
-		return (count($this->columns) > 0) ?
-			"ORDER BY ".implode(", ", $this->columns) :
-			"";
+		// Make sure there are column
+		if (count($this->columns) === 0)
+		{
+			return "";
+		}
+
+		$order = array();
+		foreach ($this->columns as $row)
+		{
+			list($column, $direction) = $row;
+
+			if ($direction)
+			{
+				$direction = " ".strtoupper($direction);
+			}
+
+			$order[] = $column.$direction;
+		}
+
+		return "ORDER BY ".implode(", ", $order);
 	}
 }
