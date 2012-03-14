@@ -48,30 +48,31 @@ class Delete extends \Peyote\Base
 	 */
 	public function compile()
 	{
-		$sql = "DELETE FROM {$this->table()}";
+		$sql = array("DELETE FROM");
+		$sql[] = $this->table();
 
-		// Where
+		// Where?
 		$where = $this->where->compile();
 		if ($where !== "")
 		{
-			$sql .= " ".$where;
+			$sql[] = $where;
 		}
 
-		// Order By
+		// Order
 		$order = $this->order_by->compile();
 		if ($order !== "")
 		{
-			$sql .= " ".$order;
+			$sql[] = $order;
 		}
 
 		// Limit
 		$limit = $this->limit->compile();
 		if ($limit !== "")
 		{
-			$sql .= " ".$limit;
+			$sql[] = $limit;
 		}
 
-		return $sql;
+		return implode(" ", $sql);
 	}
 
 	/**
