@@ -32,6 +32,17 @@ class DeleteTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
+	 * Make sure that order_by is being picked up correctly.
+	 */
+	public function testOrderBy()
+	{
+		$delete = new \Peyote\Delete("testing");
+		$delete->order_by("name", "DESC");
+
+		$this->assertEquals("DELETE FROM testing ORDER BY name DESC", $delete->compile());
+	}
+
+	/**
 	 * Make sure that limit is being picked up correctly.
 	 */
 	public function testLimit()
