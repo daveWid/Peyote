@@ -23,12 +23,19 @@ class Limit implements \Peyote\Builder
 	/**
 	 * Sets for the limit number.
 	 *
-	 * @param  int $num  The limit number
+	 * @param  int $num     The limit number
+	 * @param  int $offset  The offset
 	 * @return $this
 	 */
-	public function limit($num = null)
+	public function limit($num = null, $offset = null)
 	{
 		$this->limit = (int) $num;
+
+		if ($offset !== null)
+		{
+			$this->offset($offset);
+		}
+
 		return $this;
 	}
 
