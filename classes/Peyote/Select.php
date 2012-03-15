@@ -63,8 +63,6 @@ class Select extends \Peyote\Base
 		$this->having = new \Peyote\Having;
 		$this->order_by = new \Peyote\OrderBy;
 		$this->limit = new \Peyote\Limit;
-
-		parent::__construct();
 	}
 
 	/**

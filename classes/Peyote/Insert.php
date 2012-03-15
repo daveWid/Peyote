@@ -45,8 +45,6 @@ class Insert extends \Peyote\Base
 	public function __construct($table = "")
 	{
 		$this->table($table);
-
-		parent::__construct();
 	}
 
 	/**

@@ -16,37 +16,49 @@ abstract class Base implements \Peyote\Builder
 	private $table;
 
 	/**
-	 * @var function  A function that can be used to escape table values.
-	 */
-	public $escape = null;
-
-	/**
-	 * By default, we will use a mysql style escaping function.
-	 *
-	 * @link http://us.php.net/manual/en/function.mysql-real-escape-string.php#101248
-	 */
-	public function __construct()
-	{
-		if ($this->escape === null)
-		{
-			$this->escape = function($value) {
-				$search = array('\\', "\0", "\n", "\r", "'", '"', "\x1a");
-				$replace = array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z');
-
-				return str_replace($search, $replace, $value);
-			};
-		}
-	}
-
-	/**
 	 * Quotes/Escapes a value for the database.
 	 *
 	 * @param  string $value  The value to quote
+	 * @param  string $escape Should we escape the output too?
 	 * @return string         The quoted/escaped variable
 	 */
-	public function quote($value)
+	public function quote($value, $escape = true)
 	{
-		return "'".call_user_func($this->escape, $value)."'";
+		if (is_string($value))
+		{
+			if ($escape === true)
+			{
+				$value = $this->escape($value);
+			}
+
+			$value = "'{$value}'";
+		}
+		elseif (is_null($value))
+		{
+			$value = "NULL";
+		}
+		elseif (is_array($value))
+		{
+			$value = "(".implode(", ", array_map(array($this, "quote"), $value, array($escape))).")";
+		}
+
+		// If it is a number, then we don't need to do anything...
+
+		return $value;
+	}
+
+	/**
+	 * Escapes a value to be inserted into the database.
+	 *
+	 * @param  mixed  $value  The value to escape
+	 * @return mixed          The escaped value
+	 */
+	public function escape($value)
+	{
+		$search = array('\\', "\0", "\n", "\r", "'", '"', "\x1a");
+		$replace = array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z');
+
+		return str_replace($search, $replace, $value);
 	}
 
 	/**
