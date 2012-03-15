@@ -39,8 +39,7 @@ class Where extends \Peyote\Base
 	 */
 	public function and_where($column, $op, $value)
 	{
-		$this->where[] = "AND";
-		$this->where[] = "{$column} {$op} {$this->quote($value)}";
+		$this->where[] = array("AND" => array($column, $op, $value));
 
 		return $this;
 	}
@@ -55,8 +54,7 @@ class Where extends \Peyote\Base
 	 */
 	public function or_where($column, $op, $value)
 	{
-		$this->where[] = "OR";
-		$this->where[] = "{$column} {$op} {$this->quote($value)}";
+		$this->where[] = array("OR" => array($column, $op, $value));
 
 		return $this;
 	}
@@ -78,7 +76,7 @@ class Where extends \Peyote\Base
 	 */
 	public function and_where_open()
 	{
-		$this->where[] = "AND(";
+		$this->where[] = array("AND" => "(");
 
 		return $this;
 	}
@@ -90,19 +88,41 @@ class Where extends \Peyote\Base
 	 */
 	public function or_where_open()
 	{
-		$this->where[] = "OR(";
+		$this->where[] = array("OR" => "(");
 
 		return $this;
 	}
 
 	/**
-	 * Closes an open "(...)" grouping.
+	 * Alias for and_where_close()
 	 *
 	 * @return  $this
 	 */
 	public function where_close()
 	{
-		$this->where[] = ")";
+		return $this->and_where_close();
+	}
+
+	/**
+	 * Closes an open "AND (...)" grouping.
+	 *
+	 * @return  $this
+	 */
+	public function and_where_close()
+	{
+		$this->where[] = array("AND" => ")");
+
+		return $this;
+	}
+
+	/**
+	 * Closes an open "OR (...)" grouping.
+	 *
+	 * @return  $this
+	 */
+	public function or_where_close()
+	{
+		$this->where[] = array("OR" => ")");
 
 		return $this;
 	}
@@ -119,7 +139,40 @@ class Where extends \Peyote\Base
 			return "";
 		}
 
-		array_shift($this->where);
-		return "WHERE ".implode("", $this->where);
+		$last = null;
+		$sql = array();
+		foreach ($this->where as $group)
+		{
+			foreach ($group as $type => $condition)
+			{
+				if ($condition === "(")
+				{
+					if (empty($sql) === false AND $last !== "(")
+					{
+						$sql[] = $type;
+					}
+
+					$sql[] = "(";
+				}
+				else if($condition === ")")
+				{
+					$sql[] = ")";
+				}
+				else
+				{
+					if (empty($sql) === false AND $last !== "(")
+					{
+						$sql[] = $type;
+					}
+
+					list($column, $op, $value) = $condition;
+					$sql[] = "{$column} {$op} {$this->quote($value)}";
+				}
+
+				$last = $condition;
+			}
+		}
+
+		return "WHERE ".implode(" ", $sql);
 	}
 }
