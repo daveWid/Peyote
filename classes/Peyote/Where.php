@@ -17,6 +17,18 @@ class Where extends \Peyote\Base
 	private $where = array();
 
 	/**
+	 * Sets a BETWEEN statement.
+	 *
+	 * @param string $column  The column
+	 * @param mixed  $min     The min value
+	 * @param mixed  $max     The max value
+	 */
+	public function between($column, $min, $max)
+	{
+		$this->where[] = array("BETWEEN" => array($column, $min, $max));
+	}
+
+	/**
 	 * Alias for and_where
 	 *
 	 * @param  string $column  The column
@@ -166,7 +178,15 @@ class Where extends \Peyote\Base
 					}
 
 					list($column, $op, $value) = $condition;
-					$sql[] = "{$column} {$op} {$this->quote($value)}";
+
+					if ($op === "BETWEEN")
+					{
+						$sql[] = "{$column} {$op} {$this->quote($value[0])} AND {$this->quote($value[1])}";
+					}
+					else
+					{
+						$sql[] = "{$column} {$op} {$this->quote($value)}";
+					}
 				}
 
 				$last = $condition;

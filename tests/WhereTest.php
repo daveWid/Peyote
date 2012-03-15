@@ -19,4 +19,15 @@ class WhereTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals("WHERE name = 'Dave'", $where->compile());
 	}
+
+	/**
+	 * Tests a BETWEEN clause
+	 */
+	public function testBetween()
+	{
+		$where = new \Peyote\Where;
+		$where->where("date", "BETWEEN", array("2012-03-15", "2012-04-02"));
+
+		$this->assertEquals("WHERE date BETWEEN '2012-03-15' AND '2012-04-02'", $where->compile());
+	}
 }
