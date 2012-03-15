@@ -13,17 +13,19 @@ class GroupBy implements \Peyote\Builder
 	/**
 	 * @var string  The column name to group by
 	 */
-	private $column = null;
+	private $columns = null;
 
 	/**
 	 * Adds a group by clause.
 	 *
-	 * @param  string $column  The column to group by
+	 * @param  string $column  A list of columns to group by
 	 * @return $this
 	 */
-	public function group_by($column)
+	public function group_by($columns)
 	{
-		$this->column = $column;
+		$columns = func_get_args();
+
+		$this->columns = implode(", ", $columns);
 		return $this;
 	}
 
@@ -34,6 +36,6 @@ class GroupBy implements \Peyote\Builder
 	 */
 	public function compile()
 	{
-		return ($this->column === null) ? "" : "GROUP BY {$this->column}";
+		return ($this->columns === null) ? "" : "GROUP BY {$this->columns}";
 	}
 }

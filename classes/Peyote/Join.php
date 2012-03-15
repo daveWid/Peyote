@@ -31,10 +31,18 @@ class Join implements \Peyote\Builder
 	{
 		if ($type !== null)
 		{
-			$type = (string) $type;
+			$type = strtoupper((string) $type);
 		}
 
-		$this->in_queue = array($table, $type);
+		if ($type === "CROSS")
+		{
+			$this->joins[] = array($table, $type);
+			$this->_in_queue = null;
+		}
+		else
+		{
+			$this->in_queue = array($table, $type);
+		}
 
 		return $this;
 	}
@@ -43,9 +51,10 @@ class Join implements \Peyote\Builder
 	 * The on statement for joins. Throws an exception if join() isn't called
 	 * first.
 	 *
-	 * @param string $column1  The first column
-	 * @param string $op       The operator
-	 * @param string $column2  The second column
+	 * @param  string $column1  The first column
+	 * @param  string $op       The operator
+	 * @param  string $column2  The second column
+	 * @return $this
 	 */
 	public function on($column1, $op, $column2)
 	{
@@ -55,6 +64,26 @@ class Join implements \Peyote\Builder
 		}
 
 		$using = array("ON",$column1,$op,$column2);
+		$this->joins[] = array_merge($this->in_queue, $using);
+
+		$this->in_queue = null;
+		return $this;
+	}
+
+	/**
+	 * A list of on commands using AND to combine them.
+	 *
+	 * @param  array $statements The on statements
+	 * @return $this
+	 */
+	public function on_and(array $statements)
+	{
+		if ($this->in_queue === null)
+		{
+			throw new \Peyote\Exception("The ON...AND statement needs an associated JOIN");
+		}
+
+		$using = array("ON", $statements);
 		$this->joins[] = array_merge($this->in_queue, $using);
 
 		$this->in_queue = null;
@@ -99,16 +128,42 @@ class Join implements \Peyote\Builder
 		$joins = array();
 		foreach ($this->joins as $row)
 		{
+			$sql = array();
+
 			// Add modifier if necessary
 			if ($row[1] !== null)
 			{
 				$sql[] = strtoupper($row[1]);
 			}
 
-			$sql = array("JOIN");
-			$sql[] = $row[0];
+			$sql[] ="JOIN";
+			if (is_array($row[0]))
+			{
+				list($column, $alias) = $row[0];
+				$sql[] = ($column instanceof \Peyote\Select) ? "( {$column} )" : $column;
+				$sql[] = "AS {$alias}";
+			}
+			else
+			{
+				$sql[] = ($row[0] instanceof \Peyote\Select) ? "( {$row[0]} )" : $row[0];
+			}
 
 			$rest = array_slice($row, 2);
+
+			if (isset($rest[1]) AND is_array($rest[1]))
+			{
+				// ON ... AND
+				$and = array(array_shift($rest));
+				foreach($rest[0] as $r)
+				{
+					$and[] = implode(" ", $r);
+					$and[] = "AND";
+				}
+
+				array_pop($and);
+				$rest = $and;
+			}
+
 			$sql = array_merge($sql, $rest);
 			$joins[] = implode(" ", $sql);
 		}

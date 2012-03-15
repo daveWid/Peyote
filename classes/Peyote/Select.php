@@ -48,6 +48,11 @@ class Select extends \Peyote\Base
 	private $columns = array();
 
 	/**
+	 * @var boolean  Distinct rows?
+	 */
+	private $is_distinct = false;
+
+	/**
 	 * Create a new Update instance.
 	 *
 	 * @param mixed         $table  The table name OR array($table, $alias)
@@ -99,6 +104,18 @@ class Select extends \Peyote\Base
 	}
 
 	/**
+	 * Sets the DISTINCT flag.
+	 *
+	 * @param  boolean $distinct  The distinct flag
+	 * @return \Peyote\Select
+	 */
+	public function distinct($distinct = true)
+	{
+		$this->is_distinct = $distinct;
+		return $this;
+	}
+
+	/**
 	 * Compiles the query into raw SQL
 	 *
 	 * @return  string
@@ -106,6 +123,12 @@ class Select extends \Peyote\Base
 	public function compile()
 	{
 		$sql = array("SELECT");
+
+		// Distinct??
+		if ($this->is_distinct)
+		{
+			$sql[] = "DISTINCT";
+		}
 
 		// Column processing
 		if (empty($this->columns) === true)

@@ -74,7 +74,18 @@ abstract class Base implements \Peyote\Builder
 			return $this->table;
 		}
 
-		$this->table = (is_array($table)) ? "{$table[0]} AS {$table[1]}" : $table;
+		if (is_array($table))
+		{
+			list ($table, $alias) = $table;
+			$this->table = ($table instanceof \Peyote\Select) ?
+				"( {$table} ) AS {$alias}" :
+				"{$table} AS {$alias}";
+		}
+		else
+		{
+			$this->table = ($table instanceof \Peyote\Select) ? "( {$table} )" : $table;
+		}
+
 		return $this;
 	}
 	
