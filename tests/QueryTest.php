@@ -143,7 +143,7 @@ FROM Country,
 		) AS summary
 	)
 ) AS top
-WHERE Country.code = top.countrycode";
+WHERE Country.code = 'top.countrycode'";
 
 		$sub3 = new \Peyote\Select;
 		$sub3->columns("countrycode", array("COUNT(*)", 'nr_official_languages'))

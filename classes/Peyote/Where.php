@@ -3,18 +3,22 @@
 namespace Peyote;
 
 /**
- * A class that holds all of the where statements. A lot of this was taken from
- * the Kohana_Database_Query_Builder_Where class.
+ * A class that holds all of the WHERE statments.
  *
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Where extends \Peyote\Base
+class Where extends \Peyote\WhereCondition
 {
 	/**
-	 * @var array  The different where parts.
+	 * Gets the type of condition
+	 *
+	 * @param string
 	 */
-	private $where = array();
+	public function type()
+	{
+		return "WHERE";
+	}
 
 	/**
 	 * Alias for and_where
@@ -39,8 +43,7 @@ class Where extends \Peyote\Base
 	 */
 	public function and_where($column, $op, $value)
 	{
-		$this->where[] = array("AND" => array($column, $op, $value));
-
+		$this->add_group("AND", array($column, $op, $value));
 		return $this;
 	}
 
@@ -54,8 +57,7 @@ class Where extends \Peyote\Base
 	 */
 	public function or_where($column, $op, $value)
 	{
-		$this->where[] = array("OR" => array($column, $op, $value));
-
+		$this->add_group("OR", array($column, $op, $value));
 		return $this;
 	}
 
@@ -76,8 +78,7 @@ class Where extends \Peyote\Base
 	 */
 	public function and_where_open()
 	{
-		$this->where[] = array("AND" => "(");
-
+		$this->add_group("AND", "(");
 		return $this;
 	}
 
@@ -88,8 +89,7 @@ class Where extends \Peyote\Base
 	 */
 	public function or_where_open()
 	{
-		$this->where[] = array("OR" => "(");
-
+		$this->add_group("OR", "(");
 		return $this;
 	}
 
@@ -110,8 +110,7 @@ class Where extends \Peyote\Base
 	 */
 	public function and_where_close()
 	{
-		$this->where[] = array("AND" => ")");
-
+		$this->add_group("AND", ")");
 		return $this;
 	}
 
@@ -122,65 +121,8 @@ class Where extends \Peyote\Base
 	 */
 	public function or_where_close()
 	{
-		$this->where[] = array("OR" => ")");
-
+		$this->add_group("OR", ")");
 		return $this;
 	}
 
-	/**
-	 * Compiles the query into raw SQL
-	 *
-	 * @return  string
-	 */
-	public function compile()
-	{
-		if (empty($this->where) === true)
-		{
-			return "";
-		}
-
-		$last = null;
-		$sql = array();
-		foreach ($this->where as $group)
-		{
-			foreach ($group as $type => $condition)
-			{
-				if ($condition === "(")
-				{
-					if (empty($sql) === false AND $last !== "(")
-					{
-						$sql[] = $type;
-					}
-
-					$sql[] = "(";
-				}
-				else if($condition === ")")
-				{
-					$sql[] = ")";
-				}
-				else
-				{
-					if (empty($sql) === false AND $last !== "(")
-					{
-						$sql[] = $type;
-					}
-
-					list($column, $op, $value) = $condition;
-
-					if ($op === "BETWEEN")
-					{
-						$sql[] = "{$column} {$op} {$this->quote($value[0])} AND {$this->quote($value[1])}";
-					}
-					else
-					{
-						$sql[] = "{$column} {$op} {$this->quote($value)}";
-					}
-				}
-
-				$last = $condition;
-			}
-		}
-
-		return "WHERE ".implode(" ", $sql);
-	}
 }

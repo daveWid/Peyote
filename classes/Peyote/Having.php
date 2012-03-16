@@ -3,45 +3,126 @@
 namespace Peyote;
 
 /**
- * A class for Having statements.
+ * A class that holds all of the HAVING statments.
  *
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Having extends \Peyote\Base
+class Having extends \Peyote\WhereCondition
 {
 	/**
-	 * @var array  An array of having clauses
+	 * Gets the type of condition
+	 *
+	 * @param string
 	 */
-	private $having = array();
+	public function type()
+	{
+		return "HAVING";
+	}
 
 	/**
-	 * Sets the ORDER BY for the query.
+	 * Alias for and_where
 	 *
-	 * @param  string $column  The column name
-	 * @param  string $value   The having value
+	 * @param  string $column  The column
+	 * @param  string $op      The comparison operator
+	 * @param  string $value   The value
 	 * @return $this
 	 */
 	public function having($column, $op, $value)
 	{
-		$this->having[] = "{$column} {$op} {$this->quote($value)}";
+		return $this->and_having($column, $op, $value);
+	}
 
+	/**
+	 * Adds a clause with AND.
+	 *
+	 * @param  string $column  The column
+	 * @param  string $op      The comparison operator
+	 * @param  string $value   The value
+	 * @return $this
+	 */
+	public function and_having($column, $op, $value)
+	{
+		$this->add_group("AND", array($column, $op, $value));
 		return $this;
 	}
 
 	/**
-	 * Compiles the query into raw SQL
+	 * Adds a clause with OR.
 	 *
-	 * @return  string
+	 * @param  string $column  The column
+	 * @param  string $op      The comparison operator
+	 * @param  string $value   The value
+	 * @return $this
 	 */
-	public function compile()
+	public function or_having($column, $op, $value)
 	{
-		// Make sure there are column
-		if (empty($this->having) === true)
-		{
-			return "";
-		}
-
-		return "HAVING ".implode(", ", $this->having);
+		$this->add_group("OR", array($column, $op, $value));
+		return $this;
 	}
+
+	/**
+	 * Alias of and_having_open()
+	 *
+	 * @return  $this
+	 */
+	public function having_open()
+	{
+		return $this->and_having_open();
+	}
+
+	/**
+	 * Opens a new "AND HAVING (...)" grouping.
+	 *
+	 * @return  $this
+	 */
+	public function and_having_open()
+	{
+		$this->add_group("AND", "(");
+		return $this;
+	}
+
+	/**
+	 * Opens a new "OR HAVING (...)" grouping.
+	 *
+	 * @return  $this
+	 */
+	public function or_having_open()
+	{
+		$this->add_group("OR", "(");
+		return $this;
+	}
+
+	/**
+	 * Alias for and_having_close()
+	 *
+	 * @return  $this
+	 */
+	public function having_close()
+	{
+		return $this->and_having_close();
+	}
+
+	/**
+	 * Closes an open "AND (...)" grouping.
+	 *
+	 * @return  $this
+	 */
+	public function and_having_close()
+	{
+		$this->add_group("AND", ")");
+		return $this;
+	}
+
+	/**
+	 * Closes an open "OR (...)" grouping.
+	 *
+	 * @return  $this
+	 */
+	public function or_having_close()
+	{
+		$this->add_group("OR", ")");
+		return $this;
+	}
+
 }
