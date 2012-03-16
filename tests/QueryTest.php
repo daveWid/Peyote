@@ -120,4 +120,56 @@ GROUP BY passenger_id, destination";
 		$this->assertEquals(str_replace(PHP_EOL, " ", $query), $select->compile());
 	}
 
+	/**
+	 * @link  http://dev.mysql.com/tech-resources/articles/subqueries_part_1.html
+	 */
+	public function testSubqueryHaving()
+	{
+		$query = "SELECT name, population, headofstate, top.nr
+FROM Country,
+(
+	SELECT countrycode, COUNT(*) AS nr
+	FROM CountryLanguage
+	WHERE isofficial = 'T'
+	GROUP BY countrycode
+	HAVING nr = (
+		SELECT MAX(summary.nr_official_languages)
+		FROM
+		(
+			SELECT countrycode, COUNT(*) AS nr_official_languages
+			FROM CountryLanguage
+			WHERE isofficial = 'T'
+			GROUP BY countrycode
+		) AS summary
+	)
+) AS top
+WHERE Country.code = top.countrycode";
+
+		$sub3 = new \Peyote\Select;
+		$sub3->columns("countrycode", array("COUNT(*)", 'nr_official_languages'))
+			->table("CountryLanguage")
+			->where("isofficial", '=', "T")
+			->group_by("countrycode");
+
+		$sub2 = new \Peyote\Select;
+		$sub2->columns("MAX(summary.nr_official_languages)")
+			->table(array($sub3, "summary"));
+
+		$sub1 = new \Peyote\Select;
+		$sub1->columns("countrycode", array("COUNT(*)", "nr"))
+			->table("CountryLanguage")
+			->where("isofficial", "=", "T")
+			->group_by("countrycode")
+			->having("nr", '=', $sub2);
+
+		$select = new \Peyote\Select;
+		$select->columns("name","population","headofstate","top.nr")
+			->table("Country")
+			->table(array($sub1, 'top'))
+			->where("Country.code", "=", "top.countrycode");
+
+		$query = preg_replace("/\s+/", " ", $query);
+		$this->assertEquals($query, $select->compile());
+	}
+
 }
