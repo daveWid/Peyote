@@ -37,9 +37,13 @@ class Update extends \Peyote\Base
 	 *
 	 * @param mixed $table   The table name OR array($table, $alias)
 	 */
-	public function __construct($table = "", \Peyote\Where $where = null)
+	public function __construct($table = null, \Peyote\Where $where = null)
 	{
-		$this->table($table);
+		if ($table !== null)
+		{
+			$this->table($table);
+		}
+
 		$this->where = ($where !== null) ? $where : new \Peyote\Where;
 		$this->order_by = new \Peyote\OrderBy;
 		$this->limit = new \Peyote\Limit;

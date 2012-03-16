@@ -42,9 +42,12 @@ class Insert extends \Peyote\Base
 	 *
 	 * @param mixed $table   The table name OR array($table, $alias)
 	 */
-	public function __construct($table = "")
+	public function __construct($table = null)
 	{
-		$this->table($table);
+		if ($table !== null)
+		{
+			$this->table($table);
+		}
 	}
 
 	/**

@@ -11,9 +11,9 @@ namespace Peyote;
 abstract class Base implements \Peyote\Builder
 {
 	/**
-	 * @var mixed  The name of the database table OR array($table, $alias)
+	 * @var mixed A list of tables name of the database table OR array($table, $alias)
 	 */
-	private $table;
+	private $table = array();
 
 	/**
 	 * Quotes/Escapes a value for the database.
@@ -71,19 +71,19 @@ abstract class Base implements \Peyote\Builder
 	{
 		if ($table === null)
 		{
-			return $this->table;
+			return implode(", ", $this->table);
 		}
 
 		if (is_array($table))
 		{
 			list ($table, $alias) = $table;
-			$this->table = ($table instanceof \Peyote\Select) ?
+			$this->table[] = ($table instanceof \Peyote\Select) ?
 				"( {$table} ) AS {$alias}" :
 				"{$table} AS {$alias}";
 		}
 		else
 		{
-			$this->table = ($table instanceof \Peyote\Select) ? "( {$table} )" : $table;
+			$this->table[] = ($table instanceof \Peyote\Select) ? "( {$table} )" : $table;
 		}
 
 		return $this;

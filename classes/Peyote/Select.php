@@ -59,9 +59,13 @@ class Select extends \Peyote\Base
 	 * @param \Peyote\Where $where  Any initial where clause
 	 * @param \Peyote\Join  $join   Any initial join info
 	 */
-	public function __construct($table = "", \Peyote\Where $where = null, \Peyote\Join $join = null)
+	public function __construct($table = null, \Peyote\Where $where = null, \Peyote\Join $join = null)
 	{
-		$this->table($table);
+		if ($table !== null)
+		{
+			$this->table($table);
+		}
+
 		$this->where = ($where !== null) ? $where : new \Peyote\Where;
 		$this->join = ($join !== null) ? $join : new \Peyote\Join;
 		$this->group_by = new \Peyote\GroupBy;
