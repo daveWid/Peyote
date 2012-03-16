@@ -100,6 +100,49 @@ abstract class Base implements \Peyote\Builder
 	}
 
 	/**
+	 * Gets an internal trait for modification.  If the trait isn't found a
+	 * \Peyote\Exception is thrown.
+	 *
+	 * @throws \Peyote\Exception
+	 *
+	 * @param  string $name  The trait name
+	 * @return mixed         The trait value
+	 */
+	public function get_trait($name)
+	{
+		if (in_array($name, $this->traits()) === false)
+		{
+			throw new \Peyote\Exception("[".get_called_class()."] Trait {$name} does not exist.");
+		}
+
+		return $this->{$name};
+	}
+
+	/**
+	 * Sets an internal trait for modification.  If the trait isn't found or the
+	 * internal types do not match a \Peyote\Exception is thrown.
+	 *
+	 * @throws \Peyote\Exception
+	 *
+	 * @param  string $name   The trait name
+	 * @param  mixed  $value  The trait value
+	 * @return $this
+	 */
+	public function set_trait($name, $value)
+	{
+		$trait = $this->get_trait($name);
+
+		if (get_class($trait) !== get_class($value))
+		{
+			throw new \Peyote\Exception("[".get_called_class()."] Trait {$name} should be of type ".
+				get_class($trait).", ".get_class($value)." was provided");
+		}
+
+		$this->{$name} = $value;
+		return $this;
+	}
+
+	/**
 	 * This method is called when a property is not found on the builder object.
 	 * It will loop through all of the properties returned with $this->traits()
 	 * and see if that function has the method. If a method is found, it will
@@ -114,16 +157,28 @@ abstract class Base implements \Peyote\Builder
 	 */
 	public function __call($method, $params)
 	{
-		foreach ($this->traits() as $prop)
+		// Check for get_ or set_
+		$check = substr($method, 0, 4);
+		if ($check === "get_" OR $check === "set_")
 		{
-			if ($this->{$prop} !== null AND method_exists($this->{$prop}, $method))
+			array_unshift($params, substr($method, 4));
+			$method = $check."trait";
+
+			return call_user_func_array(array($this, $method), $params);
+		}
+		else
+		{
+			foreach ($this->traits() as $prop)
 			{
-				call_user_func_array(array($this->{$prop}, $method), $params);
-				return $this;
+				if ($this->{$prop} !== null AND method_exists($this->{$prop}, $method))
+				{
+					call_user_func_array(array($this->{$prop}, $method), $params);
+					return $this;
+				}
 			}
 		}
 
-		throw new \Peyote\Exception("{$method} does not exist in ".get_called_class());
+		throw new \Peyote\Exception("[".get_called_class()."] {$method} does not exist");
 	}
 
 	/**
