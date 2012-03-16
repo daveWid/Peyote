@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Peyote" default="package" basedir=".">
-	<property name="version" value="0.1.0" />
+	<property name="version" value="0.2.0" />
 
 	<!-- Packages up the code to be uploaded -->
 	<target name="package">
@@ -8,10 +8,9 @@
 		<mkdir dir="package/${version}" />
 
 		<!-- Build the zip -->
-		<zip destfile="${project.basedir}/package/${version}/peyote.zip">
-			<fileset dir="${project.basedir}">
-				<include name="classes/**" />
-				<include name="README.md" />
+		<zip destfile="${project.basedir}/package/${version}/Peyote.zip">
+			<fileset dir="${project.basedir}/classes/">
+				<include name="Peyote/**" />
 			</fileset>
 		</zip>
 	</target>
