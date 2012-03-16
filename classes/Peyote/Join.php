@@ -11,6 +11,11 @@ namespace Peyote;
 class Join implements \Peyote\Builder
 {
 	/**
+	 * Empty constructor to avoid php4 compatibility problems.
+	 */
+	public function __construct(){}
+
+	/**
 	 * @var array  A list of joins
 	 */
 	private $joins = array();

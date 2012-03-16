@@ -11,6 +11,11 @@ namespace Peyote;
 class OrderBy implements \Peyote\Builder
 {
 	/**
+	 * Empty constructor to avoid php4 compatibility problems.
+	 */
+	public function __construct(){}
+
+	/**
 	 * @var array  An array of string holding column DIRECTION
 	 */
 	private $columns = array();

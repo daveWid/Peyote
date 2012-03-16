@@ -11,6 +11,11 @@ namespace Peyote;
 class GroupBy implements \Peyote\Builder
 {
 	/**
+	 * Empty constructor to avoid php4 compatibility problems.
+	 */
+	public function __construct(){}
+
+	/**
 	 * @var string  The column name to group by
 	 */
 	private $columns = null;

@@ -11,6 +11,11 @@ namespace Peyote;
 class Having extends \Peyote\WhereCondition
 {
 	/**
+	 * Empty constructor to avoid php4 compatibility problems.
+	 */
+	public function __construct(){}
+
+	/**
 	 * Gets the type of condition
 	 *
 	 * @param string
