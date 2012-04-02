@@ -4,11 +4,8 @@
 
 	<!-- Packages up the code to be uploaded -->
 	<target name="package">
-		<!-- Make the directory -->
-		<mkdir dir="package/${version}" />
-
 		<!-- Build the zip -->
-		<zip destfile="${project.basedir}/package/${version}/Peyote.zip">
+		<zip destfile="${project.basedir}/package/Peyote-${version}.zip">
 			<fileset dir="${project.basedir}/classes/">
 				<include name="Peyote/**" />
 			</fileset>
