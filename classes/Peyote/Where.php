@@ -21,19 +21,6 @@ class Where extends \Peyote\Condition
 	}
 
 	/**
-	 * Alias for and_where
-	 *
-	 * @param  string $column  The column
-	 * @param  string $op      The comparison operator
-	 * @param  string $value   The value
-	 * @return $this
-	 */
-	public function where($column, $op, $value)
-	{
-		return $this->and_where($column, $op, $value);
-	}
-
-	/**
 	 * Adds a clause with AND.
 	 *
 	 * @param  string $column  The column

@@ -75,6 +75,20 @@ class Update extends \Peyote\Base
 	}
 
 	/**
+	 * Add a where condition.
+	 *
+	 * @param  string $column  The column
+	 * @param  string $op      The comparison operator
+	 * @param  string $value   The value
+	 * @return \Peyote\Update
+	 */
+	public function where($column, $op, $value)
+	{
+		$this->where->and_where($column, $op, $value);
+		return $this;
+	}
+
+	/**
 	 * Compiles the query into raw SQL
 	 *
 	 * @return  string

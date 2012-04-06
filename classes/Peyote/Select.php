@@ -146,7 +146,7 @@ class Select extends \Peyote\Base
 	}
 
 	/**
-	 * Having clause.
+	 * Add a having condition.
 	 *
 	 * @param  string $column  The column
 	 * @param  string $op      The comparison operator
@@ -156,6 +156,20 @@ class Select extends \Peyote\Base
 	public function having($column, $op, $value)
 	{
 		$this->having->and_having($column, $op, $value);
+		return $this;
+	}
+
+	/**
+	 * Add a where condition.
+	 *
+	 * @param  string $column  The column
+	 * @param  string $op      The comparison operator
+	 * @param  string $value   The value
+	 * @return \Peyote\Select
+	 */
+	public function where($column, $op, $value)
+	{
+		$this->where->and_where($column, $op, $value);
 		return $this;
 	}
 
