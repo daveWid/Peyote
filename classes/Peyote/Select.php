@@ -120,6 +120,19 @@ class Select extends \Peyote\Base
 	}
 
 	/**
+	 * Starts the join statement
+	 *
+	 * @param  string $table  The table to join
+	 * @param  string $type   The type of join
+	 * @return $this
+	 */
+	public function join($table, $type = null)
+	{
+		$this->join->add_join($table, $type);
+		return $this;
+	}
+
+	/**
 	 * Compiles the query into raw SQL
 	 *
 	 * @return  string
