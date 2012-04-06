@@ -3,8 +3,8 @@
 namespace Peyote;
 
 /**
- * A base class for where conditions. The WHERE class and HAVING class
- * will excend this.
+ * A base class for condition statments. The WHERE class and HAVING class
+ * will extend this.
  * 
  * A lot of this was taken from the Kohana_Database_Query_Builder_Where class.
  * 
@@ -13,10 +13,10 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-abstract class WhereCondition extends \Peyote\Base
+abstract class Condition extends \Peyote\Base
 {
 	/**
-	 * Gets the type of condition (HAVING or WHERE)
+	 * Gets the type of condition
 	 *
 	 * @param string
 	 */
