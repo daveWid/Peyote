@@ -26,7 +26,7 @@ class TraitTest extends PHPUnit_Framework_TestCase
 	public function testSet()
 	{
 		$limit = new \Peyote\Limit;
-		$limit->limit(5);
+		$limit->set_limit(5);
 
 		$select = new \Peyote\Select;
 		$select->table("testing");
@@ -52,7 +52,7 @@ class TraitTest extends PHPUnit_Framework_TestCase
 	public function testMagicSet()
 	{
 		$limit = new \Peyote\Limit;
-		$limit->limit(5);
+		$limit->set_limit(5);
 
 		$select = new \Peyote\Select;
 		$select->table("testing");
@@ -76,7 +76,7 @@ class TraitTest extends PHPUnit_Framework_TestCase
 	public function testSetException()
 	{
 		$limit = new \Peyote\Limit;
-		$limit->limit(5);
+		$limit->set_limit(5);
 
 		$select = new \Peyote\Select;
 		$select->set_where($limit);

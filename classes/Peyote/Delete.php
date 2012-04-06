@@ -46,6 +46,19 @@ class Delete extends \Peyote\Base
 	}
 
 	/**
+	 * Sets for the limit number.
+	 *
+	 * @param  int $num     The limit number
+	 * @param  int $offset  The offset
+	 * @return \Peyote\Delete
+	 */
+	public function limit($num = null, $offset = null)
+	{
+		$this->limit->set_limit($num, $offset);
+		return $this;
+	}
+
+	/**
 	 * Compiles the query into raw SQL
 	 *
 	 * @return  string

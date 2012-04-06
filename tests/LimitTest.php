@@ -15,7 +15,7 @@ class LimitTest extends PHPUnit_Framework_TestCase
 	public function testLimit()
 	{
 		$limit = new \Peyote\Limit;
-		$limit->limit(5);
+		$limit->set_limit(5);
 
 		$this->assertEquals("LIMIT 5", $limit->compile());
 	}
@@ -26,7 +26,7 @@ class LimitTest extends PHPUnit_Framework_TestCase
 	public function testOffest()
 	{
 		$limit = new \Peyote\Limit;
-		$limit->limit(5)->offset(10);
+		$limit->set_limit(5)->offset(10);
 
 		$this->assertEquals("LIMIT 5 OFFSET 10", $limit->compile());
 	}
@@ -38,10 +38,10 @@ class LimitTest extends PHPUnit_Framework_TestCase
 	public function testLimitOffset()
 	{
 		$limit = new \Peyote\Limit;
-		$limit->limit(5, 10);
+		$limit->set_limit(5, 10);
 
 		$offset = new \Peyote\Limit;
-		$offset->limit(5)->offset(10);
+		$offset->set_limit(5)->offset(10);
 
 		$this->assertEquals($limit->compile(), $offset->compile());
 	}
