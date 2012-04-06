@@ -146,6 +146,20 @@ class Select extends \Peyote\Base
 	}
 
 	/**
+	 * Having clause.
+	 *
+	 * @param  string $column  The column
+	 * @param  string $op      The comparison operator
+	 * @param  string $value   The value
+	 * @return \Peyote\Select
+	 */
+	public function having($column, $op, $value)
+	{
+		$this->having->and_having($column, $op, $value);
+		return $this;
+	}
+
+	/**
 	 * Compiles the query into raw SQL
 	 *
 	 * @return  string
