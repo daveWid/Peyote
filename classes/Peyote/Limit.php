@@ -11,11 +11,6 @@ namespace Peyote;
 class Limit implements \Peyote\Builder
 {
 	/**
-	 * Empty constructor to avoid php4 compatibility problems.
-	 */
-	public function __construct(){}
-
-	/**
 	 * @var int  The limit count
 	 */
 	private $limit = null;

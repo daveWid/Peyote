@@ -8,13 +8,8 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Where extends \Peyote\WhereCondition
+class Where extends \Peyote\Condition
 {
-	/**
-	 * Empty constructor to avoid php4 compatibility problems.
-	 */
-	public function __construct(){}
-
 	/**
 	 * Gets the type of condition
 	 *
