@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Peyote" default="package" basedir=".">
-	<property name="version" value="0.2.0" />
+	<property name="version" value="0.2.1" />
 
 	<!-- Packages up the code to be uploaded -->
 	<target name="package">
