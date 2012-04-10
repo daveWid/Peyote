@@ -79,6 +79,10 @@ abstract class Condition extends \Peyote\Base
 					{
 						$sql[] = "{$column} {$op} {$this->quote($value[0])} AND {$this->quote($value[1])}";
 					}
+					else if ($op === "AGAINST")
+					{
+						$sql[] = "MATCH({$column}) AGAINST({$this->quote($value)})";
+					}
 					else
 					{
 						$sql[] = "{$column} {$op}";
