@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+	<title>Peyote</title>
+	<parser>
+		<target>dev/api</target>
+	</parser>
+	<transformer>
+		<target>dev/api</target>
+	</transformer>
+	<files>
+		<directory>classes/</directory>
+	</files>
+</phpdoc>
