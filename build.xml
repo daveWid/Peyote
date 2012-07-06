@@ -5,7 +5,7 @@
 	<!-- Packages up the code to be uploaded -->
 	<target name="package">
 		<!-- Build the zip -->
-		<zip destfile="${project.basedir}/package/Peyote-${version}.zip">
+		<zip destfile="${project.basedir}/dev/package/Peyote-${version}.zip">
 			<fileset dir="${project.basedir}/">
 				<include name="classes/Peyote/**" />
 				<include name="README.md" />

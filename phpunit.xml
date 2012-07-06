@@ -12,6 +12,6 @@
 	</filter>
 
 	<logging>
-		<log type="coverage-html" target="reports/coverage" charset="utf-8" />
+		<log type="coverage-html" target="dev/reports/coverage" charset="utf-8" />
 	</logging>
 </phpunit>
