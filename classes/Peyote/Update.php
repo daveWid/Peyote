@@ -33,6 +33,11 @@ class Update extends \Peyote\Base
 	protected $limit;
 
 	/**
+	 * @var array  A list of internal "traits"
+	 */
+	private $traits = array('where','order_by','limit');
+
+	/**
 	 * Create a new Update instance.
 	 *
 	 * @param mixed $table   The table name OR array($table, $alias)
@@ -48,8 +53,7 @@ class Update extends \Peyote\Base
 		$this->order_by = new \Peyote\OrderBy;
 		$this->limit = new \Peyote\Limit;
 
-		$map = array('where','order_by','limit');
-		foreach ($map as $type)
+		foreach ($this->traits as $type)
 		{
 			$this->addToMap($type, $this->{$type}->getMethods());
 		}
@@ -76,7 +80,7 @@ class Update extends \Peyote\Base
 	 */
 	public function limit($num = null, $offset = null)
 	{
-		$this->limit->set_limit($num, $offset);
+		$this->limit->setLimit($num, $offset);
 		return $this;
 	}
 
@@ -90,7 +94,7 @@ class Update extends \Peyote\Base
 	 */
 	public function where($column, $op, $value)
 	{
-		$this->where->and_where($column, $op, $value);
+		$this->where->andWhere($column, $op, $value);
 		return $this;
 	}
 
@@ -113,25 +117,14 @@ class Update extends \Peyote\Base
 
 		$sql[] = implode(", ", $data);
 
-		// Where?
-		$where = $this->where->compile();
-		if ($where !== "")
+		foreach ($this->traits as $trait)
 		{
-			$sql[] = $where;
-		}
+			$raw = $this->{$trait}->compile();
 
-		// Order?
-		$order = $this->order_by->compile();
-		if ($order !== "")
-		{
-			$sql[] = $order;
-		}
-
-		// Limit?
-		$limit = $this->limit->compile();
-		if ($limit !== "")
-		{
-			$sql[] = $limit;
+			if ($raw !== "")
+			{
+				$sql[] = $raw;
+			}
 		}
 
 		return implode(" ", $sql);

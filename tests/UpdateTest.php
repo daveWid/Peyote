@@ -23,9 +23,10 @@ class UpdateTest extends PHPUnit_Framework_TestCase
 	public function testSimple()
 	{
 		$update = new \Peyote\Update;
-		$update->table("heroes")->set($this->hero);
+		$update->table("heroes")->set($this->hero)->where('id', '=', 1);
 
-		$this->assertEquals("UPDATE heroes SET name = 'Frank Castle', alias = 'Punisher'", $update->compile());
+		$raw = "UPDATE heroes SET name = 'Frank Castle', alias = 'Punisher' WHERE id = 1";
+		$this->assertEquals($raw, $update->compile());
 	}
 
 }
