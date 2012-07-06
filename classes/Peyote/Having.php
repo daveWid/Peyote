@@ -112,4 +112,23 @@ class Having extends \Peyote\Condition
 		return $this;
 	}
 
+	/**
+	 * Get the methods that this class will pass through.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array(
+			'addHaving',
+			'orHaving',
+			'havingOpen',
+			'andHavingOpen',
+			'orHavingOpen',
+			'havingClose',
+			'andHavingClose',
+			'orHavingClose'
+		);
+	}
+
 }

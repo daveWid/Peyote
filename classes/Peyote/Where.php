@@ -74,7 +74,7 @@ class Where extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function or_where_open()
+	public function orWhereOpen()
 	{
 		$this->addGroup("OR", "(");
 		return $this;
@@ -110,6 +110,25 @@ class Where extends \Peyote\Condition
 	{
 		$this->addGroup("OR", ")");
 		return $this;
+	}
+
+	/**
+	 * Get the methods that this class will pass through.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array(
+			'andWhere',
+			'orWhere',
+			'whereOpen',
+			'andWhereOpen',
+			'orWhereOpen',
+			'whereClose',
+			'andWhereClose',
+			'orWhereClose'
+		);
 	}
 
 }

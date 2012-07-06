@@ -74,4 +74,15 @@ class Limit implements \Peyote\Builder
 
 		return implode(" ", $sql);
 	}
+
+	/**
+	 * Get the methods that this class will pass through.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array('setLimit','offset');
+	}
+
 }

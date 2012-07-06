@@ -16,6 +16,11 @@ abstract class Base implements \Peyote\Builder
 	private $table = array();
 
 	/**
+	 * @var array  The maps holds references to internal functions for __call.
+	 */
+	private $map = array();
+
+	/**
 	 * Quotes/Escapes a value for the database.
 	 *
 	 * @param  string $value  The value to quote
@@ -100,54 +105,10 @@ abstract class Base implements \Peyote\Builder
 	}
 
 	/**
-	 * Gets an internal trait for modification.  If the trait isn't found a
-	 * \Peyote\Exception is thrown.
-	 *
-	 * @throws \Peyote\Exception
-	 *
-	 * @param  string $name  The trait name
-	 * @return mixed         The trait value
-	 */
-	public function getTrait($name)
-	{
-		if (in_array($name, $this->traits()) === false)
-		{
-			throw new \Peyote\Exception("[".get_called_class()."] Trait {$name} does not exist.");
-		}
-
-		return $this->{$name};
-	}
-
-	/**
-	 * Sets an internal trait for modification.  If the trait isn't found or the
-	 * internal types do not match a \Peyote\Exception is thrown.
-	 *
-	 * @throws \Peyote\Exception
-	 *
-	 * @param  string $name   The trait name
-	 * @param  mixed  $value  The trait value
-	 * @return $this
-	 */
-	public function setTrait($name, $value)
-	{
-		$trait = $this->getTrait($name);
-
-		if (get_class($trait) !== get_class($value))
-		{
-			throw new \Peyote\Exception("[".get_called_class()."] Trait {$name} should be of type ".
-				get_class($trait).", ".get_class($value)." was provided");
-		}
-
-		$this->{$name} = $value;
-		return $this;
-	}
-
-	/**
 	 * This method is called when a property is not found on the builder object.
-	 * It will loop through all of the properties returned with $this->traits()
-	 * and see if that function has the method. If a method is found, it will
-	 * be called and $this returned. If the method is not found and \Execption
-	 * will be thrown.
+	 * It will loop through all of the methods found in the $map array.
+	 * If a method is found, it will be called and $this returned.
+	 * If the method is not found and \Execption will be thrown.
 	 *
 	 * @throws \Peyote\Exeption
 	 *
@@ -157,43 +118,32 @@ abstract class Base implements \Peyote\Builder
 	 */
 	public function __call($method, $params)
 	{
-		// Check for get_ or set_
-		$check = substr($method, 0, 3);
-		if ($check === "get" OR $check === "set")
+		if (array_key_exists($method, $this->map))
 		{
-			$method = lcfirst(substr($method, 3));
-			array_unshift($params, $method);
-			$method = $check."Trait";
+			$property = $this->map[$method];
 
-			return call_user_func_array(array($this, $method), $params);
+			call_user_func_array(array($this->{$property}, $method), $params);
+			return $this;
 		}
 		else
 		{
-			foreach ($this->traits() as $prop)
-			{
-				if ($this->{$prop} !== null AND method_exists($this->{$prop}, $method))
-				{
-					call_user_func_array(array($this->{$prop}, $method), $params);
-					return $this;
-				}
-			}
+			throw new \Peyote\Exception("[".get_called_class()."] {$method} does not exist");
 		}
-
-		throw new \Peyote\Exception("[".get_called_class()."] {$method} does not exist");
 	}
 
 	/**
-	 * Adding in basic trait support for php 5.3.
+	 * Adds a list of methods tied to a given property to the internal map variable.
 	 *
-	 * This function will return all of the class properties that should
-	 * be looped through when __call is run. The properties will be checked
-	 * in order so put the properties you want to have priority first.
-	 *
-	 * @return array 
+	 * @param  string $property  The internal propery to
+	 * @param  array  $methods   A list of methods to add
+	 * @return \Peyote\Base
 	 */
-	protected function traits()
+	protected function addToMap($property, array $methods)
 	{
-		return array();
+		foreach ($methods as $name)
+		{
+			$this->map[$name] = $property;
+		}
 	}
 
 }

@@ -38,4 +38,15 @@ class GroupBy implements \Peyote\Builder
 	{
 		return ($this->columns === null) ? "" : "GROUP BY {$this->columns}";
 	}
+
+	/**
+	 * Get the methods that this class will pass through.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array('groupBy');
+	}
+
 }

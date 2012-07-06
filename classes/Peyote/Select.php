@@ -53,6 +53,11 @@ class Select extends \Peyote\Base
 	private $is_distinct = false;
 
 	/**
+	 * @var array  A list of internal "traits"
+	 */
+	private $traits = array("join","where","group_by","having","order_by","limit");
+
+	/**
 	 * Create a new Update instance.
 	 *
 	 * @param mixed         $table  The table name OR array($table, $alias)
@@ -72,6 +77,11 @@ class Select extends \Peyote\Base
 		$this->having = new \Peyote\Having;
 		$this->order_by = new \Peyote\OrderBy;
 		$this->limit = new \Peyote\Limit;
+
+		foreach ($this->traits as $type)
+		{
+			$this->addToMap($type, $this->{$type}->getMethods());
+		}
 	}
 
 	/**
@@ -208,7 +218,7 @@ class Select extends \Peyote\Base
 		$sql[] = "FROM";
 		$sql[] = $this->table();
 
-		foreach ($this->traits() as $prop)
+		foreach ($this->traits as $prop)
 		{
 			$value = $this->{$prop}->compile();
 			if ($value !== "")
@@ -218,16 +228,6 @@ class Select extends \Peyote\Base
 		}
 
 		return implode(" ", $sql);
-	}
-
-	/**
-	 * Get the class properties to use as "traits".
-	 *
-	 * @return array
-	 */
-	protected function traits()
-	{
-		return array("join","where","group_by","having","order_by","limit");
 	}
 
 }

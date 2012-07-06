@@ -47,6 +47,12 @@ class Update extends \Peyote\Base
 		$this->where = ($where !== null) ? $where : new \Peyote\Where;
 		$this->order_by = new \Peyote\OrderBy;
 		$this->limit = new \Peyote\Limit;
+
+		$map = array('where','order_by','limit');
+		foreach ($map as $type)
+		{
+			$this->addToMap($type, $this->{$type}->getMethods());
+		}
 	}
 
 	/**
@@ -129,16 +135,6 @@ class Update extends \Peyote\Base
 		}
 
 		return implode(" ", $sql);
-	}
-
-	/**
-	 * Get the class properties to use as "traits".
-	 *
-	 * @return array
-	 */
-	protected function traits()
-	{
-		return array("where","order_by","limit");
 	}
 
 }

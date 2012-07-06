@@ -145,7 +145,14 @@ class Join implements \Peyote\Builder
 			}
 			else
 			{
-				$sql[] = ($row[0] instanceof \Peyote\Select) ? "( {$row[0]} )" : $row[0];
+				if ($row[0] instanceof \Peyote\Select)
+				{
+					$sql[] = "( ".$row[0]->compile()." )";
+				}
+				else
+				{
+					$sql[] = $row[0];
+				}
 			}
 
 			$rest = array_slice($row, 2);
@@ -170,4 +177,20 @@ class Join implements \Peyote\Builder
 
 		return implode(" ", $joins);
 	}
+
+	/**
+	 * Get the methods that this class will pass through.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array(
+			'addJoin',
+			'on',
+			'onAnd',
+			'using',
+		);
+	}
+
 }

@@ -57,4 +57,15 @@ class OrderBy implements \Peyote\Builder
 
 		return "ORDER BY ".implode(", ", $order);
 	}
+
+	/**
+	 * Get the methods that this class will pass through.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array('orderBy');
+	}
+
 }
