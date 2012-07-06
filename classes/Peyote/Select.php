@@ -85,7 +85,7 @@ class Select extends \Peyote\Base
 	 */
 	public function columns($columns)
 	{
-		return $this->columns_array(func_get_args());
+		return $this->columnsArray(func_get_args());
 	}
 
 	/**
@@ -97,7 +97,7 @@ class Select extends \Peyote\Base
 	 * @param  array $columns  The columns in an array
 	 * @return $this
 	 */
-	public function columns_array(array $columns)
+	public function columnsArray(array $columns)
 	{
 		foreach ($columns as $c)
 		{
@@ -128,7 +128,7 @@ class Select extends \Peyote\Base
 	 */
 	public function join($table, $type = null)
 	{
-		$this->join->add_join($table, $type);
+		$this->join->addJoin($table, $type);
 		return $this;
 	}
 
@@ -141,7 +141,7 @@ class Select extends \Peyote\Base
 	 */
 	public function limit($num = null, $offset = null)
 	{
-		$this->limit->set_limit($num, $offset);
+		$this->limit->setLimit($num, $offset);
 		return $this;
 	}
 
@@ -155,7 +155,7 @@ class Select extends \Peyote\Base
 	 */
 	public function having($column, $op, $value)
 	{
-		$this->having->and_having($column, $op, $value);
+		$this->having->andHaving($column, $op, $value);
 		return $this;
 	}
 
@@ -169,7 +169,7 @@ class Select extends \Peyote\Base
 	 */
 	public function where($column, $op, $value)
 	{
-		$this->where->and_where($column, $op, $value);
+		$this->where->andWhere($column, $op, $value);
 		return $this;
 	}
 

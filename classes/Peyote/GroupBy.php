@@ -21,7 +21,7 @@ class GroupBy implements \Peyote\Builder
 	 * @param  string $column  A list of columns to group by
 	 * @return $this
 	 */
-	public function group_by($columns)
+	public function groupBy($columns)
 	{
 		$columns = func_get_args();
 

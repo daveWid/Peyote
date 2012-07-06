@@ -15,7 +15,7 @@ class OrderByTest extends PHPUnit_Framework_TestCase
 	public function testNoDirection()
 	{
 		$order = new \Peyote\OrderBy;
-		$order->order_by("name");
+		$order->orderBy("name");
 
 		$this->assertEquals("ORDER BY name", $order->compile());
 	}
@@ -26,7 +26,7 @@ class OrderByTest extends PHPUnit_Framework_TestCase
 	public function testDirection()
 	{
 		$order = new \Peyote\OrderBy;
-		$order->order_by("name", "DESC");
+		$order->orderBy("name", "DESC");
 
 		$this->assertEquals("ORDER BY name DESC", $order->compile());
 	}

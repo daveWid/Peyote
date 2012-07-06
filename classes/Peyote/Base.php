@@ -108,7 +108,7 @@ abstract class Base implements \Peyote\Builder
 	 * @param  string $name  The trait name
 	 * @return mixed         The trait value
 	 */
-	public function get_trait($name)
+	public function getTrait($name)
 	{
 		if (in_array($name, $this->traits()) === false)
 		{
@@ -128,9 +128,9 @@ abstract class Base implements \Peyote\Builder
 	 * @param  mixed  $value  The trait value
 	 * @return $this
 	 */
-	public function set_trait($name, $value)
+	public function setTrait($name, $value)
 	{
-		$trait = $this->get_trait($name);
+		$trait = $this->getTrait($name);
 
 		if (get_class($trait) !== get_class($value))
 		{
@@ -158,11 +158,12 @@ abstract class Base implements \Peyote\Builder
 	public function __call($method, $params)
 	{
 		// Check for get_ or set_
-		$check = substr($method, 0, 4);
-		if ($check === "get_" OR $check === "set_")
+		$check = substr($method, 0, 3);
+		if ($check === "get" OR $check === "set")
 		{
-			array_unshift($params, substr($method, 4));
-			$method = $check."trait";
+			$method = lcfirst(substr($method, 3));
+			array_unshift($params, $method);
+			$method = $check."Trait";
 
 			return call_user_func_array(array($this, $method), $params);
 		}

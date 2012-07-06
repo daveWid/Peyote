@@ -28,9 +28,9 @@ class Having extends \Peyote\Condition
 	 * @param  string $value   The value
 	 * @return $this
 	 */
-	public function and_having($column, $op, $value)
+	public function andHaving($column, $op, $value)
 	{
-		$this->add_group("AND", array($column, $op, $value));
+		$this->addGroup("AND", array($column, $op, $value));
 		return $this;
 	}
 
@@ -42,9 +42,9 @@ class Having extends \Peyote\Condition
 	 * @param  string $value   The value
 	 * @return $this
 	 */
-	public function or_having($column, $op, $value)
+	public function orHaving($column, $op, $value)
 	{
-		$this->add_group("OR", array($column, $op, $value));
+		$this->addGroup("OR", array($column, $op, $value));
 		return $this;
 	}
 
@@ -53,9 +53,9 @@ class Having extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function having_open()
+	public function havingOpen()
 	{
-		return $this->and_having_open();
+		return $this->andHavingOpen();
 	}
 
 	/**
@@ -63,9 +63,9 @@ class Having extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function and_having_open()
+	public function andHavingOpen()
 	{
-		$this->add_group("AND", "(");
+		$this->addGroup("AND", "(");
 		return $this;
 	}
 
@@ -74,9 +74,9 @@ class Having extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function or_having_open()
+	public function orHavingOpen()
 	{
-		$this->add_group("OR", "(");
+		$this->addGroup("OR", "(");
 		return $this;
 	}
 
@@ -85,9 +85,9 @@ class Having extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function having_close()
+	public function havingClose()
 	{
-		return $this->and_having_close();
+		return $this->andHavingClose();
 	}
 
 	/**
@@ -95,9 +95,9 @@ class Having extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function and_having_close()
+	public function andHavingClose()
 	{
-		$this->add_group("AND", ")");
+		$this->addGroup("AND", ")");
 		return $this;
 	}
 
@@ -106,9 +106,9 @@ class Having extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function or_having_close()
+	public function orHavingClose()
 	{
-		$this->add_group("OR", ")");
+		$this->addGroup("OR", ")");
 		return $this;
 	}
 

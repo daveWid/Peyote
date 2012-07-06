@@ -10,53 +10,53 @@
 class TraitTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * Testing get_trait()
+	 * Testing getTrait()
 	 */
 	public function testGet()
 	{
 		$select = new \Peyote\Select;
 		$select->table("testing")->limit(5);
 
-		$this->assertInstanceOf("\\Peyote\\Limit", $select->get_trait("limit"));
+		$this->assertInstanceOf("\\Peyote\\Limit", $select->getTrait("limit"));
 	}
 
 	/**
-	 * Testing set_trait()
+	 * Testing setTrait()
 	 */
 	public function testSet()
 	{
 		$limit = new \Peyote\Limit;
-		$limit->set_limit(5);
+		$limit->setLimit(5);
 
 		$select = new \Peyote\Select;
 		$select->table("testing");
-		$select->set_trait("limit", $limit);
+		$select->setTrait("limit", $limit);
 
 		$this->assertEquals("SELECT * FROM testing LIMIT 5", $select->compile());
 	}
 
 	/**
-	 * Testing get_$trait()
+	 * Testing get$trait()
 	 */
 	public function testMagicGet()
 	{
 		$select = new \Peyote\Select;
 		$select->table("testing")->limit(5);
 
-		$this->assertInstanceOf("\\Peyote\\Limit", $select->get_limit());
+		$this->assertInstanceOf("\\Peyote\\Limit", $select->getLimit());
 	}
 
 	/**
-	 * Testing set_$trait()
+	 * Testing set$trait()
 	 */
 	public function testMagicSet()
 	{
 		$limit = new \Peyote\Limit;
-		$limit->set_limit(5);
+		$limit->setLimit(5);
 
 		$select = new \Peyote\Select;
 		$select->table("testing");
-		$select->set_limit($limit);
+		$select->setLimit($limit);
 
 		$this->assertEquals("SELECT * FROM testing LIMIT 5", $select->compile());
 	}
@@ -67,7 +67,7 @@ class TraitTest extends PHPUnit_Framework_TestCase
 	public function testGetException()
 	{
 		$select = new \Peyote\Select;
-		$select->get_trait("throwerror");
+		$select->getTrait("throwerror");
 	}
 
 	/**
@@ -76,10 +76,10 @@ class TraitTest extends PHPUnit_Framework_TestCase
 	public function testSetException()
 	{
 		$limit = new \Peyote\Limit;
-		$limit->set_limit(5);
+		$limit->setLimit(5);
 
 		$select = new \Peyote\Select;
-		$select->set_where($limit);
+		$select->setWhere($limit);
 	}
 
 }

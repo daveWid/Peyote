@@ -27,7 +27,7 @@ class Join implements \Peyote\Builder
 	 * @param  string $type   The type of join
 	 * @return $this
 	 */
-	public function add_join($table, $type = null)
+	public function addJoin($table, $type = null)
 	{
 		if ($type !== null)
 		{
@@ -76,7 +76,7 @@ class Join implements \Peyote\Builder
 	 * @param  array $statements The on statements
 	 * @return $this
 	 */
-	public function on_and(array $statements)
+	public function onAnd(array $statements)
 	{
 		if ($this->in_queue === null)
 		{

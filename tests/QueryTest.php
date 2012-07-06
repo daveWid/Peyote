@@ -22,14 +22,14 @@ AND removed IS NULL";
 
 		$select = new \Peyote\Select;
 		$select->table('users')
-			->where_open()
-				->or_where('id', 'IN', array(1, 2, 3, 5))
-				->and_where_open()
+			->whereOpen()
+				->orWhere('id', 'IN', array(1, 2, 3, 5))
+				->andWhereOpen()
 					->where('last_login', '<=', 1276020805)
-					->or_where('last_login', 'IS', NULL)
-				->where_close()
-			->where_close()
-			->and_where('removed','IS', NULL);
+					->orWhere('last_login', 'IS', NULL)
+				->whereClose()
+			->whereClose()
+			->andWhere('removed','IS', NULL);
 		
 		$this->assertEquals(str_replace(PHP_EOL, " ", $query), $select->compile());
 	}
@@ -52,7 +52,7 @@ ORDER BY employee";
 		)->table(array("employees", "m"))
 		->join(array("employees", "e"), "inner")
 		->on("m.employeeNumber", "=", "e.reportsTo")
-		->order_by("employee");
+		->orderBy("employee");
 
 		$this->assertEquals(str_replace(PHP_EOL, " ", $query), $select->compile());
 	}
@@ -75,7 +75,7 @@ ON a1.authid = a3.authid";
 		$subquery = new \Peyote\Select;
 		$subquery->columns("authid","COUNT(bookid)")
 			->table(array("authorbook", "a2"))
-			->group_by("authid")
+			->groupBy("authid")
 			->having("COUNT(bookid)", ">", 1);
 
 		$select = new \Peyote\Select;
@@ -111,11 +111,11 @@ GROUP BY passenger_id, destination";
 		$select->columns("x.*", array("COUNT(b.passenger_id)", "bookings"))
 			->table(array($subquery, "x"))
 			->join(array("flight", "d"), "left")->on("d.destination", "=", "x.destination")
-			->join(array("booking", "b"), "left")->on_and(array(
+			->join(array("booking", "b"), "left")->onAnd(array(
 				array("b.passenger_id", "=", "x.passenger_id"),
 				array("b.flight", '=', 'd.flight')
 			))
-			->group_by("passenger_id", "destination");
+			->groupBy("passenger_id", "destination");
 
 		$this->assertEquals(str_replace(PHP_EOL, " ", $query), $select->compile());
 	}
@@ -149,7 +149,7 @@ WHERE Country.code = 'top.countrycode'";
 		$sub3->columns("countrycode", array("COUNT(*)", 'nr_official_languages'))
 			->table("CountryLanguage")
 			->where("isofficial", '=', "T")
-			->group_by("countrycode");
+			->groupBy("countrycode");
 
 		$sub2 = new \Peyote\Select;
 		$sub2->columns("MAX(summary.nr_official_languages)")
@@ -159,7 +159,7 @@ WHERE Country.code = 'top.countrycode'";
 		$sub1->columns("countrycode", array("COUNT(*)", "nr"))
 			->table("CountryLanguage")
 			->where("isofficial", "=", "T")
-			->group_by("countrycode")
+			->groupBy("countrycode")
 			->having("nr", '=', $sub2);
 
 		$select = new \Peyote\Select;

@@ -30,7 +30,7 @@ abstract class Condition extends \Peyote\Base
 	/**
 	 * Adds a group.
 	 */
-	protected function add_group($type, $value)
+	protected function addGroup($type, $value)
 	{
 		$this->groups[] = array($type => $value);
 	}

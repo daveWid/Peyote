@@ -128,7 +128,7 @@ class Insert extends \Peyote\Base
 	 * @param  \Peyote\Update $update  The update statement
 	 * @return $this
 	 */
-	public function on_duplicate_key(\Peyote\Update $update)
+	public function onDuplicateKey(\Peyote\Update $update)
 	{
 		$this->duplicate = $update;
 		return $this;

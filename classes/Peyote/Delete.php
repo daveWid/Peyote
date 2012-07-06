@@ -54,7 +54,7 @@ class Delete extends \Peyote\Base
 	 */
 	public function limit($num = null, $offset = null)
 	{
-		$this->limit->set_limit($num, $offset);
+		$this->limit->setLimit($num, $offset);
 		return $this;
 	}
 
@@ -68,7 +68,7 @@ class Delete extends \Peyote\Base
 	 */
 	public function where($column, $op, $value)
 	{
-		$this->where->and_where($column, $op, $value);
+		$this->where->andWhere($column, $op, $value);
 		return $this;
 	}
 

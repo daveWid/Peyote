@@ -39,7 +39,7 @@ class SelectTest extends PHPUnit_Framework_TestCase
 		$columns = array('name', 'alias');
 
 		$select = new \Peyote\Select;
-		$select->table("heroes")->columns_array($columns);
+		$select->table("heroes")->columnsArray($columns);
 
 		$this->assertEquals("SELECT name, alias FROM heroes", $select->compile());
 	}

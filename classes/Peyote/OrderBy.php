@@ -22,7 +22,7 @@ class OrderBy implements \Peyote\Builder
 	 * @param  string $direction  The sort direction
 	 * @return $this
 	 */
-	public function order_by($column, $direction = null)
+	public function orderBy($column, $direction = null)
 	{
 		$this->columns[] = array($column, $direction);
 

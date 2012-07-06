@@ -28,9 +28,9 @@ class Where extends \Peyote\Condition
 	 * @param  string $value   The value
 	 * @return $this
 	 */
-	public function and_where($column, $op, $value)
+	public function andWhere($column, $op, $value)
 	{
-		$this->add_group("AND", array($column, $op, $value));
+		$this->addGroup("AND", array($column, $op, $value));
 		return $this;
 	}
 
@@ -42,9 +42,9 @@ class Where extends \Peyote\Condition
 	 * @param  string $value   The value
 	 * @return $this
 	 */
-	public function or_where($column, $op, $value)
+	public function orWhere($column, $op, $value)
 	{
-		$this->add_group("OR", array($column, $op, $value));
+		$this->addGroup("OR", array($column, $op, $value));
 		return $this;
 	}
 
@@ -53,9 +53,9 @@ class Where extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function where_open()
+	public function whereOpen()
 	{
-		return $this->and_where_open();
+		return $this->andWhereOpen();
 	}
 
 	/**
@@ -63,9 +63,9 @@ class Where extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function and_where_open()
+	public function andWhereOpen()
 	{
-		$this->add_group("AND", "(");
+		$this->addGroup("AND", "(");
 		return $this;
 	}
 
@@ -76,7 +76,7 @@ class Where extends \Peyote\Condition
 	 */
 	public function or_where_open()
 	{
-		$this->add_group("OR", "(");
+		$this->addGroup("OR", "(");
 		return $this;
 	}
 
@@ -85,9 +85,9 @@ class Where extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function where_close()
+	public function whereClose()
 	{
-		return $this->and_where_close();
+		return $this->andWhereClose();
 	}
 
 	/**
@@ -95,9 +95,9 @@ class Where extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function and_where_close()
+	public function andWhereClose()
 	{
-		$this->add_group("AND", ")");
+		$this->addGroup("AND", ")");
 		return $this;
 	}
 
@@ -106,9 +106,9 @@ class Where extends \Peyote\Condition
 	 *
 	 * @return  $this
 	 */
-	public function or_where_close()
+	public function orWhereClose()
 	{
-		$this->add_group("OR", ")");
+		$this->addGroup("OR", ")");
 		return $this;
 	}
 

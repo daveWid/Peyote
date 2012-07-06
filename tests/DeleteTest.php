@@ -48,7 +48,7 @@ class DeleteTest extends PHPUnit_Framework_TestCase
 	public function testChaining()
 	{
 		$delete = new \Peyote\Delete;
-		$delete->table("testing")->where("name", '=', 'Dave')->order_by("name")->limit(1);
+		$delete->table("testing")->where("name", '=', 'Dave')->orderBy("name")->limit(1);
 
 		$this->assertInstanceOf("\\Peyote\\Delete", $delete);
 	}

@@ -15,7 +15,7 @@ class JoinTest extends PHPUnit_Framework_TestCase
 	public function testOn()
 	{
 		$join = new \Peyote\Join;
-		$join->add_join("role")->on("user.id", "=", "role.id");
+		$join->addJoin("role")->on("user.id", "=", "role.id");
 
 		$this->assertEquals("JOIN role ON user.id = role.id", $join->compile());
 	}
@@ -26,7 +26,7 @@ class JoinTest extends PHPUnit_Framework_TestCase
 	public function testUsing()
 	{
 		$join = new \Peyote\Join;
-		$join->add_join("role")->using('id');
+		$join->addJoin("role")->using('id');
 
 		$this->assertEquals("JOIN role USING(id)", $join->compile());
 	}
@@ -37,7 +37,7 @@ class JoinTest extends PHPUnit_Framework_TestCase
 	public function testModifier()
 	{
 		$join = new \Peyote\Join;
-		$join->add_join("role", "left")->on("user.id", "=", "role.id");
+		$join->addJoin("role", "left")->on("user.id", "=", "role.id");
 
 		$this->assertEquals("LEFT JOIN role ON user.id = role.id", $join->compile());
 	}
@@ -52,11 +52,11 @@ class JoinTest extends PHPUnit_Framework_TestCase
 		$subquery = new \Peyote\Select;
 		$subquery->columns("authid","COUNT(bookid)")
 			->table(array("authorbook", "a2"))
-			->group_by("authid")
+			->groupBy("authid")
 			->having("COUNT(bookid)", ">", 1);
 
 		$join = new \Peyote\Join;
-		$join->add_join($subquery, "inner")->on("a1.authid", "=", "a3.authid");
+		$join->addJoin($subquery, "inner")->on("a1.authid", "=", "a3.authid");
 
 		$this->assertEquals($query, $join->compile());
 	}
@@ -71,11 +71,11 @@ class JoinTest extends PHPUnit_Framework_TestCase
 		$subquery = new \Peyote\Select;
 		$subquery->columns("authid","COUNT(bookid)")
 			->table(array("authorbook", "a2"))
-			->group_by("authid")
+			->groupBy("authid")
 			->having("COUNT(bookid)", ">", 1);
 
 		$join = new \Peyote\Join;
-		$join->add_join(array($subquery, "a3"), "outer")->on("a1.authid", "=", "a3.authid");
+		$join->addJoin(array($subquery, "a3"), "outer")->on("a1.authid", "=", "a3.authid");
 
 		$this->assertEquals($query, $join->compile());
 	}
