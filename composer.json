@@ -1,0 +1,21 @@
+{
+	"name": "davewid/peyote",
+	"description": "A database query builder for PHP 5.3+",
+	"keywords": ["Database","Query Builder", "MySQL"],
+	"homepage": "https://github.com/daveWid/Peyote",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Dave Widmer",
+			"email": "dave@davewidmer.net",
+			"homepage": "http://www.davewidmer.net"
+		}
+	],
+	"require":{
+		"php": ">=5.3"
+	},
+	"autoload": {
+		"psr-0": { "Peyote": "classes/" }
+	}
+}
