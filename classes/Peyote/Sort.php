@@ -20,7 +20,7 @@ abstract class Sort implements \Peyote\Builder
 	 *
 	 * @return string
 	 */
-	abstract function getType();
+	abstract public function getType();
 
 	/**
 	 * Compiles the query into raw SQL
