@@ -8,17 +8,17 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Order implements \Peyote\Builder
+class Order extends \Peyote\Sort
 {
 	/**
-	 * @var array  The order clauses.
+	 * Gets the type of sorting query we are running.
+	 *
+	 * @return string
 	 */
-	private $clauses = array();
-
-	/**
-	 * @var type string  The "type" of clause this is.
-	 */
-	protected $type = "ORDER BY";
+	public function getType()
+	{
+		return "ORDER BY";
+	}
 
 	/**
 	 * Orders a result with an optional direction.
@@ -31,36 +31,6 @@ class Order implements \Peyote\Builder
 	{
 		$this->clauses[] = array($column, $direction);
 		return $this;
-	}
-
-	/**
-	 * Compiles the query into raw SQL
-	 *
-	 * @return  string
-	 */
-	public function compile()
-	{
-		if (empty($this->clauses))
-		{
-			return "";
-		}
-
-		$sql = array();
-		foreach ($this->clauses as $clause)
-		{
-			list($column, $direction) = $clause;
-
-			if ($direction === null)
-			{
-				$sql[] = $column;
-			}
-			else
-			{
-				$sql[] = "{$column} {$direction}";
-			}
-		}
-
-		return $this->type." ".join(", ", $sql);
 	}
 
 }
