@@ -3,7 +3,7 @@
 namespace Peyote;
 
 /**
- * An interface for Peyote builder classes.
+ * The LIMIT # clause builder.
  *
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
