@@ -10,8 +10,9 @@
 			<directory suffix=".php">tests/classes/</directory>
 		</blacklist>
 	</filter>
-
+<!--
 	<logging>
 		<log type="coverage-html" target="dev/reports/coverage" charset="utf-8" />
 	</logging>
+-->
 </phpunit>
