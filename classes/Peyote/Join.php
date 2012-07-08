@@ -8,7 +8,7 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Join implements \Peyote\Builder
+class Join implements \Peyote\Builder, \Peyote\Trait
 {
 	/**
 	 * @var array  The internal list of joins
@@ -75,6 +75,16 @@ class Join implements \Peyote\Builder
 		$this->active_join = null;
 		$this->joins[] = array("USING", $table, $type, $column);
 		return $this;
+	}
+
+	/**
+	 * Gets all of the methods that should be passed as "trait" methods.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array('on', 'using');
 	}
 
 	/**

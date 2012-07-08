@@ -8,7 +8,7 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Where extends \Peyote\Condition
+class Where extends \Peyote\Condition implements \Peyote\Trait
 {
 	/**
 	 * Gets the type of sorting query we are running.
@@ -46,6 +46,16 @@ class Where extends \Peyote\Condition
 	{
 		$this->clauses[] = array("OR", $column, $op, $value);
 		return $this;
+	}
+
+	/**
+	 * Gets all of the methods that should be passed as "trait" methods.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array('andWhere', 'orWhere');
 	}
 
 }

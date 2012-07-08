@@ -8,7 +8,7 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Group extends \Peyote\Sort
+class Group extends \Peyote\Sort implements \Peyote\Trait
 {
 	/**
 	 * Gets the type of sorting query we are running.
@@ -31,6 +31,16 @@ class Group extends \Peyote\Sort
 	{
 		$this->clauses[] = array($column, $direction);
 		return $this;
+	}
+
+	/**
+	 * Gets all of the methods that should be passed as "trait" methods.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array('groupBy');
 	}
 
 }

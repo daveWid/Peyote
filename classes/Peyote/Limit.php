@@ -8,7 +8,7 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Limit implements \Peyote\Builder
+class Limit implements \Peyote\Builder, \Peyote\Trait
 {
 	/**
 	 * @var int  The limit number
@@ -38,6 +38,16 @@ class Limit implements \Peyote\Builder
 		}
 
 		return "LIMIT {$this->limit}";
+	}
+
+	/**
+	 * Gets all of the methods that should be passed as "trait" methods.
+	 *
+	 * @return array
+	 */
+	public function getMethods()
+	{
+		return array();
 	}
 
 }
