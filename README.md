@@ -9,7 +9,7 @@ The easiest way to install Peyote is by adding this line to your
 
 ``` json
 "require":{
-	"davewid/peyote": "0.3.*"
+	"davewid/peyote": "0.5.*"
 },
 ```
 
