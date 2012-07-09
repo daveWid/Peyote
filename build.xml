@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Peyote" default="package" basedir=".">
-	<property name="version" value="0.3.0" />
+	<property name="version" value="0.5.0" />
 
-	<!-- Packages up the code to be uploaded -->
 	<target name="package">
-		<!-- Build the zip -->
-		<zip destfile="${project.basedir}/dev/package/Peyote-${version}.zip">
+		<property name="file" value="${project.basedir}/dev/package/Peyote-${version}.zip" />
+
+		<delete file="${file}" />
+
+		<zip destfile="${file}">
 			<fileset dir="${project.basedir}/">
-				<include name="classes/Peyote/**" />
-				<include name="README.md" />
+				<exclude name="dev/**" />
+				<exclude name="vendor/**" />
+				<exclude name=".DS_Store" />
+				<exclude name=".git/**" />
+				<exclude name=".gitignore" />
 			</fileset>
 		</zip>
 	</target>
