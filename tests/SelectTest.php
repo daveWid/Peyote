@@ -63,6 +63,13 @@ class SelectTest extends PHPUnit_Framework_TestCase
 		$this->assertSame($sql, $this->query->compile());
 	}
 
+	public function testOffset()
+	{
+		$this->query->offset(10);
+		$sql = 'SELECT * FROM user OFFSET 10';
+		$this->assertSame($sql, $this->query->compile());
+	}
+
 	/**
 	 * @expectedException \Peyote\Exception
 	 */

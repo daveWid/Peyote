@@ -47,6 +47,11 @@ class Select extends \Peyote\Query
 	protected $traits = array('join', 'where', 'group_by', 'order_by', 'limit');
 
 	/**
+	 * @var int  The number to offset by.
+	 */
+	private $offset_num = null;
+
+	/**
 	 * @var boolean  Run a distinct query?
 	 */
 	private $is_distinct = false;
@@ -147,6 +152,18 @@ class Select extends \Peyote\Query
 	}
 
 	/**
+	 * The offset number.
+	 *
+	 * @param  int $num The number of rows to offset by
+	 * @return \Peyote\Select
+	 */
+	public function offset($num)
+	{
+		$this->offset_num = (int) $num;
+		return $this;
+	}
+
+	/**
 	 * Gets all of the bound parameters for this query.
 	 *
 	 * @return array
@@ -196,6 +213,11 @@ class Select extends \Peyote\Query
 			{
 				$sql[] = $compiled;
 			}
+		}
+
+		if ($this->offset_num !== null)
+		{
+			$sql[] = "OFFSET {$this->offset_num}";
 		}
 
 		return join(' ', $sql);
