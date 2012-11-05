@@ -1,4 +1,4 @@
-<phpunit bootstrap="tests/bootstrap.php" colors="true" verbose="true" strict="true">
+<phpunit bootstrap="vendor/autoload.php" colors="true" verbose="true" strict="true">
 	<testsuites>
 		<testsuite name="Peyote Test Suite">
 			<directory>tests/</directory>
