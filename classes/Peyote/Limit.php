@@ -8,7 +8,7 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Limit implements \Peyote\Builder, \Peyote\Trait
+class Limit implements \Peyote\Builder, \Peyote\Mixin
 {
 	/**
 	 * @var int  The limit number

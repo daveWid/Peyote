@@ -8,7 +8,7 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Order extends \Peyote\Sort implements \Peyote\Trait
+class Order extends \Peyote\Sort implements \Peyote\Mixin
 {
 	/**
 	 * Gets the type of sorting query we are running.

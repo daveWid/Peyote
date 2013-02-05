@@ -8,7 +8,7 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Where extends \Peyote\Condition implements \Peyote\Trait
+class Where extends \Peyote\Condition implements \Peyote\Mixin
 {
 	/**
 	 * Gets the type of sorting query we are running.

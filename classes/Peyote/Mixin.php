@@ -8,7 +8,7 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-interface Trait
+interface Mixin
 {
 	/**
 	 * Gets all of the methods that should be passed as "trait" methods.

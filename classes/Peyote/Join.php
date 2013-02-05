@@ -8,7 +8,7 @@ namespace Peyote;
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Join implements \Peyote\Builder, \Peyote\Trait
+class Join implements \Peyote\Builder, \Peyote\Mixin
 {
 	/**
 	 * @var array  The internal list of joins
