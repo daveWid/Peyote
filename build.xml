@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Peyote" default="package" basedir=".">
-	<property name="version" value="0.5.0" />
+	<property name="version" value="0.5.2" />
 
 	<target name="package">
 		<property name="file" value="${project.basedir}/dev/package/Peyote-${version}.zip" />
