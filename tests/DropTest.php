@@ -13,7 +13,7 @@ class DropTest extends PHPUnit_Framework_TestCase
 	public function testDrop()
 	{
 		$this->assertSame(
-			'DROP test',
+			'DROP TABLE test',
 			$this->drop->compile()
 		);
 	}
@@ -22,7 +22,7 @@ class DropTest extends PHPUnit_Framework_TestCase
 	{
 		$this->drop->setIfExists(true);
 		$this->assertSame(
-			'DROP test IF EXISTS',
+			'DROP TABLE test IF EXISTS',
 			$this->drop->compile()
 		);
 	}

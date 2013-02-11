@@ -21,6 +21,11 @@ class Drop implements Builder
 	private $if_exists = false;
 
 	/**
+	 * @var string
+	 */
+	private $type = "TABLE";
+
+	/**
 	 * @param string $table The table name
 	 */
 	public function __construct($table = null, $if_exists = false)
@@ -70,7 +75,7 @@ class Drop implements Builder
 	 */
 	public function compile()
 	{
-		$query = array("DROP", $this->getTable());
+		$query = array("DROP", $this->type, $this->getTable());
 
 		if ($this->getIfExists() === true)
 		{
