@@ -35,6 +35,14 @@ class Drop implements Builder
 	}
 
 	/**
+	 * @return string  The type of object to change (DATABASE, TABLE, etc...)
+	 */
+	public function getType()
+	{
+		return $this->type;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getTable()
