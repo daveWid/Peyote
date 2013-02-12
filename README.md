@@ -33,8 +33,6 @@ I'll start out with a full example on how to use the library and break it down
 as we go along.
 
 ``` php
-&lt;?php
-
 // Create a PDO instance
 $pdo = new PDO($dsn, $user, $password);
 
@@ -72,8 +70,6 @@ you a lot safer from SQL injection.
 ## Select
 
 ``` php
-&lt;?php
-
 $query = new \Peyote\Select('user');
 $query->where('user_id', '=', 1);
 
@@ -84,8 +80,6 @@ echo $query->compile();
 ## Insert
 
 ``` php
-&lt;?php
-
 $data = array(
 	'email' => "testing@foo.com",
 	'password' => "youllneverguess"
@@ -101,8 +95,6 @@ echo $query->compile();
 ## Update
 
 ``` php
-&lt;?php
-
 $data = array(
 	'password' => "iguesssomebodyguessed"
 );
@@ -117,8 +109,6 @@ echo $query->compile();
 ## Delete
 
 ``` php
-&lt;?php
-
 $query = new \Peyote\Delete('user');
 $query->where('user_id', '=', 1);
 
@@ -134,8 +124,6 @@ and drop tables.
 ### Create
 
 ``` php
-&lt;?php
-
 $query = new \Peyote\Create('user');
 $query->setColumns(array(
   // Add Columns here....
@@ -159,8 +147,6 @@ not null, unsigned and auto increment.
 ### Alter
 
 ``` php
-&lt;?php
-
 $query = new \Peyote\Alter('user');
 
 // As string...
@@ -175,8 +161,6 @@ $query->addColumn($column);
 
 ### Drop
 ``` php
-&lt;?php
-
 $query = new \Peyote\Drop('user');
 echo $query->compile();
 // Output: DROP TABLE user
