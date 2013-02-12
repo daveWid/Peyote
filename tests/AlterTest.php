@@ -18,9 +18,18 @@ class AlterTest extends PHPUnit_Framework_TestCase
 		$this->alter->compile();
 	}
 
-	public function testAddColumn()
+	public function testAddColumnString()
 	{
-		$this->alter->addColumn('activated', 'TINYINT NOT NULL');
+		$this->alter->addColumn('activated TINYINT NOT NULL');
+
+		$expected = 'ALTER TABLE user ADD activated TINYINT NOT NULL';
+		$this->doAssert($expected);
+	}
+
+	public function testAddColumnClass()
+	{
+		$column = new \Peyote\Column('activated', 'TINYINT', array('is_null' => false));
+		$this->alter->addColumn($column);
 
 		$expected = 'ALTER TABLE user ADD activated TINYINT NOT NULL';
 		$this->doAssert($expected);

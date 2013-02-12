@@ -55,13 +55,17 @@ class Alter implements Builder
 	}
 
 	/**
-	 * @param string $column     The column name
-	 * @param string $definition The column definition
-	 * @return \Peyote\Alter     $this
+	 * @param string|\Peyote\Column $column     The column name or Peyote column
+	 * @return \Peyote\Alter                    $this
 	 */
-	public function addColumn($column, $definition)
+	public function addColumn($column)
 	{
-		$this->conditions[] = array("ADD", $column, $definition);
+		if ($column instanceof \Peyote\Column)
+		{
+			$column = $column->compile();
+		}
+
+		$this->conditions[] = array("ADD", $column, null);
 		return $this;
 	}
 
