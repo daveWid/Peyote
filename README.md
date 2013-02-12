@@ -118,7 +118,7 @@ echo $query->compile();
 
 ## Table Statements
 
-As of version 0.6.0, Peyote now comes bundled with statment to help create, alter
+As of version 0.6.0, Peyote now comes bundled with statements to help create, alter
 and drop tables.
 
 ### Create
@@ -131,7 +131,6 @@ $query->setColumns(array(
 
 echo $query->compile();
 // output: CREATE TABLE user ( {columns here...} ) ENGINE=MyISAM DEFAULT CHARSET=utf8
-
 ```
 
 #### Columns
@@ -156,6 +155,7 @@ $query->addColumn('activated TINYINT NOT NULL');
 $column = new \Peyote\Column('activated', 'TINYINT', array('is_null' => false));
 $query->addColumn($column);
 
+echo $query->compile();
 // Output: 'ALTER TABLE user ADD activated TINYINT NOT NULL';
 ```
 
