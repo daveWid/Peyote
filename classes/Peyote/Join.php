@@ -78,7 +78,7 @@ class Join implements \Peyote\Builder, \Peyote\Mixin
 	}
 
 	/**
-	 * Gets all of the methods that should be passed as "trait" methods.
+	 * Gets all of the methods that should be passed as "mixin" methods.
 	 *
 	 * @return array
 	 */

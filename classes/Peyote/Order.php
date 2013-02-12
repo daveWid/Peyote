@@ -34,7 +34,7 @@ class Order extends \Peyote\Sort implements \Peyote\Mixin
 	}
 
 	/**
-	 * Gets all of the methods that should be passed as "trait" methods.
+	 * Gets all of the methods that should be passed as "mixin" methods.
 	 *
 	 * @return array
 	 */

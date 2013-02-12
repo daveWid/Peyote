@@ -42,9 +42,9 @@ class Select extends \Peyote\Query
 	protected $limit = null;
 
 	/**
-	 * @var array  A list of traits that the query can passthru
+	 * @var array  A list of mixins that the query can passthru
 	 */
-	protected $traits = array('join', 'where', 'group_by', 'order_by', 'limit');
+	protected $mixins = array('join', 'where', 'group_by', 'order_by', 'limit');
 
 	/**
 	 * @var int  The number to offset by.
@@ -172,10 +172,10 @@ class Select extends \Peyote\Query
 	{
 		/**
 		 * Instead of writing some crazy magic foo to pull the params
-		 * automatically, I'm just overridding thid function to get the where
+		 * automatically, I'm just overridding this function to get the where
 		 * params.
 		 *
-		 * Where is the only trait that will have params anyway...
+		 * Where is the only mixin that will have params anyway...
 		 */
 		return $this->where->getParams();
 	}
@@ -206,9 +206,9 @@ class Select extends \Peyote\Query
 		$sql[] = "FROM";
 		$sql[] = $this->table;
 
-		foreach ($this->traits as $trait)
+		foreach ($this->mixins as $mixin)
 		{
-			$compiled = $this->{$trait}->compile();
+			$compiled = $this->{$mixin}->compile();
 			if ($compiled !== "")
 			{
 				$sql[] = $compiled;

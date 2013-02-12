@@ -35,9 +35,9 @@ class Update extends \Peyote\Query
 	private $data = array();
 
 	/**
-	 * @var array  A list of traits that the query can passthru
+	 * @var array  A list of mixins that the query can passthru
 	 */
-	protected $traits = array('where', 'order_by', 'limit');
+	protected $mixins = array('where', 'order_by', 'limit');
 
 	/**
 	 * Optionally sets the table name and initializes the internal class
@@ -127,9 +127,9 @@ class Update extends \Peyote\Query
 
 		$sql[] = join(', ', $set);
 
-		foreach ($this->traits as $trait)
+		foreach ($this->mixins as $mixin)
 		{
-			$compiled = $this->{$trait}->compile();
+			$compiled = $this->{$mixin}->compile();
 			if ($compiled !== "")
 			{
 				$sql[] = $compiled;

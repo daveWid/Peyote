@@ -23,9 +23,9 @@ abstract class Query implements \Peyote\Builder
 	private $method_map = array();
 
 	/**
-	 * @var array  A list of traits that the query can passthru
+	 * @var array  A list of mixins that the query can passthru
 	 */
-	protected $traits = array();
+	protected $mixins = array();
 
 	/**
 	 * @var string  The name of the table
@@ -42,9 +42,9 @@ abstract class Query implements \Peyote\Builder
 	{
 		$this->table = $table;
 
-		foreach ($this->traits as $trait)
+		foreach ($this->mixins as $mixin)
 		{
-			$this->addMethods($trait, $this->{$trait}->getMethods());
+			$this->addMethods($mixin, $this->{$mixin}->getMethods());
 		}
 	}
 
@@ -61,17 +61,17 @@ abstract class Query implements \Peyote\Builder
 	}
 
 	/**
-	 * Adds "trait" methods to this class.
+	 * Adds "mixin" methods to this class.
 	 *
-	 * @param  string $trait   The name of the trait
+	 * @param  string $mixin  The name of the mixin
 	 * @param  array $methods  A list of methods to add
 	 * @return \Petoyte\Query
 	 */
-	public function addMethods($trait, array $methods)
+	public function addMethods($mixin, array $methods)
 	{
 		foreach ($methods as $method)
 		{
-			$this->method_map[$method] = $trait;
+			$this->method_map[$method] = $mixin;
 		}
 
 		return $this;
@@ -89,7 +89,7 @@ abstract class Query implements \Peyote\Builder
 
 	/**
 	 * The only bit of magic in this codebase. This is necessary so we can add
-	 * trait like functionality in 5.3
+	 * mixins.
 	 *
 	 * @throws \Peyote\Exception
 	 *

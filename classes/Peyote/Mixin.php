@@ -3,7 +3,7 @@
 namespace Peyote;
 
 /**
- * An interface for the classes that can be used as a trait.
+ * An interface for the classes that can be used as a mixin.
  *
  * @package    Peyote
  * @author     Dave Widmer <dave@davewidmer.net>
@@ -11,7 +11,7 @@ namespace Peyote;
 interface Mixin
 {
 	/**
-	 * Gets all of the methods that should be passed as "trait" methods.
+	 * Gets all of the methods that should be passed as "mixin" methods.
 	 *
 	 * @return array
 	 */
