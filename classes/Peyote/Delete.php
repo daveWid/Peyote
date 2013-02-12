@@ -103,14 +103,7 @@ class Delete extends \Peyote\Query
 		$sql = array("DELETE FROM");
 		$sql[] = $this->table;
 
-		foreach ($this->mixins as $mixin)
-		{
-			$compiled = $this->{$mixin}->compile();
-			if ($compiled !== "")
-			{
-				$sql[] = $compiled;
-			}
-		}
+		$sql = \array_merge($sql, $this->compileMixins());
 
 		return join(' ', $sql);
 	}

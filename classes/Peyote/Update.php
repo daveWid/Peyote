@@ -127,14 +127,7 @@ class Update extends \Peyote\Query
 
 		$sql[] = join(', ', $set);
 
-		foreach ($this->mixins as $mixin)
-		{
-			$compiled = $this->{$mixin}->compile();
-			if ($compiled !== "")
-			{
-				$sql[] = $compiled;
-			}
-		}
+		$sql = \array_merge($sql, $this->compileMixins());
 
 		return join(' ', $sql);
 	}

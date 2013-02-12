@@ -112,4 +112,25 @@ abstract class Query implements \Peyote\Builder
 		}
 	}
 
+	/**
+	 * Compiles all of the mixins into an array.
+	 *
+	 * @return array  All of the mixins into an array.
+	 */
+	protected function compileMixins()
+	{
+		$sql = array();
+
+		foreach ($this->mixins as $mixin)
+		{
+			$compiled = $this->{$mixin}->compile();
+			if ($compiled !== "")
+			{
+				$sql[] = $compiled;
+			}
+		}
+
+		return $sql;
+	}
+
 }

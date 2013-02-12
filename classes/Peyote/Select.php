@@ -206,14 +206,7 @@ class Select extends \Peyote\Query
 		$sql[] = "FROM";
 		$sql[] = $this->table;
 
-		foreach ($this->mixins as $mixin)
-		{
-			$compiled = $this->{$mixin}->compile();
-			if ($compiled !== "")
-			{
-				$sql[] = $compiled;
-			}
-		}
+		$sql = \array_merge($sql, $this->compileMixins());
 
 		if ($this->offset_num !== null)
 		{
