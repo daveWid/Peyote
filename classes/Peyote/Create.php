@@ -72,6 +72,20 @@ class Create extends Drop
 	}
 
 	/**
+	 * @param string $key      The name of the primary key to add
+	 * @return \Peyote\Create  $this
+	 */
+	public function addPrimaryKey($key)
+	{
+		if ( ! in_array($key, $this->primary_key))
+		{
+			$this->primary_key[] = $key;
+		}
+
+		return $this;
+	}
+
+	/**
 	 * @return string  The database engine (MyISAM, InnoDB)
 	 */
 	public function getEngine()
@@ -122,7 +136,22 @@ class Create extends Drop
 		$query[] = $this->getTable();
 		$query[] = "(";
 
-		$columns = $this->getColumns();
+		$columns = array();
+		foreach ($this->getColumns() as $column)
+		{
+			if ($column instanceof \Peyote\Column)
+			{
+				if ($column->isPrimaryKey())
+				{
+					$this->addPrimaryKey($column->getName());
+				}
+
+				$column = $column->compile();
+			}
+
+			$columns[] = $column;
+		}
+
 		if ( ! empty($this->primary_key))
 		{
 			$columns[] = "PRIMARY KEY (".join(', ', $this->primary_key).')';

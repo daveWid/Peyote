@@ -8,17 +8,19 @@ class CreateTest extends PHPUnit_Framework_TestCase
 	{
 		parent::setUp();
 		$this->create = new \Peyote\Create('user');
+
+		// Mixing columns and strings...
 		$this->create->setColumns(array(
-			'user_id int(10) unsigned NOT NULL AUTO_INCREMENT',
-			'name varchar(50) NOT NULL',
+			new \Peyote\Column('user_id', 'serial'),
+			new \Peyote\Column('name', 'varchar', array('length' => 50, 'is_null' => false)),
 			'password varchar(100) NOT NULL',
-			'create_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
-		))->setPrimaryKey('user_id');
+			new \Peyote\Column('create_date', 'timestamp', array('is_null' => false, 'default' => 'CURRENT_TIMESTAMP'))
+		));
 	}
 
 	public function testOutput()
 	{
-		$expected = 'CREATE TABLE user ( user_id int(10) unsigned NOT NULL AUTO_INCREMENT, '.
+		$expected = 'CREATE TABLE user ( user_id INT UNSIGNED NOT NULL AUTO_INCREMENT, '.
 			'name varchar(50) NOT NULL, ' .
 			'password varchar(100) NOT NULL, ' .
 			'create_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, ' .
@@ -55,7 +57,7 @@ class CreateTest extends PHPUnit_Framework_TestCase
 	{
 		$this->create->setPrimaryKey(array('user_id', 'create_date'));
 
-		$expected = 'CREATE TABLE user ( user_id int(10) unsigned NOT NULL AUTO_INCREMENT, '.
+		$expected = 'CREATE TABLE user ( user_id INT UNSIGNED NOT NULL AUTO_INCREMENT, '.
 			'name varchar(50) NOT NULL, ' .
 			'password varchar(100) NOT NULL, ' .
 			'create_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, ' .
