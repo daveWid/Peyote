@@ -1,0 +1,331 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Peyote » \Peyote\Delete</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Peyote</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/db_Peyote.html"><i class="icon-folder-open"></i> Peyote</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors</a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers (TODO/FIXME)</a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements</a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__call" title="__call :: The only bit of magic in this codebase. This is necessary so we can add
+mixins."><span class="description">The only bit of magic in this codebase. This is necessary so we can add
+mixins.</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#__construct" title="__construct :: Optionally sets the table name and initializes the internal class
+properties."><span class="description">Optionally sets the table name and initializes the internal class
+properties.</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#addMethods" title='addMethods :: Adds "mixin" methods to this class.'><span class="description">Adds "mixin" methods to this class.</span><pre>addMethods()</pre></a></li>
+<li class="method public "><a href="#compile" title="compile :: Compiles the query into raw SQL"><span class="description">Compiles the query into raw SQL</span><pre>compile()</pre></a></li>
+<li class="method public "><a href="#getParams" title="getParams :: Gets all of the bound parameters for this query."><span class="description">Gets all of the bound parameters for this query.</span><pre>getParams()</pre></a></li>
+<li class="method public "><a href="#limit" title="limit :: Sets the limit."><span class="description">Sets the limit.</span><pre>limit()</pre></a></li>
+<li class="method public inherited"><a href="#table" title="table :: Sets the name of the table."><span class="description">Sets the name of the table.</span><pre>table()</pre></a></li>
+<li class="method public "><a href="#where" title="where :: Adds a WHERE clause."><span class="description">Adds a WHERE clause.</span><pre>where()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#compileMixins" title="compileMixins :: Compiles all of the mixins into an array."><span class="description">Compiles all of the mixins into an array.</span><pre>compileMixins()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24limit" title="$limit :: "><span class="description">The limit object</span><pre>$limit</pre></a></li>
+<li class="property protected "><a href="#%24mixins" title="$mixins :: "><span class="description">A list of mixins that the query can passthru</span><pre>$mixins</pre></a></li>
+<li class="property protected "><a href="#%24order_by" title="$order_by :: "><span class="description">The order object</span><pre>$order_by</pre></a></li>
+<li class="property protected inherited"><a href="#%24params" title="$params :: "><span class="description">Bound parameters</span><pre>$params</pre></a></li>
+<li class="property protected inherited"><a href="#%24table" title="$table :: "><span class="description">The name of the table</span><pre>$table</pre></a></li>
+<li class="property protected "><a href="#%24where" title="$where :: "><span class="description">The where object</span><pre>$where</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="property private inherited"><a href="#%24method_map" title="$method_map :: "><span class="description">A map of passthru methods</span><pre>$method_map</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CPeyote%5CDelete" id="\Peyote\Delete"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/db_Peyote.html">Peyote</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/db_%5CPeyote%5CDelete.html">Delete</a>
+</li>
+</ul>
+<div href="../classes/db_%5CPeyote%5CDelete.html" class="element class">
+<p class="short_description">Building a DELETE query.</p>
+<div class="details">
+<p class="long_description"><p>See Select for the full rant, but the tl;dr is that php 4 is messing up my
+classes, so I have to actually declare where() and limit() in this class
+instead of just using the cool passthru functionality.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="..//packages/db_Peyote.html">Peyote</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:dave@davewidmer.net">Dave Widmer</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__call" id="__call"></a><div class="element clickable method public __call" data-toggle="collapse" data-target=".__call .collapse">
+<h2>The only bit of magic in this codebase. This is necessary so we can add
+mixins.</h2>
+<pre>__call(string $name, $params) : <a href="../classes/db_%5CPeyote%5CQuery.html">\Peyote\Query</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Query::__call()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the method to call</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code></code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/db_%5CPeyote%5CException.html">\Peyote\Exception</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CQuery.html">\Peyote\Query</a></code></div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Optionally sets the table name and initializes the internal class
+properties.</h2>
+<pre>__construct(string $table) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The name of the table</p></div>
+</div></div>
+</div>
+<a name="addMethods" id="addMethods"></a><div class="element clickable method public addMethods" data-toggle="collapse" data-target=".addMethods .collapse">
+<h2>Adds "mixin" methods to this class.</h2>
+<pre>addMethods(string $mixin, array $methods) : \Petoyte\Query</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Query::addMethods()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$mixin</h4>
+<code>string</code><p>The name of the mixin</p></div>
+<div class="subelement argument">
+<h4>$methods</h4>
+<code>array</code><p>A list of methods to add</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Petoyte\Query</code></div>
+</div></div>
+</div>
+<a name="compile" id="compile"></a><div class="element clickable method public compile" data-toggle="collapse" data-target=".compile .collapse">
+<h2>Compiles the query into raw SQL</h2>
+<pre>compile() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getParams" id="getParams"></a><div class="element clickable method public getParams" data-toggle="collapse" data-target=".getParams .collapse">
+<h2>Gets all of the bound parameters for this query.</h2>
+<pre>getParams() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="limit" id="limit"></a><div class="element clickable method public limit" data-toggle="collapse" data-target=".limit .collapse">
+<h2>Sets the limit.</h2>
+<pre>limit(int $num) : <a href="../classes/db_%5CPeyote%5CSelect.html">\Peyote\Select</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$num</h4>
+<code>int</code><p>The number to limit the queries to</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CSelect.html">\Peyote\Select</a></code></div>
+</div></div>
+</div>
+<a name="table" id="table"></a><div class="element clickable method public table" data-toggle="collapse" data-target=".table .collapse">
+<h2>Sets the name of the table.</h2>
+<pre>table(string $name) : <a href="../classes/db_%5CPeyote%5CQuery.html">\Peyote\Query</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Query::table()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The table name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CQuery.html">\Peyote\Query</a></code></div>
+</div></div>
+</div>
+<a name="where" id="where"></a><div class="element clickable method public where" data-toggle="collapse" data-target=".where .collapse">
+<h2>Adds a WHERE clause.</h2>
+<pre>where(string $column, string $op, mixed $value) : <a href="../classes/db_%5CPeyote%5CDelete.html">\Peyote\Delete</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column name</p></div>
+<div class="subelement argument">
+<h4>$op</h4>
+<code>string</code><p>The comparison operator</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to bind</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CDelete.html">\Peyote\Delete</a></code></div>
+</div></div>
+</div>
+<a name="compileMixins" id="compileMixins"></a><div class="element clickable method protected compileMixins" data-toggle="collapse" data-target=".compileMixins .collapse">
+<h2>Compiles all of the mixins into an array.</h2>
+<pre>compileMixins() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Query::compileMixins()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>All of the mixins into an array.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24limit" id="$limit"> </a><div class="element clickable property protected $limit" data-toggle="collapse" data-target=".$limit .collapse">
+<h2>The limit object</h2>
+<pre>$limit : <a href="../classes/db_%5CPeyote%5CLimit.html">\Peyote\Limit</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24mixins" id="$mixins"> </a><div class="element clickable property protected $mixins" data-toggle="collapse" data-target=".$mixins .collapse">
+<h2>A list of mixins that the query can passthru</h2>
+<pre>$mixins : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24order_by" id="$order_by"> </a><div class="element clickable property protected $order_by" data-toggle="collapse" data-target=".$order_by .collapse">
+<h2>The order object</h2>
+<pre>$order_by : <a href="../classes/db_%5CPeyote%5COrder.html">\Peyote\Order</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24params" id="$params"> </a><div class="element clickable property protected $params" data-toggle="collapse" data-target=".$params .collapse">
+<h2>Bound parameters</h2>
+<pre>$params : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Query::$$params</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24table" id="$table"> </a><div class="element clickable property protected $table" data-toggle="collapse" data-target=".$table .collapse">
+<h2>The name of the table</h2>
+<pre>$table : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Query::$$table</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24where" id="$where"> </a><div class="element clickable property protected $where" data-toggle="collapse" data-target=".$where .collapse">
+<h2>The where object</h2>
+<pre>$where : <a href="../classes/db_%5CPeyote%5CWhere.html">\Peyote\Where</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24method_map" id="$method_map"> </a><div class="element clickable property private $method_map" data-toggle="collapse" data-target=".$method_map .collapse">
+<h2>A map of passthru methods</h2>
+<pre>$method_map : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Query::$$method_map</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a1</a> and<br>
+            generated on 2013-03-11T15:25:59-04:00.<br></footer></div>
+</div>
+</body>
+</html>

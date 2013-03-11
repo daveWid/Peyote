@@ -1,0 +1,469 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Peyote » \Peyote\Column</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Peyote</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/db_Peyote.html"><i class="icon-folder-open"></i> Peyote</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors</a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers (TODO/FIXME)</a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements</a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Below are the keys that can be used in the options parameters"><span class="description">Below are the keys that can be used in the options parameters</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#addOption" title="addOption :: "><span class="description">addOption()
+        </span><pre>addOption()</pre></a></li>
+<li class="method public "><a href="#compile" title="compile :: {@inheritDoc}"><span class="description">{@inheritDoc}</span><pre>compile()</pre></a></li>
+<li class="method public "><a href="#getAutoIncrement" title="getAutoIncrement :: "><span class="description">getAutoIncrement()
+        </span><pre>getAutoIncrement()</pre></a></li>
+<li class="method public "><a href="#getDefault" title="getDefault :: "><span class="description">getDefault()
+        </span><pre>getDefault()</pre></a></li>
+<li class="method public "><a href="#getIsNull" title="getIsNull :: "><span class="description">getIsNull()
+        </span><pre>getIsNull()</pre></a></li>
+<li class="method public "><a href="#getLength" title="getLength :: "><span class="description">getLength()
+        </span><pre>getLength()</pre></a></li>
+<li class="method public "><a href="#getName" title="getName :: "><span class="description">getName()
+        </span><pre>getName()</pre></a></li>
+<li class="method public "><a href="#getOptions" title="getOptions :: "><span class="description">getOptions()
+        </span><pre>getOptions()</pre></a></li>
+<li class="method public "><a href="#getType" title="getType :: "><span class="description">getType()
+        </span><pre>getType()</pre></a></li>
+<li class="method public "><a href="#isPrimaryKey" title="isPrimaryKey :: "><span class="description">isPrimaryKey()
+        </span><pre>isPrimaryKey()</pre></a></li>
+<li class="method public "><a href="#setAutoIncrement" title="setAutoIncrement :: "><span class="description">setAutoIncrement()
+        </span><pre>setAutoIncrement()</pre></a></li>
+<li class="method public "><a href="#setDefault" title="setDefault :: "><span class="description">setDefault()
+        </span><pre>setDefault()</pre></a></li>
+<li class="method public "><a href="#setIsNull" title="setIsNull :: "><span class="description">setIsNull()
+        </span><pre>setIsNull()</pre></a></li>
+<li class="method public "><a href="#setLength" title="setLength :: "><span class="description">setLength()
+        </span><pre>setLength()</pre></a></li>
+<li class="method public "><a href="#setName" title="setName :: "><span class="description">setName()
+        </span><pre>setName()</pre></a></li>
+<li class="method public "><a href="#setOptions" title="setOptions :: "><span class="description">setOptions()
+        </span><pre>setOptions()</pre></a></li>
+<li class="method public "><a href="#setType" title="setType :: "><span class="description">setType()
+        </span><pre>setType()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24auto_increment" title="$auto_increment :: "><span class="description">Is this an auto increment column?</span><pre>$auto_increment</pre></a></li>
+<li class="property private "><a href="#%24default" title="$default :: "><span class="description">The default value</span><pre>$default</pre></a></li>
+<li class="property private "><a href="#%24is_null" title="$is_null :: "><span class="description">Can this column be null?</span><pre>$is_null</pre></a></li>
+<li class="property private "><a href="#%24length" title="$length :: "><span class="description">The length of a field</span><pre>$length</pre></a></li>
+<li class="property private "><a href="#%24name" title="$name :: "><span class="description">The name of the column.</span><pre>$name</pre></a></li>
+<li class="property private "><a href="#%24options" title="$options :: "><span class="description">Column options (UNSIGNED, ZEROFILL, etc...)</span><pre>$options</pre></a></li>
+<li class="property private "><a href="#%24primary_key" title="$primary_key :: "><span class="description">Is this column a primary key?</span><pre>$primary_key</pre></a></li>
+<li class="property private "><a href="#%24type" title="$type :: "><span class="description">The data type for the column.</span><pre>$type</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CPeyote%5CColumn" id="\Peyote\Column"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/db_Peyote.html">Peyote</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/db_%5CPeyote%5CColumn.html">Column</a>
+</li>
+</ul>
+<div href="../classes/db_%5CPeyote%5CColumn.html" class="element class">
+<p class="short_description">A class to define columns</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="..//packages/db_Peyote.html">Peyote</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:dave@davewidmer.net">Dave Widmer</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Below are the keys that can be used in the options parameters</h2>
+<pre>__construct(string $name, string $type, array $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><table>
+<thead>
+<tr>
+  <th>Key</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>is_null</td>
+  <td>boolean</td>
+  <td>Can this column be null?</td>
+</tr>
+<tr>
+  <td>length</td>
+  <td>string</td>
+  <td>The length of a field (number fields)</td>
+</tr>
+<tr>
+  <td>options</td>
+  <td>array</td>
+  <td>A list of data type options (UNSIGNED, ZEROFILL, etc...)</td>
+</tr>
+<tr>
+  <td>auto_increment</td>
+  <td>boolean</td>
+  <td>Auto Increment the column?</td>
+</tr>
+<tr>
+  <td>default</td>
+  <td>string</td>
+  <td>The default value for the column</td>
+</tr>
+</tbody>
+</table></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the column</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of column</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>See above for column options that can be set.</p></div>
+</div></div>
+</div>
+<a name="addOption" id="addOption"></a><div class="element clickable method public addOption" data-toggle="collapse" data-target=".addOption .collapse">
+<h2>addOption()
+        </h2>
+<pre>addOption(string $option) : <a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$option</h4>
+<code>string</code><p>The option to add</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></code></div>
+</div></div>
+</div>
+<a name="compile" id="compile"></a><div class="element clickable method public compile" data-toggle="collapse" data-target=".compile .collapse">
+<h2>{@inheritDoc}</h2>
+<pre>compile() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getAutoIncrement" id="getAutoIncrement"></a><div class="element clickable method public getAutoIncrement" data-toggle="collapse" data-target=".getAutoIncrement .collapse">
+<h2>getAutoIncrement()
+        </h2>
+<pre>getAutoIncrement() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="getDefault" id="getDefault"></a><div class="element clickable method public getDefault" data-toggle="collapse" data-target=".getDefault .collapse">
+<h2>getDefault()
+        </h2>
+<pre>getDefault() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The default value or null if it hasn't been set</div>
+</div></div>
+</div>
+<a name="getIsNull" id="getIsNull"></a><div class="element clickable method public getIsNull" data-toggle="collapse" data-target=".getIsNull .collapse">
+<h2>getIsNull()
+        </h2>
+<pre>getIsNull() : boolean | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code><code>null</code>
+</div>
+</div></div>
+</div>
+<a name="getLength" id="getLength"></a><div class="element clickable method public getLength" data-toggle="collapse" data-target=".getLength .collapse">
+<h2>getLength()
+        </h2>
+<pre>getLength() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The length of the column</div>
+</div></div>
+</div>
+<a name="getName" id="getName"></a><div class="element clickable method public getName" data-toggle="collapse" data-target=".getName .collapse">
+<h2>getName()
+        </h2>
+<pre>getName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The column name</div>
+</div></div>
+</div>
+<a name="getOptions" id="getOptions"></a><div class="element clickable method public getOptions" data-toggle="collapse" data-target=".getOptions .collapse">
+<h2>getOptions()
+        </h2>
+<pre>getOptions() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Column options</div>
+</div></div>
+</div>
+<a name="getType" id="getType"></a><div class="element clickable method public getType" data-toggle="collapse" data-target=".getType .collapse">
+<h2>getType()
+        </h2>
+<pre>getType() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The current data type</div>
+</div></div>
+</div>
+<a name="isPrimaryKey" id="isPrimaryKey"></a><div class="element clickable method public isPrimaryKey" data-toggle="collapse" data-target=".isPrimaryKey .collapse">
+<h2>isPrimaryKey()
+        </h2>
+<pre>isPrimaryKey() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Is this a primary key column?</div>
+</div></div>
+</div>
+<a name="setAutoIncrement" id="setAutoIncrement"></a><div class="element clickable method public setAutoIncrement" data-toggle="collapse" data-target=".setAutoIncrement .collapse">
+<h2>setAutoIncrement()
+        </h2>
+<pre>setAutoIncrement(boolean $flag) : <a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$flag</h4>
+<code>boolean</code><p>Set auto increment?</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></code></div>
+</div></div>
+</div>
+<a name="setDefault" id="setDefault"></a><div class="element clickable method public setDefault" data-toggle="collapse" data-target=".setDefault .collapse">
+<h2>setDefault()
+        </h2>
+<pre>setDefault(string $value) : <a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The default value</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></code></div>
+</div></div>
+</div>
+<a name="setIsNull" id="setIsNull"></a><div class="element clickable method public setIsNull" data-toggle="collapse" data-target=".setIsNull .collapse">
+<h2>setIsNull()
+        </h2>
+<pre>setIsNull(boolean $is_null) : <a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$is_null</h4>
+<code>boolean</code><p>Should this column be null?</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></code></div>
+</div></div>
+</div>
+<a name="setLength" id="setLength"></a><div class="element clickable method public setLength" data-toggle="collapse" data-target=".setLength .collapse">
+<h2>setLength()
+        </h2>
+<pre>setLength(string $length) : <a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>string</code><p>The field length</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></code>$this</div>
+</div></div>
+</div>
+<a name="setName" id="setName"></a><div class="element clickable method public setName" data-toggle="collapse" data-target=".setName .collapse">
+<h2>setName()
+        </h2>
+<pre>setName(string $name) : <a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The new column name</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></code>$this</div>
+</div></div>
+</div>
+<a name="setOptions" id="setOptions"></a><div class="element clickable method public setOptions" data-toggle="collapse" data-target=".setOptions .collapse">
+<h2>setOptions()
+        </h2>
+<pre>setOptions(array $options) : <a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>The column options.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></code>$this</div>
+</div></div>
+</div>
+<a name="setType" id="setType"></a><div class="element clickable method public setType" data-toggle="collapse" data-target=".setType .collapse">
+<h2>setType()
+        </h2>
+<pre>setType(string $type) : <a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The data type</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5CPeyote%5CColumn.html">\Peyote\Column</a></code>$this</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24auto_increment" id="$auto_increment"> </a><div class="element clickable property private $auto_increment" data-toggle="collapse" data-target=".$auto_increment .collapse">
+<h2>Is this an auto increment column?</h2>
+<pre>$auto_increment : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24default" id="$default"> </a><div class="element clickable property private $default" data-toggle="collapse" data-target=".$default .collapse">
+<h2>The default value</h2>
+<pre>$default : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24is_null" id="$is_null"> </a><div class="element clickable property private $is_null" data-toggle="collapse" data-target=".$is_null .collapse">
+<h2>Can this column be null?</h2>
+<pre>$is_null : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24length" id="$length"> </a><div class="element clickable property private $length" data-toggle="collapse" data-target=".$length .collapse">
+<h2>The length of a field</h2>
+<pre>$length : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24name" id="$name"> </a><div class="element clickable property private $name" data-toggle="collapse" data-target=".$name .collapse">
+<h2>The name of the column.</h2>
+<pre>$name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24options" id="$options"> </a><div class="element clickable property private $options" data-toggle="collapse" data-target=".$options .collapse">
+<h2>Column options (UNSIGNED, ZEROFILL, etc...)</h2>
+<pre>$options : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24primary_key" id="$primary_key"> </a><div class="element clickable property private $primary_key" data-toggle="collapse" data-target=".$primary_key .collapse">
+<h2>Is this column a primary key?</h2>
+<pre>$primary_key : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24type" id="$type"> </a><div class="element clickable property private $type" data-toggle="collapse" data-target=".$type .collapse">
+<h2>The data type for the column.</h2>
+<pre>$type : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a1</a> and<br>
+            generated on 2013-03-11T15:25:58-04:00.<br></footer></div>
+</div>
+</body>
+</html>

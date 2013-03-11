@@ -1,0 +1,437 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Peyote » \Peyote\Create</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Peyote</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/db_Peyote.html"><i class="icon-folder-open"></i> Peyote</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors</a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers (TODO/FIXME)</a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements</a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#addPrimaryKey" title="addPrimaryKey :: "><span class="description">addPrimaryKey()
+        </span><pre>addPrimaryKey()</pre></a></li>
+<li class="method public "><a href="#compile" title="compile :: {@inheritDoc}"><span class="description">{@inheritDoc}</span><pre>compile()</pre></a></li>
+<li class="method public "><a href="#getCharset" title="getCharset :: "><span class="description">getCharset()
+        </span><pre>getCharset()</pre></a></li>
+<li class="method public "><a href="#getColumns" title="getColumns :: "><span class="description">getColumns()
+        </span><pre>getColumns()</pre></a></li>
+<li class="method public "><a href="#getEngine" title="getEngine :: "><span class="description">getEngine()
+        </span><pre>getEngine()</pre></a></li>
+<li class="method public inherited"><a href="#getIfExists" title="getIfExists :: "><span class="description">getIfExists()
+        </span><pre>getIfExists()</pre></a></li>
+<li class="method public "><a href="#getPrimaryKey" title="getPrimaryKey :: "><span class="description">getPrimaryKey()
+        </span><pre>getPrimaryKey()</pre></a></li>
+<li class="method public inherited"><a href="#getTable" title="getTable :: "><span class="description">getTable()
+        </span><pre>getTable()</pre></a></li>
+<li class="method public inherited"><a href="#getType" title="getType :: "><span class="description">getType()
+        </span><pre>getType()</pre></a></li>
+<li class="method public "><a href="#setCharset" title="setCharset :: "><span class="description">setCharset()
+        </span><pre>setCharset()</pre></a></li>
+<li class="method public "><a href="#setColumns" title="setColumns :: "><span class="description">setColumns()
+        </span><pre>setColumns()</pre></a></li>
+<li class="method public "><a href="#setEngine" title="setEngine :: "><span class="description">setEngine()
+        </span><pre>setEngine()</pre></a></li>
+<li class="method public inherited"><a href="#setIfExists" title="setIfExists :: "><span class="description">setIfExists()
+        </span><pre>setIfExists()</pre></a></li>
+<li class="method public "><a href="#setPrimaryKey" title="setPrimaryKey :: "><span class="description">setPrimaryKey()
+        </span><pre>setPrimaryKey()</pre></a></li>
+<li class="method public inherited"><a href="#setTable" title="setTable :: "><span class="description">setTable()
+        </span><pre>setTable()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24charset" title="$charset :: "><span class="description">$charset</span><pre>$charset</pre></a></li>
+<li class="property private "><a href="#%24columns" title="$columns :: "><span class="description">$columns</span><pre>$columns</pre></a></li>
+<li class="property private "><a href="#%24engine" title="$engine :: "><span class="description">$engine</span><pre>$engine</pre></a></li>
+<li class="property private inherited"><a href="#%24if_exists" title="$if_exists :: "><span class="description">$if_exists</span><pre>$if_exists</pre></a></li>
+<li class="property private "><a href="#%24primary_key" title="$primary_key :: "><span class="description">$primary_key</span><pre>$primary_key</pre></a></li>
+<li class="property private inherited"><a href="#%24table" title="$table :: "><span class="description">$table</span><pre>$table</pre></a></li>
+<li class="property private inherited"><a href="#%24type" title="$type :: "><span class="description">$type</span><pre>$type</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CPeyote%5CCreate" id="\Peyote\Create"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/db_Peyote.html">Peyote</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/db_%5CPeyote%5CCreate.html">Create</a>
+</li>
+</ul>
+<div href="../classes/db_%5CPeyote%5CCreate.html" class="element class">
+<p class="short_description">The Create table class</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="..//packages/db_Peyote.html">Peyote</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:dave@davewidmer.net">Dave Widmer</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>__construct()
+        </h2>
+<pre>__construct(string $table, $if_exists) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Drop::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table name</p></div>
+<div class="subelement argument">
+<h4>$if_exists</h4>
+<code></code>
+</div>
+</div></div>
+</div>
+<a name="addPrimaryKey" id="addPrimaryKey"></a><div class="element clickable method public addPrimaryKey" data-toggle="collapse" data-target=".addPrimaryKey .collapse">
+<h2>addPrimaryKey()
+        </h2>
+<pre>addPrimaryKey(string $key) : <a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The name of the primary key to add</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></code>$this</div>
+</div></div>
+</div>
+<a name="compile" id="compile"></a><div class="element clickable method public compile" data-toggle="collapse" data-target=".compile .collapse">
+<h2>{@inheritDoc}</h2>
+<pre>compile() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getCharset" id="getCharset"></a><div class="element clickable method public getCharset" data-toggle="collapse" data-target=".getCharset .collapse">
+<h2>getCharset()
+        </h2>
+<pre>getCharset() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The character set</div>
+</div></div>
+</div>
+<a name="getColumns" id="getColumns"></a><div class="element clickable method public getColumns" data-toggle="collapse" data-target=".getColumns .collapse">
+<h2>getColumns()
+        </h2>
+<pre>getColumns() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The column list</div>
+</div></div>
+</div>
+<a name="getEngine" id="getEngine"></a><div class="element clickable method public getEngine" data-toggle="collapse" data-target=".getEngine .collapse">
+<h2>getEngine()
+        </h2>
+<pre>getEngine() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The database engine (MyISAM, InnoDB)</div>
+</div></div>
+</div>
+<a name="getIfExists" id="getIfExists"></a><div class="element clickable method public getIfExists" data-toggle="collapse" data-target=".getIfExists .collapse">
+<h2>getIfExists()
+        </h2>
+<pre>getIfExists() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Drop::getIfExists()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="getPrimaryKey" id="getPrimaryKey"></a><div class="element clickable method public getPrimaryKey" data-toggle="collapse" data-target=".getPrimaryKey .collapse">
+<h2>getPrimaryKey()
+        </h2>
+<pre>getPrimaryKey() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>A list of primary keys</div>
+</div></div>
+</div>
+<a name="getTable" id="getTable"></a><div class="element clickable method public getTable" data-toggle="collapse" data-target=".getTable .collapse">
+<h2>getTable()
+        </h2>
+<pre>getTable() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Drop::getTable()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getType" id="getType"></a><div class="element clickable method public getType" data-toggle="collapse" data-target=".getType .collapse">
+<h2>getType()
+        </h2>
+<pre>getType() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Drop::getType()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The type of object to change (DATABASE, TABLE, etc...)</div>
+</div></div>
+</div>
+<a name="setCharset" id="setCharset"></a><div class="element clickable method public setCharset" data-toggle="collapse" data-target=".setCharset .collapse">
+<h2>setCharset()
+        </h2>
+<pre>setCharset(string $charset) : <a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$charset</h4>
+<code>string</code><p>The character set.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></code>$this</div>
+</div></div>
+</div>
+<a name="setColumns" id="setColumns"></a><div class="element clickable method public setColumns" data-toggle="collapse" data-target=".setColumns .collapse">
+<h2>setColumns()
+        </h2>
+<pre>setColumns(array $columns) : <a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>array</code><p>The columns to set.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></code>$this</div>
+</div></div>
+</div>
+<a name="setEngine" id="setEngine"></a><div class="element clickable method public setEngine" data-toggle="collapse" data-target=".setEngine .collapse">
+<h2>setEngine()
+        </h2>
+<pre>setEngine(string $engine) : <a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$engine</h4>
+<code>string</code><p>The database engine</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></code>$this</div>
+</div></div>
+</div>
+<a name="setIfExists" id="setIfExists"></a><div class="element clickable method public setIfExists" data-toggle="collapse" data-target=".setIfExists .collapse">
+<h2>setIfExists()
+        </h2>
+<pre>setIfExists(boolean $exists) : <a href="../classes/db_%5CPeyote%5CDrop.html">\Peyote\Drop</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Drop::setIfExists()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$exists</h4>
+<code>boolean</code><p>Add the IF EXISTS clause?</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CDrop.html">\Peyote\Drop</a></code></div>
+</div></div>
+</div>
+<a name="setPrimaryKey" id="setPrimaryKey"></a><div class="element clickable method public setPrimaryKey" data-toggle="collapse" data-target=".setPrimaryKey .collapse">
+<h2>setPrimaryKey()
+        </h2>
+<pre>setPrimaryKey(array | string $keys) : <a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$keys</h4>
+<code>arraystring</code><p>The key(s) to set</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5CPeyote%5CCreate.html">\Peyote\Create</a></code>$this</div>
+</div></div>
+</div>
+<a name="setTable" id="setTable"></a><div class="element clickable method public setTable" data-toggle="collapse" data-target=".setTable .collapse">
+<h2>setTable()
+        </h2>
+<pre>setTable(string $table) : <a href="../classes/db_%5CPeyote%5CDrop.html">\Peyote\Drop</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Drop::setTable()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table name to drop.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5CPeyote%5CDrop.html">\Peyote\Drop</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24charset" id="$charset"> </a><div class="element clickable property private $charset" data-toggle="collapse" data-target=".$charset .collapse">
+<h2>$charset</h2>
+<pre>$charset : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24columns" id="$columns"> </a><div class="element clickable property private $columns" data-toggle="collapse" data-target=".$columns .collapse">
+<h2>$columns</h2>
+<pre>$columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24engine" id="$engine"> </a><div class="element clickable property private $engine" data-toggle="collapse" data-target=".$engine .collapse">
+<h2>$engine</h2>
+<pre>$engine : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24if_exists" id="$if_exists"> </a><div class="element clickable property private $if_exists" data-toggle="collapse" data-target=".$if_exists .collapse">
+<h2>$if_exists</h2>
+<pre>$if_exists : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Drop::$$if_exists</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24primary_key" id="$primary_key"> </a><div class="element clickable property private $primary_key" data-toggle="collapse" data-target=".$primary_key .collapse">
+<h2>$primary_key</h2>
+<pre>$primary_key : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24table" id="$table"> </a><div class="element clickable property private $table" data-toggle="collapse" data-target=".$table .collapse">
+<h2>$table</h2>
+<pre>$table : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Drop::$$table</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24type" id="$type"> </a><div class="element clickable property private $type" data-toggle="collapse" data-target=".$type .collapse">
+<h2>$type</h2>
+<pre>$type : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Peyote\Drop::$$type</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a1</a> and<br>
+            generated on 2013-03-11T15:25:59-04:00.<br></footer></div>
+</div>
+</body>
+</html>

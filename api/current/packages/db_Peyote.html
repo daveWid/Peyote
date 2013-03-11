@@ -1,0 +1,244 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Peyote » Peyote</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Peyote</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/db_Peyote.html"><i class="icon-folder-open"></i> Peyote</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors</a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers (TODO/FIXME)</a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements</a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/db_Peyote.html" title="Peyote"><i class="icon-folder-open"></i>Peyote</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-interface"></i> Interfaces</li>
+<li><a href="#Builder" title="An interface for Peyote builder classes.">Builder</a></li>
+<li><a href="#Mixin" title="An interface for the classes that can be used as a mixin.">Mixin</a></li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#Alter" title="A class to allow table altering.">Alter</a></li>
+<li><a href="#Column" title="A class to define columns">Column</a></li>
+<li><a href="#Condition" title="An abstract starting class for the WHERE and HAVING classes.">Condition</a></li>
+<li><a href="#Create" title="The Create table class">Create</a></li>
+<li><a href="#Delete" title="Building a DELETE query.">Delete</a></li>
+<li><a href="#Drop" title="The DROP table class">Drop</a></li>
+<li><a href="#Exception" title="A Peyote Exception class">Exception</a></li>
+<li><a href="#Group" title="The GROUP BY clause builder.">Group</a></li>
+<li><a href="#Having" title="A class to build HAVING clauses.">Having</a></li>
+<li><a href="#Insert" title="Building an INSERT query.">Insert</a></li>
+<li><a href="#Join" title="The JOIN clause builder.">Join</a></li>
+<li><a href="#Limit" title="The LIMIT # clause builder.">Limit</a></li>
+<li><a href="#Order" title="The ORDER BY clause builder.">Order</a></li>
+<li><a href="#Query" title="The base Query class for SELECT, INSERT, UPDATE and DELETE statement.">Query</a></li>
+<li><a href="#Select" title="Building a SELECT query.">Select</a></li>
+<li><a href="#Sort" title="An abstract starting class for the ORDER BY and GROUP BY classes.">Sort</a></li>
+<li><a href="#Update" title="Building a UPDATE query.">Update</a></li>
+<li><a href="#Where" title="A class to build WHERE clauses.">Where</a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span>
+</li>
+<li class="active"><a href="../packages/db_Peyote.html">Peyote</a></li>
+</ul>
+<div class="package-indent">
+<div class="alert alert-info">This package does not contain any documentable elements</div>
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<a name="Builder" id="Builder"></a><div class="element ajax clickable interface" href="../classes/db_%5CPeyote%5CBuilder.html">
+<h1>Builder<a href="../classes/db_%5CPeyote%5CBuilder.html">¶</a>
+</h1>
+<p class="short_description">An interface for Peyote builder classes.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CBuilder.html" class="more">« More »</a>
+</div>
+<a name="Mixin" id="Mixin"></a><div class="element ajax clickable interface" href="../classes/db_%5CPeyote%5CMixin.html">
+<h1>Mixin<a href="../classes/db_%5CPeyote%5CMixin.html">¶</a>
+</h1>
+<p class="short_description">An interface for the classes that can be used as a mixin.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CMixin.html" class="more">« More »</a>
+</div>
+<a name="Alter" id="Alter"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CAlter.html">
+<h1>Alter<a href="../classes/db_%5CPeyote%5CAlter.html">¶</a>
+</h1>
+<p class="short_description">A class to allow table altering.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CAlter.html" class="more">« More »</a>
+</div>
+<a name="Column" id="Column"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CColumn.html">
+<h1>Column<a href="../classes/db_%5CPeyote%5CColumn.html">¶</a>
+</h1>
+<p class="short_description">A class to define columns</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CColumn.html" class="more">« More »</a>
+</div>
+<a name="Condition" id="Condition"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CCondition.html">
+<h1>Condition<a href="../classes/db_%5CPeyote%5CCondition.html">¶</a>
+</h1>
+<p class="short_description">An abstract starting class for the WHERE and HAVING classes.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CCondition.html" class="more">« More »</a>
+</div>
+<a name="Create" id="Create"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CCreate.html">
+<h1>Create<a href="../classes/db_%5CPeyote%5CCreate.html">¶</a>
+</h1>
+<p class="short_description">The Create table class</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CCreate.html" class="more">« More »</a>
+</div>
+<a name="Delete" id="Delete"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CDelete.html">
+<h1>Delete<a href="../classes/db_%5CPeyote%5CDelete.html">¶</a>
+</h1>
+<p class="short_description">Building a DELETE query.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CDelete.html" class="more">« More »</a>
+</div>
+<a name="Drop" id="Drop"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CDrop.html">
+<h1>Drop<a href="../classes/db_%5CPeyote%5CDrop.html">¶</a>
+</h1>
+<p class="short_description">The DROP table class</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CDrop.html" class="more">« More »</a>
+</div>
+<a name="Exception" id="Exception"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CException.html">
+<h1>Exception<a href="../classes/db_%5CPeyote%5CException.html">¶</a>
+</h1>
+<p class="short_description">A Peyote Exception class</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CException.html" class="more">« More »</a>
+</div>
+<a name="Group" id="Group"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CGroup.html">
+<h1>Group<a href="../classes/db_%5CPeyote%5CGroup.html">¶</a>
+</h1>
+<p class="short_description">The GROUP BY clause builder.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CGroup.html" class="more">« More »</a>
+</div>
+<a name="Having" id="Having"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CHaving.html">
+<h1>Having<a href="../classes/db_%5CPeyote%5CHaving.html">¶</a>
+</h1>
+<p class="short_description">A class to build HAVING clauses.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CHaving.html" class="more">« More »</a>
+</div>
+<a name="Insert" id="Insert"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CInsert.html">
+<h1>Insert<a href="../classes/db_%5CPeyote%5CInsert.html">¶</a>
+</h1>
+<p class="short_description">Building an INSERT query.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CInsert.html" class="more">« More »</a>
+</div>
+<a name="Join" id="Join"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CJoin.html">
+<h1>Join<a href="../classes/db_%5CPeyote%5CJoin.html">¶</a>
+</h1>
+<p class="short_description">The JOIN clause builder.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CJoin.html" class="more">« More »</a>
+</div>
+<a name="Limit" id="Limit"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CLimit.html">
+<h1>Limit<a href="../classes/db_%5CPeyote%5CLimit.html">¶</a>
+</h1>
+<p class="short_description">The LIMIT # clause builder.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CLimit.html" class="more">« More »</a>
+</div>
+<a name="Order" id="Order"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5COrder.html">
+<h1>Order<a href="../classes/db_%5CPeyote%5COrder.html">¶</a>
+</h1>
+<p class="short_description">The ORDER BY clause builder.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5COrder.html" class="more">« More »</a>
+</div>
+<a name="Query" id="Query"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CQuery.html">
+<h1>Query<a href="../classes/db_%5CPeyote%5CQuery.html">¶</a>
+</h1>
+<p class="short_description">The base Query class for SELECT, INSERT, UPDATE and DELETE statement.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CQuery.html" class="more">« More »</a>
+</div>
+<a name="Select" id="Select"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CSelect.html">
+<h1>Select<a href="../classes/db_%5CPeyote%5CSelect.html">¶</a>
+</h1>
+<p class="short_description">Building a SELECT query.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CSelect.html" class="more">« More »</a>
+</div>
+<a name="Sort" id="Sort"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CSort.html">
+<h1>Sort<a href="../classes/db_%5CPeyote%5CSort.html">¶</a>
+</h1>
+<p class="short_description">An abstract starting class for the ORDER BY and GROUP BY classes.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CSort.html" class="more">« More »</a>
+</div>
+<a name="Update" id="Update"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CUpdate.html">
+<h1>Update<a href="../classes/db_%5CPeyote%5CUpdate.html">¶</a>
+</h1>
+<p class="short_description">Building a UPDATE query.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CUpdate.html" class="more">« More »</a>
+</div>
+<a name="Where" id="Where"></a><div class="element ajax clickable class" href="../classes/db_%5CPeyote%5CWhere.html">
+<h1>Where<a href="../classes/db_%5CPeyote%5CWhere.html">¶</a>
+</h1>
+<p class="short_description">A class to build WHERE clauses.</p>
+<div class="details collapse"></div>
+<a href="../classes/db_%5CPeyote%5CWhere.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a1</a> and<br>
+            generated on 2013-03-11T15:25:58-04:00.<br></footer></div>
+</div>
+</body>
+</html>

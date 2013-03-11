@@ -1,0 +1,2810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a1" title="Peyote">
+  <file path="Peyote/Alter.php" hash="b0bb7add9ca2c52415ab9cb16a5b3c99" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $table</critical>
+      <critical line="18" code="50019">No short description for property $conditions</critical>
+      <error line="23" code="50012">No short description for method __construct()</error>
+      <error line="31" code="50012">No short description for method getTable()</error>
+      <error line="39" code="50012">No short description for method setTable()</error>
+      <error line="49" code="50012">No short description for method getConditions()</error>
+      <error line="57" code="50012">No short description for method addColumn()</error>
+      <error line="72" code="50012">No short description for method addPrimaryKey()</error>
+      <error line="81" code="50012">No short description for method addIndex()</error>
+      <error line="93" code="50012">No short description for method dropColumn()</error>
+      <error line="103" code="50012">No short description for method dropPrimaryKey()</error>
+      <error line="111" code="50012">No short description for method dropIndex()</error>
+      <error line="111" code="50015">Argument $type is missing from the Docblock of dropIndex()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Alter.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Alter</name>
+      <full_name>\Peyote\Alter</full_name>
+      <extends/>
+      <extends>\Peyote\Builder</extends>
+      <docblock line="5">
+        <description><![CDATA[A class to allow table altering.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$table</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="21" package="Default">
+        <name>$conditions</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="26" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="The table name" type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="26">
+          <name>$table</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="34" package="">
+        <name>getTable</name>
+        <type>function</type>
+        <docblock line="31">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="31" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="43" package="">
+        <name>setTable</name>
+        <type>function</type>
+        <docblock line="39">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="39" name="param" description="The table name to drop." type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="39" name="return" description="" type="\Peyote\Alter">
+            <type by_reference="false">\Peyote\Alter</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$table</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="52" package="">
+        <name>getConditions</name>
+        <type>function</type>
+        <docblock line="49">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="49" name="return" description="A list of alter conditions" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="61" package="">
+        <name>addColumn</name>
+        <type>function</type>
+        <docblock line="57">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="param" description="The column name or Peyote column" type="string|\Peyote\Column" variable="$column">
+            <type by_reference="false">string</type>
+            <type by_reference="false">\Peyote\Column</type>
+          </tag>
+          <tag line="57" name="return" description="$this" type="\Peyote\Alter">
+            <type by_reference="false">\Peyote\Alter</type>
+          </tag>
+        </docblock>
+        <argument line="61">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="76" package="">
+        <name>addPrimaryKey</name>
+        <type>function</type>
+        <docblock line="72">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="72" name="param" description="The columns name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="72" name="return" description="" type="\Peyote\Alter">
+            <type by_reference="false">\Peyote\Alter</type>
+          </tag>
+        </docblock>
+        <argument line="76">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="87" package="">
+        <name>addIndex</name>
+        <type>function</type>
+        <docblock line="81">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="81" name="param" description="The column name to add as a key" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="81" name="param" description="The type of key to add" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="81" name="return" description="$this" type="\Peyote\Alter">
+            <type by_reference="false">\Peyote\Alter</type>
+          </tag>
+        </docblock>
+        <argument line="87">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="87">
+          <name>$type</name>
+          <default><![CDATA["INDEX"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="97" package="">
+        <name>dropColumn</name>
+        <type>function</type>
+        <docblock line="93">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="return" description="$this" type="\Peyote\Alter">
+            <type by_reference="false">\Peyote\Alter</type>
+          </tag>
+        </docblock>
+        <argument line="97">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="106" package="">
+        <name>dropPrimaryKey</name>
+        <type>function</type>
+        <docblock line="103">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="103" name="return" description="$this" type="\Peyote\Alter">
+            <type by_reference="false">\Peyote\Alter</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="115" package="">
+        <name>dropIndex</name>
+        <type>function</type>
+        <docblock line="111">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="111" name="param" description="The index" type="string" variable="$index">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="111" name="return" description="$this" type="\Peyote\Alter">
+            <type by_reference="false">\Peyote\Alter</type>
+          </tag>
+        </docblock>
+        <argument line="115">
+          <name>$index</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="115">
+          <name>$type</name>
+          <default><![CDATA["INDEX"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="126" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="121">
+          <description><![CDATA[{@inheritDoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="121" name="throws" description="" type="\Peyote\Exception">
+            <type by_reference="false">\Peyote\Exception</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Builder.php" hash="6ffbe92fbb708f5221e425980b132489" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Builder.php</error>
+    </parse_markers>
+    <interface namespace="Peyote" line="11" package="Peyote">
+      <name>Builder</name>
+      <full_name>\Peyote\Builder</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[An interface for Peyote builder classes.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="18" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="13">
+          <description><![CDATA[Compiles the query into raw SQL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </interface>
+  </file>
+  <file path="Peyote/Column.php" hash="4e2564af0cfbd111b1ee9352098531bf" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $name</critical>
+      <critical line="18" code="50019">No short description for property $type</critical>
+      <critical line="23" code="50019">No short description for property $is_null</critical>
+      <critical line="28" code="50019">No short description for property $length</critical>
+      <critical line="33" code="50019">No short description for property $options</critical>
+      <critical line="38" code="50019">No short description for property $auto_increment</critical>
+      <critical line="43" code="50019">No short description for property $default</critical>
+      <critical line="48" code="50019">No short description for property $primary_key</critical>
+      <error line="93" code="50012">No short description for method getName()</error>
+      <error line="101" code="50012">No short description for method setName()</error>
+      <error line="111" code="50012">No short description for method getType()</error>
+      <error line="119" code="50012">No short description for method setType()</error>
+      <error line="139" code="50012">No short description for method getIsNull()</error>
+      <error line="147" code="50012">No short description for method setIsNull()</error>
+      <error line="157" code="50012">No short description for method getLength()</error>
+      <error line="165" code="50012">No short description for method setLength()</error>
+      <error line="175" code="50012">No short description for method getOptions()</error>
+      <error line="183" code="50012">No short description for method setOptions()</error>
+      <error line="193" code="50012">No short description for method addOption()</error>
+      <error line="207" code="50012">No short description for method getAutoIncrement()</error>
+      <error line="215" code="50012">No short description for method setAutoIncrement()</error>
+      <error line="225" code="50012">No short description for method getDefault()</error>
+      <error line="233" code="50012">No short description for method setDefault()</error>
+      <error line="243" code="50012">No short description for method isPrimaryKey()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Column.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Column</name>
+      <full_name>\Peyote\Column</full_name>
+      <extends/>
+      <extends>\Peyote\Builder</extends>
+      <docblock line="5">
+        <description><![CDATA[A class to define columns]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The name of the column." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="21" package="Default">
+        <name>$type</name>
+        <default><![CDATA[]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="The data type for the column." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="26" package="Default">
+        <name>$is_null</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="23">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="Can this column be null?" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="31" package="Default">
+        <name>$length</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="28">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="The length of a field" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="36" package="Default">
+        <name>$options</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="33">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="33" name="var" description="Column options (UNSIGNED, ZEROFILL, etc...)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="41" package="Default">
+        <name>$auto_increment</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="38">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="38" name="var" description="Is this an auto increment column?" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="46" package="Default">
+        <name>$default</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="43">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="The default value" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="51" package="Default">
+        <name>$primary_key</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="48">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="48" name="var" description="Is this column a primary key?" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="68" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="53">
+          <description><![CDATA[Below are the keys that can be used in the options parameters]]></description>
+          <long-description><![CDATA[<table>
+<thead>
+<tr>
+  <th>Key</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>is_null</td>
+  <td>boolean</td>
+  <td>Can this column be null?</td>
+</tr>
+<tr>
+  <td>length</td>
+  <td>string</td>
+  <td>The length of a field (number fields)</td>
+</tr>
+<tr>
+  <td>options</td>
+  <td>array</td>
+  <td>A list of data type options (UNSIGNED, ZEROFILL, etc...)</td>
+</tr>
+<tr>
+  <td>auto_increment</td>
+  <td>boolean</td>
+  <td>Auto Increment the column?</td>
+</tr>
+<tr>
+  <td>default</td>
+  <td>string</td>
+  <td>The default value for the column</td>
+</tr>
+</tbody>
+</table>]]></long-description>
+          <tag line="53" name="param" description="The name of the column" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="param" description="The type of column" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="param" description="See above for column options that can be set." type="array" variable="$options">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="68">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="68">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="68">
+          <name>$options</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="96" package="">
+        <name>getName</name>
+        <type>function</type>
+        <docblock line="93">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="return" description="The column name" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="105" package="">
+        <name>setName</name>
+        <type>function</type>
+        <docblock line="101">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="101" name="param" description="The new column name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="101" name="return" description="$this" type="\Peyote\Column">
+            <type by_reference="false">\Peyote\Column</type>
+          </tag>
+        </docblock>
+        <argument line="105">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="114" package="">
+        <name>getType</name>
+        <type>function</type>
+        <docblock line="111">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="111" name="return" description="The current data type" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="123" package="">
+        <name>setType</name>
+        <type>function</type>
+        <docblock line="119">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="119" name="param" description="The data type" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="119" name="return" description="$this" type="\Peyote\Column">
+            <type by_reference="false">\Peyote\Column</type>
+          </tag>
+        </docblock>
+        <argument line="123">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="142" package="">
+        <name>getIsNull</name>
+        <type>function</type>
+        <docblock line="139">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="139" name="return" description="" type="boolean|null">
+            <type by_reference="false">boolean</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="151" package="">
+        <name>setIsNull</name>
+        <type>function</type>
+        <docblock line="147">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="147" name="param" description="Should this column be null?" type="boolean" variable="$is_null">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="147" name="return" description="" type="\Peyote\Column">
+            <type by_reference="false">\Peyote\Column</type>
+          </tag>
+        </docblock>
+        <argument line="151">
+          <name>$is_null</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="160" package="">
+        <name>getLength</name>
+        <type>function</type>
+        <docblock line="157">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="157" name="return" description="The length of the column" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="169" package="">
+        <name>setLength</name>
+        <type>function</type>
+        <docblock line="165">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="165" name="param" description="The field length" type="string" variable="$length">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="165" name="return" description="$this" type="\Peyote\Column">
+            <type by_reference="false">\Peyote\Column</type>
+          </tag>
+        </docblock>
+        <argument line="169">
+          <name>$length</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="178" package="">
+        <name>getOptions</name>
+        <type>function</type>
+        <docblock line="175">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="175" name="return" description="Column options" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="187" package="">
+        <name>setOptions</name>
+        <type>function</type>
+        <docblock line="183">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="183" name="param" description="The column options." type="array" variable="$options">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="183" name="return" description="$this" type="\Peyote\Column">
+            <type by_reference="false">\Peyote\Column</type>
+          </tag>
+        </docblock>
+        <argument line="187">
+          <name>$options</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="197" package="">
+        <name>addOption</name>
+        <type>function</type>
+        <docblock line="193">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="193" name="param" description="The option to add" type="string" variable="$option">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="193" name="return" description="" type="\Peyote\Column">
+            <type by_reference="false">\Peyote\Column</type>
+          </tag>
+        </docblock>
+        <argument line="197">
+          <name>$option</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="210" package="">
+        <name>getAutoIncrement</name>
+        <type>function</type>
+        <docblock line="207">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="207" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="219" package="">
+        <name>setAutoIncrement</name>
+        <type>function</type>
+        <docblock line="215">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="215" name="param" description="Set auto increment?" type="boolean" variable="$flag">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="215" name="return" description="" type="\Peyote\Column">
+            <type by_reference="false">\Peyote\Column</type>
+          </tag>
+        </docblock>
+        <argument line="219">
+          <name>$flag</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="228" package="">
+        <name>getDefault</name>
+        <type>function</type>
+        <docblock line="225">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="225" name="return" description="The default value or null if it hasn't been set" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="237" package="">
+        <name>setDefault</name>
+        <type>function</type>
+        <docblock line="233">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="233" name="param" description="The default value" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="233" name="return" description="" type="\Peyote\Column">
+            <type by_reference="false">\Peyote\Column</type>
+          </tag>
+        </docblock>
+        <argument line="237">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="246" package="">
+        <name>isPrimaryKey</name>
+        <type>function</type>
+        <docblock line="243">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="243" name="return" description="Is this a primary key column?" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="254" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="251">
+          <description><![CDATA[{@inheritDoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Condition.php" hash="c57660ef3acacda3108db18a20df0c72" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $clauses</critical>
+      <critical line="18" code="50019">No short description for property $params</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Condition.php</error>
+    </parse_markers>
+    <class final="false" abstract="true" namespace="Peyote" line="11" package="Peyote">
+      <name>Condition</name>
+      <full_name>\Peyote\Condition</full_name>
+      <extends/>
+      <extends>\Peyote\Builder</extends>
+      <docblock line="5">
+        <description><![CDATA[An abstract starting class for the WHERE and HAVING classes.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="16" package="Default">
+        <name>$clauses</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The order clauses." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="21" package="Default">
+        <name>$params</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="A list of bound parameters." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="Peyote" line="28" package="">
+        <name>getType</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Gets the type of sorting query we are running.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="35" package="">
+        <name>getParams</name>
+        <type>function</type>
+        <docblock line="30">
+          <description><![CDATA[Gets the list of bound parameters.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="45" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="40">
+          <description><![CDATA[Compiles the query into raw SQL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Create.php" hash="8776d95cc166f1f14c074216a03a8554" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $columns</critical>
+      <critical line="18" code="50019">No short description for property $primary_key</critical>
+      <critical line="23" code="50019">No short description for property $engine</critical>
+      <critical line="28" code="50019">No short description for property $charset</critical>
+      <error line="33" code="50012">No short description for method getColumns()</error>
+      <error line="41" code="50012">No short description for method setColumns()</error>
+      <error line="51" code="50012">No short description for method getPrimaryKey()</error>
+      <error line="59" code="50012">No short description for method setPrimaryKey()</error>
+      <error line="74" code="50012">No short description for method addPrimaryKey()</error>
+      <error line="88" code="50012">No short description for method getEngine()</error>
+      <error line="96" code="50012">No short description for method setEngine()</error>
+      <error line="106" code="50012">No short description for method getCharset()</error>
+      <error line="114" code="50012">No short description for method setCharset()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Create.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Create</name>
+      <full_name>\Peyote\Create</full_name>
+      <extends>\Peyote\Drop</extends>
+      <docblock line="5">
+        <description><![CDATA[The Create table class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$columns</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="21" package="Default">
+        <name>$primary_key</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="26" package="Default">
+        <name>$engine</name>
+        <default><![CDATA["MyISAM"]]></default>
+        <docblock line="23">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="31" package="Default">
+        <name>$charset</name>
+        <default><![CDATA["utf8"]]></default>
+        <docblock line="28">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="36" package="">
+        <name>getColumns</name>
+        <type>function</type>
+        <docblock line="33">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="33" name="return" description="The column list" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="45" package="">
+        <name>setColumns</name>
+        <type>function</type>
+        <docblock line="41">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="41" name="param" description="The columns to set." type="array" variable="$columns">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="41" name="return" description="$this" type="\Peyote\Create">
+            <type by_reference="false">\Peyote\Create</type>
+          </tag>
+        </docblock>
+        <argument line="45">
+          <name>$columns</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="54" package="">
+        <name>getPrimaryKey</name>
+        <type>function</type>
+        <docblock line="51">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="51" name="return" description="A list of primary keys" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="63" package="">
+        <name>setPrimaryKey</name>
+        <type>function</type>
+        <docblock line="59">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="59" name="param" description="The key(s) to set" type="array|string" variable="$keys">
+            <type by_reference="false">array</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="59" name="return" description="$this" type="\Peyote\Create">
+            <type by_reference="false">\Peyote\Create</type>
+          </tag>
+        </docblock>
+        <argument line="63">
+          <name>$keys</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="78" package="">
+        <name>addPrimaryKey</name>
+        <type>function</type>
+        <docblock line="74">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="74" name="param" description="The name of the primary key to add" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="74" name="return" description="$this" type="\Peyote\Create">
+            <type by_reference="false">\Peyote\Create</type>
+          </tag>
+        </docblock>
+        <argument line="78">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="91" package="">
+        <name>getEngine</name>
+        <type>function</type>
+        <docblock line="88">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="88" name="return" description="The database engine (MyISAM, InnoDB)" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="100" package="">
+        <name>setEngine</name>
+        <type>function</type>
+        <docblock line="96">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="96" name="param" description="The database engine" type="string" variable="$engine">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="96" name="return" description="$this" type="\Peyote\Create">
+            <type by_reference="false">\Peyote\Create</type>
+          </tag>
+        </docblock>
+        <argument line="100">
+          <name>$engine</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="109" package="">
+        <name>getCharset</name>
+        <type>function</type>
+        <docblock line="106">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="106" name="return" description="The character set" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="118" package="">
+        <name>setCharset</name>
+        <type>function</type>
+        <docblock line="114">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="114" name="param" description="The character set." type="string" variable="$charset">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="114" name="return" description="$this" type="\Peyote\Create">
+            <type by_reference="false">\Peyote\Create</type>
+          </tag>
+        </docblock>
+        <argument line="118">
+          <name>$charset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="127" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="124">
+          <description><![CDATA[{@inheritDoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Delete.php" hash="aaf6606c9a39d195c850e4070729fabf" package="Default">
+    <parse_markers>
+      <critical line="17" code="50019">No short description for property $where</critical>
+      <critical line="22" code="50019">No short description for property $order_by</critical>
+      <critical line="27" code="50019">No short description for property $limit</critical>
+      <critical line="32" code="50019">No short description for property $mixins</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Delete.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="15" package="Peyote">
+      <name>Delete</name>
+      <full_name>\Peyote\Delete</full_name>
+      <extends>\Peyote\Query</extends>
+      <docblock line="5">
+        <description><![CDATA[Building a DELETE query.]]></description>
+        <long-description><![CDATA[<p>See Select for the full rant, but the tl;dr is that php 4 is messing up my
+classes, so I have to actually declare where() and limit() in this class
+instead of just using the cool passthru functionality.</p>]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="20" package="Default">
+        <name>$where</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="17">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="17" name="var" description="The where object" type="\Peyote\Where">
+            <type by_reference="false">\Peyote\Where</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="25" package="Default">
+        <name>$order_by</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="22">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="The order object" type="\Peyote\Order">
+            <type by_reference="false">\Peyote\Order</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="30" package="Default">
+        <name>$limit</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="27">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="27" name="var" description="The limit object" type="\Peyote\Limit">
+            <type by_reference="false">\Peyote\Limit</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="35" package="Default">
+        <name>$mixins</name>
+        <default><![CDATA[array('where', 'order_by', 'limit')]]></default>
+        <docblock line="32">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="var" description="A list of mixins that the query can passthru" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="43" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="37">
+          <description><![CDATA[Optionally sets the table name and initializes the internal class
+properties.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="param" description="The name of the table" type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$table</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="60" package="">
+        <name>where</name>
+        <type>function</type>
+        <docblock line="52">
+          <description><![CDATA[Adds a WHERE clause.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="52" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="52" name="param" description="The comparison operator" type="string" variable="$op">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="52" name="param" description="The value to bind" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="52" name="return" description="" type="\Peyote\Delete">
+            <type by_reference="false">\Peyote\Delete</type>
+          </tag>
+        </docblock>
+        <argument line="60">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="60">
+          <name>$op</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="60">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="72" package="">
+        <name>limit</name>
+        <type>function</type>
+        <docblock line="66">
+          <description><![CDATA[Sets the limit.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="66" name="param" description="The number to limit the queries to" type="int" variable="$num">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="66" name="return" description="" type="\Peyote\Select">
+            <type by_reference="false">\Peyote\Select</type>
+          </tag>
+        </docblock>
+        <argument line="72">
+          <name>$num</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="83" package="">
+        <name>getParams</name>
+        <type>function</type>
+        <docblock line="78">
+          <description><![CDATA[Gets all of the bound parameters for this query.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="101" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="96">
+          <description><![CDATA[Compiles the query into raw SQL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="96" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Drop.php" hash="cb72ff7de24c673b2b11c6aa50801866" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $table</critical>
+      <critical line="18" code="50019">No short description for property $if_exists</critical>
+      <critical line="23" code="50019">No short description for property $type</critical>
+      <error line="28" code="50012">No short description for method __construct()</error>
+      <error line="28" code="50015">Argument $if_exists is missing from the Docblock of __construct()</error>
+      <error line="37" code="50012">No short description for method getType()</error>
+      <error line="45" code="50012">No short description for method getTable()</error>
+      <error line="53" code="50012">No short description for method setTable()</error>
+      <error line="63" code="50012">No short description for method getIfExists()</error>
+      <error line="71" code="50012">No short description for method setIfExists()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Drop.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Drop</name>
+      <full_name>\Peyote\Drop</full_name>
+      <extends/>
+      <extends>\Peyote\Builder</extends>
+      <docblock line="5">
+        <description><![CDATA[The DROP table class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$table</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="21" package="Default">
+        <name>$if_exists</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="26" package="Default">
+        <name>$type</name>
+        <default><![CDATA["TABLE"]]></default>
+        <docblock line="23">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="31" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="28">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="param" description="The table name" type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$table</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$if_exists</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="40" package="">
+        <name>getType</name>
+        <type>function</type>
+        <docblock line="37">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="return" description="The type of object to change (DATABASE, TABLE, etc...)" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="48" package="">
+        <name>getTable</name>
+        <type>function</type>
+        <docblock line="45">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="45" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="57" package="">
+        <name>setTable</name>
+        <type>function</type>
+        <docblock line="53">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="param" description="The table name to drop." type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="53" name="return" description="" type="\Peyote\Drop">
+            <type by_reference="false">\Peyote\Drop</type>
+          </tag>
+        </docblock>
+        <argument line="57">
+          <name>$table</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="66" package="">
+        <name>getIfExists</name>
+        <type>function</type>
+        <docblock line="63">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="63" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="75" package="">
+        <name>setIfExists</name>
+        <type>function</type>
+        <docblock line="71">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="param" description="Add the IF EXISTS clause?" type="boolean" variable="$exists">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="71" name="return" description="" type="\Peyote\Drop">
+            <type by_reference="false">\Peyote\Drop</type>
+          </tag>
+        </docblock>
+        <argument line="75">
+          <name>$exists</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="84" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="81">
+          <description><![CDATA[{@inheritDoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Exception.php" hash="4a497fb1770cda24f3bf49f13e49cda6" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Exception.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Exception</name>
+      <full_name>\Peyote\Exception</full_name>
+      <extends>\Exception</extends>
+      <docblock line="5">
+        <description><![CDATA[A Peyote Exception class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Peyote/Group.php" hash="8b5da0dc5f31ccc847342869cd467397" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Group.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Group</name>
+      <full_name>\Peyote\Group</full_name>
+      <extends>\Peyote\Sort</extends>
+      <extends>\Peyote\Mixin</extends>
+      <docblock line="5">
+        <description><![CDATA[The GROUP BY clause builder.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="18" package="">
+        <name>getType</name>
+        <type>function</type>
+        <docblock line="13">
+          <description><![CDATA[Gets the type of sorting query we are running.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="30" package="">
+        <name>groupBy</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Groups a result with an optional direction.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="The direction to sort on" type="string" variable="$direction">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="return" description="" type="\Peyote\Group">
+            <type by_reference="false">\Peyote\Group</type>
+          </tag>
+        </docblock>
+        <argument line="30">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="30">
+          <name>$direction</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="41" package="">
+        <name>getMethods</name>
+        <type>function</type>
+        <docblock line="36">
+          <description><![CDATA[Gets all of the methods that should be passed as "mixin" methods.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Having.php" hash="0b9a53134c558b4ed3a90a88d5d9f6af" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Having.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Having</name>
+      <full_name>\Peyote\Having</full_name>
+      <extends>\Peyote\Condition</extends>
+      <extends>\Peyote\Mixin</extends>
+      <docblock line="5">
+        <description><![CDATA[A class to build HAVING clauses.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="18" package="">
+        <name>getType</name>
+        <type>function</type>
+        <docblock line="13">
+          <description><![CDATA[Gets the type of sorting query we are running.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="31" package="">
+        <name>andHaving</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Builds an AND HAVING clause.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="The comparison operator" type="string" variable="$op">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="The value to bind" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="23" name="return" description="" type="\Peyote\Where">
+            <type by_reference="false">\Peyote\Where</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$op</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="45" package="">
+        <name>orHaving</name>
+        <type>function</type>
+        <docblock line="37">
+          <description><![CDATA[Builds an OR HAVING clause.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="param" description="The comparison operator" type="string" variable="$op">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="param" description="The value to bind" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="37" name="return" description="" type="\Peyote\Where">
+            <type by_reference="false">\Peyote\Where</type>
+          </tag>
+        </docblock>
+        <argument line="45">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="45">
+          <name>$op</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="45">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="56" package="">
+        <name>getMethods</name>
+        <type>function</type>
+        <docblock line="51">
+          <description><![CDATA[Gets all of the methods that should be passed as "mixin" methods.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="51" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Insert.php" hash="a173cfa9306c30a5e0bd2a8f97a482d4" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $columns</critical>
+      <critical line="18" code="50019">No short description for property $values</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Insert.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Insert</name>
+      <full_name>\Peyote\Insert</full_name>
+      <extends>\Peyote\Query</extends>
+      <docblock line="5">
+        <description><![CDATA[Building an INSERT query.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$columns</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="A list of columns to insert" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="21" package="Default">
+        <name>$values</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="A list of values to insert" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="29" package="">
+        <name>columns</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Specify the columns to insert.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="The columns" type="array" variable="$columns">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="23" name="return" description="" type="\Peyote\Insert">
+            <type by_reference="false">\Peyote\Insert</type>
+          </tag>
+        </docblock>
+        <argument line="29">
+          <name>$columns</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="41" package="">
+        <name>values</name>
+        <type>function</type>
+        <docblock line="35">
+          <description><![CDATA[The values to add to the insert statement.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="param" description="The column values" type="array" variable="$values">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="35" name="return" description="" type="\Peyote\Insert">
+            <type by_reference="false">\Peyote\Insert</type>
+          </tag>
+        </docblock>
+        <argument line="41">
+          <name>$values</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="52" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="47">
+          <description><![CDATA[Compiles the query into raw SQL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Join.php" hash="d88ba99a1addc9fc05544a92da48e7ed" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $joins</critical>
+      <critical line="18" code="50019">No short description for property $active_join</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Join.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Join</name>
+      <full_name>\Peyote\Join</full_name>
+      <extends/>
+      <extends>\Peyote\Builder</extends>
+      <extends>\Peyote\Mixin</extends>
+      <docblock line="5">
+        <description><![CDATA[The JOIN clause builder.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$joins</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The internal list of joins" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="21" package="Default">
+        <name>$active_join</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="The currently active join" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="30" package="">
+        <name>addJoin</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Add a join.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="The table name" type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="The type of join" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="return" description="" type="\Peyote\Join">
+            <type by_reference="false">\Peyote\Join</type>
+          </tag>
+        </docblock>
+        <argument line="30">
+          <name>$table</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="30">
+          <name>$type</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="46" package="">
+        <name>on</name>
+        <type>function</type>
+        <docblock line="36">
+          <description><![CDATA[Creates an ON join.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="throws" description="" type="\Peyote\Exception">
+            <type by_reference="false">\Peyote\Exception</type>
+          </tag>
+          <tag line="36" name="param" description="The column from the first table" type="string" variable="$column1">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="36" name="param" description="The operator" type="string" variable="$op">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="36" name="param" description="The column from the second table" type="string" variable="$column2">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="36" name="return" description="" type="\Peyote\Join">
+            <type by_reference="false">\Peyote\Join</type>
+          </tag>
+        </docblock>
+        <argument line="46">
+          <name>$column1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="46">
+          <name>$op</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="46">
+          <name>$column2</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="67" package="">
+        <name>using</name>
+        <type>function</type>
+        <docblock line="59">
+          <description><![CDATA[Create a USING join.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="59" name="throws" description="" type="\Peyote\Exception">
+            <type by_reference="false">\Peyote\Exception</type>
+          </tag>
+          <tag line="59" name="param" description="The column to join on" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="59" name="return" description="" type="\Peyote\Join">
+            <type by_reference="false">\Peyote\Join</type>
+          </tag>
+        </docblock>
+        <argument line="67">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="85" package="">
+        <name>getMethods</name>
+        <type>function</type>
+        <docblock line="80">
+          <description><![CDATA[Gets all of the methods that should be passed as "mixin" methods.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="80" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="95" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="90">
+          <description><![CDATA[Compiles the query into raw SQL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="90" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Peyote" line="124" package="">
+        <name>compileOn</name>
+        <type>function</type>
+        <docblock line="118">
+          <description><![CDATA[Compiles an ON join.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="118" name="param" description="The on join to compile" type="array" variable="$join">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="118" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="124">
+          <name>$join</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Peyote" line="144" package="">
+        <name>compileUsing</name>
+        <type>function</type>
+        <docblock line="138">
+          <description><![CDATA[Compiles a JOIN USING clause]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="138" name="param" description="The join to compile" type="array" variable="$join">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="138" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="144">
+          <name>$join</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Limit.php" hash="f270382ba2bb398ef5318380bed13ee7" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $limit</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Limit.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Limit</name>
+      <full_name>\Peyote\Limit</full_name>
+      <extends/>
+      <extends>\Peyote\Builder</extends>
+      <extends>\Peyote\Mixin</extends>
+      <docblock line="5">
+        <description><![CDATA[The LIMIT # clause builder.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$limit</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The limit number" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="23" package="">
+        <name>setLimit</name>
+        <type>function</type>
+        <docblock line="18">
+          <description><![CDATA[Sets the limit.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="param" description="The number to limit the queries to" type="int" variable="$num">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="23">
+          <name>$num</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="33" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="28">
+          <description><![CDATA[Compiles the query into raw SQL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="48" package="">
+        <name>getMethods</name>
+        <type>function</type>
+        <docblock line="43">
+          <description><![CDATA[Gets all of the methods that should be passed as "mixin" methods.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Mixin.php" hash="e3e19ed5a279843aea5bf46536b2d430" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Mixin.php</error>
+    </parse_markers>
+    <interface namespace="Peyote" line="11" package="Peyote">
+      <name>Mixin</name>
+      <full_name>\Peyote\Mixin</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[An interface for the classes that can be used as a mixin.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="18" package="">
+        <name>getMethods</name>
+        <type>function</type>
+        <docblock line="13">
+          <description><![CDATA[Gets all of the methods that should be passed as "mixin" methods.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </interface>
+  </file>
+  <file path="Peyote/Order.php" hash="7344e2b5346bc0f3476837add1af5f3c" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Order.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Order</name>
+      <full_name>\Peyote\Order</full_name>
+      <extends>\Peyote\Sort</extends>
+      <extends>\Peyote\Mixin</extends>
+      <docblock line="5">
+        <description><![CDATA[The ORDER BY clause builder.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="18" package="">
+        <name>getType</name>
+        <type>function</type>
+        <docblock line="13">
+          <description><![CDATA[Gets the type of sorting query we are running.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="30" package="">
+        <name>orderBy</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Orders a result with an optional direction.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="The direction to sort on" type="string" variable="$direction">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="return" description="" type="\Peyote\Order">
+            <type by_reference="false">\Peyote\Order</type>
+          </tag>
+        </docblock>
+        <argument line="30">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="30">
+          <name>$direction</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="41" package="">
+        <name>getMethods</name>
+        <type>function</type>
+        <docblock line="36">
+          <description><![CDATA[Gets all of the methods that should be passed as "mixin" methods.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Query.php" hash="555bfbdf3bcabf215d0f99e75b7a429f" package="Default">
+    <parse_markers>
+      <critical line="15" code="50019">No short description for property $params</critical>
+      <critical line="20" code="50019">No short description for property $method_map</critical>
+      <critical line="25" code="50019">No short description for property $mixins</critical>
+      <critical line="30" code="50019">No short description for property $table</critical>
+      <error line="90" code="50014">Name of argument $params does not match with the DocBlock's name $param in __call()</error>
+      <notice line="90" code="50013">Parameter $param could not be found in __call()</notice>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Query.php</error>
+    </parse_markers>
+    <class final="false" abstract="true" namespace="Peyote" line="13" package="Peyote">
+      <name>Query</name>
+      <full_name>\Peyote\Query</full_name>
+      <extends/>
+      <extends>\Peyote\Builder</extends>
+      <docblock line="5">
+        <description><![CDATA[The base Query class for SELECT, INSERT, UPDATE and DELETE statement.]]></description>
+        <long-description><![CDATA[<p>These four classes will share some functionality, so let us share!</p>]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="18" package="Default">
+        <name>$params</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="15">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="var" description="Bound parameters" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="23" package="Default">
+        <name>$method_map</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="20">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="20" name="var" description="A map of passthru methods" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="28" package="Default">
+        <name>$mixins</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="25">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="var" description="A list of mixins that the query can passthru" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="33" package="Default">
+        <name>$table</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="30">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="var" description="The name of the table" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="41" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="35">
+          <description><![CDATA[Creates the method map. Make sure you call parent::__construct()
+after all of your main passthru objects are created.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="param" description="The name of the table" type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="41">
+          <name>$table</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="57" package="">
+        <name>table</name>
+        <type>function</type>
+        <docblock line="51">
+          <description><![CDATA[Sets the name of the table.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="51" name="param" description="The table name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="51" name="return" description="" type="\Peyote\Query">
+            <type by_reference="false">\Peyote\Query</type>
+          </tag>
+        </docblock>
+        <argument line="57">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="70" package="">
+        <name>addMethods</name>
+        <type>function</type>
+        <docblock line="63">
+          <description><![CDATA[Adds "mixin" methods to this class.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="63" name="param" description="The name of the mixin" type="string" variable="$mixin">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="63" name="param" description="A list of methods to add" type="array" variable="$methods">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="63" name="return" description="" type="\Petoyte\Query">
+            <type by_reference="false">\Petoyte\Query</type>
+          </tag>
+        </docblock>
+        <argument line="70">
+          <name>$mixin</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="70">
+          <name>$methods</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="85" package="">
+        <name>getParams</name>
+        <type>function</type>
+        <docblock line="80">
+          <description><![CDATA[Gets all of the bound parameters for this query.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="80" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="100" package="">
+        <name>__call</name>
+        <type>function</type>
+        <docblock line="90">
+          <description><![CDATA[The only bit of magic in this codebase. This is necessary so we can add
+mixins.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="90" name="throws" description="" type="\Peyote\Exception">
+            <type by_reference="false">\Peyote\Exception</type>
+          </tag>
+          <tag line="90" name="param" description="The name of the method to call" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="90" name="param" description="The passed in parameters" type="array" variable="$param">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="90" name="return" description="" type="\Peyote\Query">
+            <type by_reference="false">\Peyote\Query</type>
+          </tag>
+        </docblock>
+        <argument line="100">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="100">
+          <name>$params</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Peyote" line="120" package="">
+        <name>compileMixins</name>
+        <type>function</type>
+        <docblock line="115">
+          <description><![CDATA[Compiles all of the mixins into an array.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="115" name="return" description="All of the mixins into an array." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Select.php" hash="92e4a2539dcadc1d8b06d1317c4b13b1" package="Default">
+    <parse_markers>
+      <critical line="19" code="50019">No short description for property $join</critical>
+      <critical line="24" code="50019">No short description for property $where</critical>
+      <critical line="29" code="50019">No short description for property $group_by</critical>
+      <critical line="34" code="50019">No short description for property $order_by</critical>
+      <critical line="39" code="50019">No short description for property $limit</critical>
+      <critical line="44" code="50019">No short description for property $mixins</critical>
+      <critical line="49" code="50019">No short description for property $offset_num</critical>
+      <critical line="54" code="50019">No short description for property $is_distinct</critical>
+      <critical line="59" code="50019">No short description for property $columns</critical>
+      <notice line="92" code="50013">Parameter  could not be found in columns()</notice>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Select.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="17" package="Peyote">
+      <name>Select</name>
+      <full_name>\Peyote\Select</full_name>
+      <extends>\Peyote\Query</extends>
+      <docblock line="5">
+        <description><![CDATA[Building a SELECT query.]]></description>
+        <long-description><![CDATA[<p>The join(), select(), and limit() functions should just be passthrus, but I
+was getting an error when naming a function the same as the class (php4 FTW!)
+so I had to just move the methods here and call back. Lame I know, but the
+only other choice was to go back down to 5.2 and name everything with
+underscores, and I didn't want to do that, so here we are...</p>]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="22" package="Default">
+        <name>$join</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="19">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="19" name="var" description="The join object" type="\Peyote\Join">
+            <type by_reference="false">\Peyote\Join</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="27" package="Default">
+        <name>$where</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="24">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="24" name="var" description="The where object" type="\Peyote\Where">
+            <type by_reference="false">\Peyote\Where</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="32" package="Default">
+        <name>$group_by</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="29">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="The group object" type="\Peyote\Group">
+            <type by_reference="false">\Peyote\Group</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="37" package="Default">
+        <name>$order_by</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="34">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="34" name="var" description="The order object" type="\Peyote\Order">
+            <type by_reference="false">\Peyote\Order</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="42" package="Default">
+        <name>$limit</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="39">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="39" name="var" description="The limit object" type="\Peyote\Limit">
+            <type by_reference="false">\Peyote\Limit</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="47" package="Default">
+        <name>$mixins</name>
+        <default><![CDATA[array('join', 'where', 'group_by', 'order_by', 'limit')]]></default>
+        <docblock line="44">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="44" name="var" description="A list of mixins that the query can passthru" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="52" package="Default">
+        <name>$offset_num</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="49">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="49" name="var" description="The number to offset by." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="57" package="Default">
+        <name>$is_distinct</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="54">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="54" name="var" description="Run a distinct query?" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="62" package="Default">
+        <name>$columns</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="59">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="59" name="var" description="A list of columns to search for" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="70" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="64">
+          <description><![CDATA[Optionally sets the table name and initializes the internal class
+properties.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="param" description="The name of the table" type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="70">
+          <name>$table</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="86" package="">
+        <name>distinct</name>
+        <type>function</type>
+        <docblock line="81">
+          <description><![CDATA[Run a SELECT DISTINCT query.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="81" name="return" description="" type="\Peyote\Select">
+            <type by_reference="false">\Peyote\Select</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="98" package="">
+        <name>columns</name>
+        <type>function</type>
+        <docblock line="92">
+          <description><![CDATA[Specify the columns to select.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="92" name="param" description="... Any number of string column names" type="string" variable="">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="92" name="return" description="" type="\Peyote\Select">
+            <type by_reference="false">\Peyote\Select</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="109" package="">
+        <name>columnsArray</name>
+        <type>function</type>
+        <docblock line="103">
+          <description><![CDATA[Specify the columns to select as an array.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="103" name="param" description="The columns to select" type="array" variable="$columns">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="103" name="return" description="" type="\Peyote\Select">
+            <type by_reference="false">\Peyote\Select</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$columns</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="122" package="">
+        <name>join</name>
+        <type>function</type>
+        <docblock line="115">
+          <description><![CDATA[Add a join.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="115" name="param" description="The table name" type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="115" name="param" description="The type of join" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="115" name="return" description="" type="\Peyote\Select">
+            <type by_reference="false">\Peyote\Select</type>
+          </tag>
+        </docblock>
+        <argument line="122">
+          <name>$table</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="122">
+          <name>$type</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="136" package="">
+        <name>where</name>
+        <type>function</type>
+        <docblock line="128">
+          <description><![CDATA[Adds a WHERE clause.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="128" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="128" name="param" description="The comparison operator" type="string" variable="$op">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="128" name="param" description="The value to bind" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="128" name="return" description="" type="\Peyote\Select">
+            <type by_reference="false">\Peyote\Select</type>
+          </tag>
+        </docblock>
+        <argument line="136">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="136">
+          <name>$op</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="136">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="148" package="">
+        <name>limit</name>
+        <type>function</type>
+        <docblock line="142">
+          <description><![CDATA[Sets the limit.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="142" name="param" description="The number to limit the queries to" type="int" variable="$num">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="142" name="return" description="" type="\Peyote\Select">
+            <type by_reference="false">\Peyote\Select</type>
+          </tag>
+        </docblock>
+        <argument line="148">
+          <name>$num</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="160" package="">
+        <name>offset</name>
+        <type>function</type>
+        <docblock line="154">
+          <description><![CDATA[The offset number.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="154" name="param" description="The number of rows to offset by" type="int" variable="$num">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="154" name="return" description="" type="\Peyote\Select">
+            <type by_reference="false">\Peyote\Select</type>
+          </tag>
+        </docblock>
+        <argument line="160">
+          <name>$num</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="171" package="">
+        <name>getParams</name>
+        <type>function</type>
+        <docblock line="166">
+          <description><![CDATA[Gets all of the bound parameters for this query.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="166" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="188" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="183">
+          <description><![CDATA[Compiles the query into raw SQL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="183" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Sort.php" hash="9230359aa4a57472164a0fe5a179f2ba" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $clauses</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Sort.php</error>
+    </parse_markers>
+    <class final="false" abstract="true" namespace="Peyote" line="11" package="Peyote">
+      <name>Sort</name>
+      <full_name>\Peyote\Sort</full_name>
+      <extends/>
+      <extends>\Peyote\Builder</extends>
+      <docblock line="5">
+        <description><![CDATA[An abstract starting class for the ORDER BY and GROUP BY classes.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="16" package="Default">
+        <name>$clauses</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The order clauses." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="Peyote" line="23" package="">
+        <name>getType</name>
+        <type>function</type>
+        <docblock line="18">
+          <description><![CDATA[Gets the type of sorting query we are running.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="30" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="25">
+          <description><![CDATA[Compiles the query into raw SQL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Update.php" hash="00cbc57475f147862b784b5c097d7dd3" package="Default">
+    <parse_markers>
+      <critical line="17" code="50019">No short description for property $where</critical>
+      <critical line="22" code="50019">No short description for property $order_by</critical>
+      <critical line="27" code="50019">No short description for property $limit</critical>
+      <critical line="32" code="50019">No short description for property $data</critical>
+      <critical line="37" code="50019">No short description for property $mixins</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Update.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="15" package="Peyote">
+      <name>Update</name>
+      <full_name>\Peyote\Update</full_name>
+      <extends>\Peyote\Query</extends>
+      <docblock line="5">
+        <description><![CDATA[Building a UPDATE query.]]></description>
+        <long-description><![CDATA[<p>See Select for the full rant, but the tl;dr is that php 4 is messing up my
+classes, so I have to actually declare where() and limit() in this class
+instead of just using the cool passthru functionality.</p>]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="20" package="Default">
+        <name>$where</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="17">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="17" name="var" description="The where object" type="\Peyote\Where">
+            <type by_reference="false">\Peyote\Where</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="25" package="Default">
+        <name>$order_by</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="22">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="The order object" type="\Peyote\Order">
+            <type by_reference="false">\Peyote\Order</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="30" package="Default">
+        <name>$limit</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="27">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="27" name="var" description="The limit object" type="\Peyote\Limit">
+            <type by_reference="false">\Peyote\Limit</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="35" package="Default">
+        <name>$data</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="32">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="var" description="The key/value pair data" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="40" package="Default">
+        <name>$mixins</name>
+        <default><![CDATA[array('where', 'order_by', 'limit')]]></default>
+        <docblock line="37">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="var" description="A list of mixins that the query can passthru" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="48" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="42">
+          <description><![CDATA[Optionally sets the table name and initializes the internal class
+properties.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="42" name="param" description="The name of the table" type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$table</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="63" package="">
+        <name>set</name>
+        <type>function</type>
+        <docblock line="57">
+          <description><![CDATA[Set key/value pairs for the update.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="param" description="The data to set" type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="57" name="return" description="" type="\Peyote\Update">
+            <type by_reference="false">\Peyote\Update</type>
+          </tag>
+        </docblock>
+        <argument line="63">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="77" package="">
+        <name>where</name>
+        <type>function</type>
+        <docblock line="69">
+          <description><![CDATA[Adds a WHERE clause.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="69" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="69" name="param" description="The comparison operator" type="string" variable="$op">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="69" name="param" description="The value to bind" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="69" name="return" description="" type="\Peyote\Delete">
+            <type by_reference="false">\Peyote\Delete</type>
+          </tag>
+        </docblock>
+        <argument line="77">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="77">
+          <name>$op</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="77">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="89" package="">
+        <name>limit</name>
+        <type>function</type>
+        <docblock line="83">
+          <description><![CDATA[Sets the limit.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="83" name="param" description="The number to limit the queries to" type="int" variable="$num">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="83" name="return" description="" type="\Peyote\Select">
+            <type by_reference="false">\Peyote\Select</type>
+          </tag>
+        </docblock>
+        <argument line="89">
+          <name>$num</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="100" package="">
+        <name>getParams</name>
+        <type>function</type>
+        <docblock line="95">
+          <description><![CDATA[Gets all of the bound parameters for this query.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="95" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="115" package="">
+        <name>compile</name>
+        <type>function</type>
+        <docblock line="110">
+          <description><![CDATA[Compiles the query into raw SQL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="110" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Peyote/Where.php" hash="27f24b1878239054da1a5f40389e5228" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Peyote/Where.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Peyote" line="11" package="Peyote">
+      <name>Where</name>
+      <full_name>\Peyote\Where</full_name>
+      <extends>\Peyote\Condition</extends>
+      <extends>\Peyote\Mixin</extends>
+      <docblock line="5">
+        <description><![CDATA[A class to build WHERE clauses.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Peyote"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dave@davewidmer.net&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="18" package="">
+        <name>getType</name>
+        <type>function</type>
+        <docblock line="13">
+          <description><![CDATA[Gets the type of sorting query we are running.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="31" package="">
+        <name>andWhere</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Builds an AND WHERE clause.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="The comparison operator" type="string" variable="$op">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="The value to bind" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="23" name="return" description="" type="\Peyote\Where">
+            <type by_reference="false">\Peyote\Where</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$op</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="45" package="">
+        <name>orWhere</name>
+        <type>function</type>
+        <docblock line="37">
+          <description><![CDATA[Builds an OR WHERE clause.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="param" description="The column name" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="param" description="The comparison operator" type="string" variable="$op">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="param" description="The value to bind" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="37" name="return" description="" type="\Peyote\Where">
+            <type by_reference="false">\Peyote\Where</type>
+          </tag>
+        </docblock>
+        <argument line="45">
+          <name>$column</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="45">
+          <name>$op</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="45">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Peyote" line="56" package="">
+        <name>getMethods</name>
+        <type>function</type>
+        <docblock line="51">
+          <description><![CDATA[Gets all of the methods that should be passed as "mixin" methods.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="51" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <package name="" full_name=""/>
+  <package name="Default" full_name="Default"/>
+  <package name="Peyote" full_name="Peyote"/>
+  <namespace name="Peyote" full_name="Peyote"/>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>
