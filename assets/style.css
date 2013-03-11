@@ -267,7 +267,7 @@ footer .pad { padding-bottom: 0; }
 
 .large { font-size: 2em; }
 
-.code { padding: 1em; background-color: #d6f5dd; font-family: "Droid Mono", Consolas, monospace; }
+.code { padding: 1em; background-color: #F8F8F8; border: 1px solid #cccccc; font-family: "Droid Mono", Consolas, monospace; }
 
 .air-out > li { margin: 0.5em 0; }
 
