@@ -2,19 +2,14 @@
 <project name="Peyote" default="package" basedir=".">
 	<property name="version" value="0.6.0" />
 
-	<target name="package">
+	<target name="package" description="Creates a package for distribution">
 		<property name="file" value="${project.basedir}/dev/package/Peyote-${version}.zip" />
 
-		<delete file="${file}" />
+		<mkdir dir="${project.basedir}/dev/package/" />
+		<delete file="${file}" quiet="true" />
 
 		<zip destfile="${file}">
-			<fileset dir="${project.basedir}/">
-				<exclude name="dev/**" />
-				<exclude name="vendor/**" />
-				<exclude name=".DS_Store" />
-				<exclude name=".git/**" />
-				<exclude name=".gitignore" />
-			</fileset>
+			<fileset dir="${project.basedir}/classes/" />
 		</zip>
 	</target>
 </project>
