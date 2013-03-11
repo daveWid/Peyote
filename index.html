@@ -45,21 +45,22 @@ layout: default
 <div class="row pad box">
 	<h2>Example</h2>
 
-``` php
-// Create a PDO instance
-$pdo = new PDO($dsn, $user, $password);
+	<div class="code">
+		<pre class="shrink"><span class="c1">// Create a PDO instance</span>
+<span class="nv">$pdo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="nv">$dsn</span><span class="p">,</span> <span class="nv">$user</span><span class="p">,</span> <span class="nv">$password</span><span class="p">);</span>
 
-// Create a SELECT query
-$query = new \Peyote\Select('user');
-$query->where('user_id', '=', 1);
+<span class="c1">// Create a SELECT query</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Peyote\Select</span><span class="p">(</span><span class="s1">'user'</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">'user_id'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-// Build the PDOStatement
-$statement = $pdo->prepare($query->compile());
+<span class="c1">// Build the PDOStatement</span>
+<span class="nv">$statement</span> <span class="o">=</span> <span class="nv">$pdo</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">compile</span><span class="p">());</span>
 
-// Run the query
-$statement->execute($query->getParams());
+<span class="c1">// Run the query</span>
+<span class="nv">$statement</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">());</span>
 
-// Fetch results
-$results = $statement->fetchAll();
-```
+<span class="c1">// Fetch results</span>
+<span class="nv">$results</span> <span class="o">=</span> <span class="nv">$statement</span><span class="o">-&gt;</span><span class="na">fetchAll</span><span class="p">();</span>
+</pre>
+	</div>
 </div>

@@ -219,6 +219,13 @@ table { border-collapse: collapse; border-spacing: 0; }
   .sd { display: none; }
   .mobile { display: none; }
   .hide-mobile { display: inherit; } }
+/* ============================================================================= Syntax Highlighting ========================================================================== */
+.cl { color: #999; font-variant: italic; }
+
+.nv, .na { color: #008080; }
+
+.s1, .s2 { color: #DD1144; }
+
 /* ============================================================================= Theme ========================================================================== */
 body { font-size: 16px; font-family: Arial, sans-serif; background-image: url("sneaker_mesh_fabric.png"); color: #333; }
 
