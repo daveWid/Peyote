@@ -2,6 +2,14 @@
    Syntax Highlighting
    ========================================================================== */
 
+.code {
+	padding: 1em;
+	background-color: #F8F8F8;
+	border: 1px solid #CCC;
+	font-family: 'Droid Mono', Consolas, monospace;
+	line-height: 1.25em;
+}
+
 .c1 {
 	color: #999;
 	font-variant: italic;

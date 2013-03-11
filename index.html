@@ -64,3 +64,69 @@ layout: default
 </pre>
 	</div>
 </div>
+
+<div class="row pad box">
+	<div class="span6">
+		<h3 class="headline">Select</h3>
+		<div class="code">
+			<pre class="shrink"><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s2">"testing@foo.com"</span><span class="p">,</span>
+    <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s2">"youllneverguess"</span>
+<span class="p">);</span>
+
+<span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Peyote\Insert</span><span class="p">(</span><span class="s1">'user'</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">columns</span><span class="p">(</span><span class="nb">array_keys</span><span class="p">(</span><span class="nv">$data</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">values</span><span class="p">(</span><span class="nb">array_values</span><span class="p">(</span><span class="nv">$data</span><span class="p">));</span>
+
+<span class="k">echo</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">compile</span><span class="p">();</span>
+<span class="c1">// output: INSERT INTO user (email, password) VALUES (?, ?)</span>
+</pre>
+		</div>
+	</div>
+	<div class="span6">
+		<h3 class="headline">Insert</h3>
+		<div class="code">
+			<pre class="shrink"><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s2">"testing@foo.com"</span><span class="p">,</span>
+    <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s2">"youllneverguess"</span>
+<span class="p">);</span>
+
+<span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Peyote\Insert</span><span class="p">(</span><span class="s1">'user'</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">columns</span><span class="p">(</span><span class="nb">array_keys</span><span class="p">(</span><span class="nv">$data</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">values</span><span class="p">(</span><span class="nb">array_values</span><span class="p">(</span><span class="nv">$data</span><span class="p">));</span>
+
+<span class="k">echo</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">compile</span><span class="p">();</span>
+<span class="c1">// output: INSERT INTO user (email, password) VALUES (?, ?)</span>
+</pre>
+		</div>
+	</div>
+</div>
+
+<div class="row pad box">
+	<div class="span6">
+		<h3 class="headline">Update</h3>
+		<div class="code">
+			<pre class="shrink"><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s2">"iguesssomebodyguessed"</span>
+<span class="p">);</span>
+
+<span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Peyote\Update</span><span class="p">(</span><span class="s1">'user'</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">'user_id'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">compile</span><span class="p">();</span>
+<span class="c1">// output: UPDATE user SET password = ? WHERE user_id = ?</span>
+</pre>
+		</div>
+	</div>
+	<div class="span6">
+		<h3 class="headline">Delete</h3>
+		<div class="code">
+			<pre class="shrink"><span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Peyote\Delete</span><span class="p">(</span><span class="s1">'user'</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">'user_id'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">compile</span><span class="p">();</span>
+<span class="c1">// output: DELETE FROM user WHERE user_id = ?</span>
+</pre>
+		</div>
+	</div>
+</div>
+
+

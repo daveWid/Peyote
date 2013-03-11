@@ -220,6 +220,8 @@ table { border-collapse: collapse; border-spacing: 0; }
   .mobile { display: none; }
   .hide-mobile { display: inherit; } }
 /* ============================================================================= Syntax Highlighting ========================================================================== */
+.code { padding: 1em; background-color: #F8F8F8; border: 1px solid #cccccc; font-family: "Droid Mono", Consolas, monospace; line-height: 1.25em; }
+
 .c1 { color: #999; font-variant: italic; }
 
 .nv, .na { color: #008080; }
@@ -266,8 +268,6 @@ footer .pad { padding-bottom: 0; }
 .valign { margin-top: 0; }
 
 .large { font-size: 2em; }
-
-.code { padding: 1em; background-color: #F8F8F8; border: 1px solid #cccccc; font-family: "Droid Mono", Consolas, monospace; }
 
 .air-out > li { margin: 0.5em 0; }
 
