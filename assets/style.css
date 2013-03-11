@@ -220,7 +220,7 @@ table { border-collapse: collapse; border-spacing: 0; }
   .mobile { display: none; }
   .hide-mobile { display: inherit; } }
 /* ============================================================================= Syntax Highlighting ========================================================================== */
-.cl { color: #999; font-variant: italic; }
+.c1 { color: #999; font-variant: italic; }
 
 .nv, .na { color: #008080; }
 
