@@ -10,7 +10,7 @@ body {
 }
 
 a {
-	color: $colorDeepPurple;
+	color: $colorPrimary;
 }
 
 .container {
@@ -19,7 +19,7 @@ a {
 }
 
 header {
-	background-color: $colorPink;
+	background-color: $colorLight;
 	@include border-box;
 	padding: 1em;
 
@@ -49,7 +49,7 @@ nav {
 			padding: 0.5em;
 			text-decoration: none;
 			color: #fff;
-			background-color: $colorDeepPurple;
+			background-color: $colorPrimary;
 			border-radius: 0.5em 0.5em 0 0;
 		}
 	}
@@ -66,7 +66,7 @@ footer {
 }
 
 .blue {
-	background-color: $colorDeepPurple;
+	background-color: $colorPrimary;
 }
 
 .pad {
@@ -113,7 +113,7 @@ footer {
 
 .code {
 	padding: 1em;
-	background-color: $colorPink;
+	background-color: $colorLight;
 	font-family: 'Droid Mono', Consolas, monospace;
 }
 

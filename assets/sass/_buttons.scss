@@ -11,13 +11,13 @@
 	cursor: pointer;
 	outline: none;
 	overflow: visible;
-	background-color: $colorYellow;
+	background-color: $colorAccent;
 	border:1px solid rgba(0,0,0,0.25);
 	font-weight: bold;
-	color:#FFF;
+	color:#000;
 	border-radius: 0.25em;
 	text-shadow:
-		1px 1px 1px rgba(0,0,0,0.75);
+		1px 1px 1px rgba(255,255,255,0.75);
 }
 
 .button:hover  {

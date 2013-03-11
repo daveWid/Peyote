@@ -158,7 +158,7 @@ textarea { overflow: auto; /* 1 */ vertical-align: top; /* 2 */ }
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* ============================================================================= Button ========================================================================== */
-.button { display: inline-block; padding: 0.5em 1em; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25); text-align: center; text-decoration: none; cursor: pointer; outline: none; overflow: visible; background-color: #f4ef71; border: 1px solid rgba(0, 0, 0, 0.25); font-weight: bold; color: #FFF; border-radius: 0.25em; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75); }
+.button { display: inline-block; padding: 0.5em 1em; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25); text-align: center; text-decoration: none; cursor: pointer; outline: none; overflow: visible; background-color: #f4ef71; border: 1px solid rgba(0, 0, 0, 0.25); font-weight: bold; color: #000; border-radius: 0.25em; text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75); }
 
 .button:hover { cursor: pointer; }
 
@@ -222,23 +222,23 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* ============================================================================= Theme ========================================================================== */
 body { font-size: 16px; font-family: Arial, sans-serif; background-image: url("sneaker_mesh_fabric.png"); color: #333; }
 
-a { color: #3a1828; }
+a { color: #893400; }
 
 .container { background-color: #fff; box-shadow: 0 0 0.5em #999999; }
 
-header { background-color: #f5e5ed; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; padding: 1em; }
+header { background-color: #a63f00; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; padding: 1em; }
 header a { text-decoration: none; }
 
 nav .navigation { -webkit-transform: translate3d(0, 1.45em, 0); -moz-transform: translate3d(0, 1.45em, 0); -o-transform: translate3d(0, 1.45em, 0); -ms-transform: translate3d(0, 1.45em, 0); transform: translate3d(0, 1.45em, 0); }
 
 .navigation { padding: 0; margin: 0 0 -16px; text-align: right; }
 .navigation > li { display: inline-block; margin-left: 1em; }
-.navigation > li a { display: block; font-size: 1.125em; padding: 0.5em; text-decoration: none; color: #fff; background-color: #3a1828; border-radius: 0.5em 0.5em 0 0; }
+.navigation > li a { display: block; font-size: 1.125em; padding: 0.5em; text-decoration: none; color: #fff; background-color: #893400; border-radius: 0.5em 0.5em 0 0; }
 
 footer { padding: 1em; font-size: 0.85em; text-align: right; }
 footer .pad { padding-bottom: 0; }
 
-.blue { background-color: #3a1828; }
+.blue { background-color: #893400; }
 
 .pad { padding: 1em; }
 
@@ -260,7 +260,7 @@ footer .pad { padding-bottom: 0; }
 
 .large { font-size: 2em; }
 
-.code { padding: 1em; background-color: #f5e5ed; font-family: "Droid Mono", Consolas, monospace; }
+.code { padding: 1em; background-color: #a63f00; font-family: "Droid Mono", Consolas, monospace; }
 
 .air-out > li { margin: 0.5em 0; }
 
