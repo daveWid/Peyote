@@ -1,0 +1,149 @@
+/* =============================================================================
+   Theme
+   ========================================================================== */
+
+body {
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	background-image: url('sneaker_mesh_fabric.png');
+	color: #333;
+}
+
+a {
+	color: $colorDeepPurple;
+}
+
+.container {
+	background-color: #fff;
+	box-shadow: 0 0 0.5em #999;
+}
+
+header {
+	background-color: $colorPink;
+	@include border-box;
+	padding: 1em;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+nav {
+	.navigation {
+		@include translate(0, 1.45em, 0);
+	}
+}
+
+.navigation {
+	padding: 0;
+	margin: 0 0 -16px;
+	text-align: right;
+
+	& > li {
+		display: inline-block;
+		margin-left: 1em;
+
+		a {
+			display: block;
+			font-size: 1.125em;
+			padding: 0.5em;
+			text-decoration: none;
+			color: #fff;
+			background-color: $colorDeepPurple;
+			border-radius: 0.5em 0.5em 0 0;
+		}
+	}
+}
+
+footer {
+	padding: 1em;
+	font-size: 0.85em;
+	text-align: right;
+
+	.pad {
+		padding-bottom: 0;
+	}
+}
+
+.blue {
+	background-color: $colorDeepPurple;
+}
+
+.pad {
+	padding: 1em;
+}
+
+.shrink {
+	padding: 0;
+	margin: 0;
+}
+
+.top-line {
+	border-top: 1px solid lightgray;
+}
+
+.headline {
+	margin: 0;
+}
+
+.fit {
+	max-width: 100%;
+	height: auto;
+}
+
+.box {
+	@include border-box;
+}
+
+.white {
+	color: #fff;
+}
+
+.shadow-text {
+	text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.valign {
+	margin-top: 0;
+}
+
+.large {
+	font-size: 2em;
+}
+
+.code {
+	padding: 1em;
+	background-color: $colorPink;
+	font-family: 'Droid Mono', Consolas, monospace;
+}
+
+.air-out > li {
+	margin: 0.5em 0;
+}
+
+@media (max-width: 768px) {
+	nav {
+		.navigation {
+			@include translate(0, 0, 0);
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	nav {
+		.navigation {
+			text-align: left;
+
+			& > li {
+				margin: 0 1em 0.5em 0;
+
+				a {
+					border-radius: 0.5em;
+				}
+			}
+		}
+
+		padding-bottom: 1em;
+	}
+}
+

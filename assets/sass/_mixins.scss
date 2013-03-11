@@ -1,0 +1,56 @@
+/* =============================================================================
+   Mixins
+   ========================================================================== */
+
+/**
+ * Creates a cross browser gradient
+ *
+ * @param $dir     The direction of the gradient
+ * @param $color1  The first color
+ * @param $color2  The second color
+ */
+@mixin gradient($dir, $color1, $color2) {
+	background-image: -webkit-linear-gradient($dir, $color1, $color2);
+	background-image: -moz-linear-gradient($dir, $color1, $color2);
+	background-image: -ms-linear-gradient($dir, $color1, $color2);
+	background-image: -o-linear-gradient($dir, $color1, $color2);
+}
+
+/**
+ * Adds the border box code.
+ */
+@mixin border-box {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/**
+ * Translate 3d mixin
+ *
+ * @param $x  The x coord (left/right)
+ * @param $y  The y coord (up/down)
+ * @param $z  The z coord (angle/spin...)
+ */
+@mixin translate($x, $y, $z) {
+	-webkit-transform: translate3d($x, $y, $z);
+	-moz-transform: translate3d($x, $y, $z);
+	-o-transform: translate3d($x, $y, $z);
+	-ms-transform: translate3d($x, $y, $z);
+	transform: translate3d($x, $y, $z);
+}
+
+/**
+ * Transitions
+ *
+ * @param $prop  The property to transition
+ * @param $time  The amount of time the animation takes (in seconds)
+ * @param $fn    The easing function
+ */
+@mixin transition($prop, $time, $fn) {
+	-webkit-transition: $prop $time $fn;
+	-moz-transition: $prop $time $fn;
+	-o-transition: $prop $time $fn;
+	transition: $prop $time $fn;
+}

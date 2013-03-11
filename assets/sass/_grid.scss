@@ -1,0 +1,41 @@
+/* =============================================================================
+   Grid
+   ========================================================================== */
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.row {
+	width:100%;
+}
+
+.row:before,
+.row:after {
+	display: table;
+	content: "";
+}
+
+.row:after {
+	clear: both;
+}
+
+[class*="span"] {
+	margin-left: $gridGutter;
+	float: left;
+	@include border-box;
+}
+
+[class*="span"]:first-child {
+	margin-left: 0;
+}
+
+/* Grid
+   ========================================================================== */
+
+@for $i from 1 through $gridColumns {
+	.span#{$i} {
+		width: ($gridSize * $i) + ($gridGutter * ($i - 1));
+	}
+}
