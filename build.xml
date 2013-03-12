@@ -8,8 +8,12 @@
 		<mkdir dir="${project.basedir}/dev/package/" />
 		<delete file="${file}" quiet="true" />
 
-		<zip destfile="${file}">
-			<fileset dir="${project.basedir}/classes/" />
+		<zip destfile="${file}" basedir=".">
+			<fileset dir="${project.basedir}">
+				<include name="classes/**" />
+				<include name="LICENSE.md" />
+				<include name="README.md" />
+			</fileset>
 		</zip>
 	</target>
 </project>
