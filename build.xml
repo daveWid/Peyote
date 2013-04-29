@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Peyote" default="package" basedir=".">
-	<property name="version" value="0.6.0" />
+	<property name="version" value="0.6.1" />
 
 	<target name="package" description="Creates a package for distribution">
 		<property name="file" value="${project.basedir}/dev/package/Peyote-${version}.zip" />
