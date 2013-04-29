@@ -112,7 +112,7 @@ class Join implements \Peyote\Builder, \Peyote\Mixin
 			}
 		}
 
-		return join(", ", $joins);
+		return join(" ", $joins);
 	}
 
 	/**
