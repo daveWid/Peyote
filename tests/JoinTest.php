@@ -49,7 +49,7 @@ class JoinTest extends PHPUnit_Framework_TestCase
 			->addJoin('role')->on('user.user_id', '=', 'role.user_id')
 			->addJoin('role')->using('user_id');
 
-		$sql = "JOIN role ON user.user_id = role.user_id, JOIN role USING(user_id)";
+		$sql = "JOIN role ON user.user_id = role.user_id JOIN role USING(user_id)";
 		$this->assertSame($sql, $this->query->compile());
 	}
 
