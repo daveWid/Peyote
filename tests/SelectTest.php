@@ -41,6 +41,23 @@ class SelectTest extends PHPUnit_Framework_TestCase
 		$this->assertSame($sql, $this->query->compile());
 		$this->assertSame(array(1), $this->query->getParams());
 	}
+	
+	public function testHaving()
+	{
+		$this->query->having('id', '>', 1);
+		$sql = 'SELECT * FROM user HAVING id > ?';
+		$this->assertSame($sql, $this->query->compile());
+		$this->assertSame(array(1), $this->query->getParams());
+	}
+	
+	public function testWhereHaving()
+	{
+		$this->query->where('user_id', '=', 5);
+		$this->query->having('id', '>', 1);
+		$sql = 'SELECT * FROM user WHERE user_id = ? HAVING id > ?';
+		$this->assertSame($sql, $this->query->compile());
+		$this->assertSame(array(5, 1), $this->query->getParams());
+	}
 
 	public function testGroupBy()
 	{
