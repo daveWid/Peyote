@@ -44,7 +44,7 @@ class Select extends \Peyote\Query
 	/**
 	 * @var array  A list of mixins that the query can passthru
 	 */
-	protected $mixins = array('join', 'where', 'group_by', 'order_by', 'limit');
+	protected $mixins = array('join', 'where', 'group_by', 'order_by', 'limit', 'having');
 
 	/**
 	 * @var int  The number to offset by.
@@ -74,6 +74,7 @@ class Select extends \Peyote\Query
 		$this->group_by = new \Peyote\Group;
 		$this->order_by = new \Peyote\Order;
 		$this->limit = new \Peyote\Limit;
+		$this->having = new \Peyote\Having;
 
 		parent::__construct($table);
 	}
@@ -138,6 +139,20 @@ class Select extends \Peyote\Query
 		$this->where->andWhere($column, $op, $value);
 		return $this;
 	}
+	
+	/**
+	 * Adds a HAVING clause.
+	 *
+	 * @param  string $column  The column name
+	 * @param  string $op      The comparison operator
+	 * @param  mixed  $value   The value to bind
+	 * @return \Peyote\Select
+	 */
+	public function having($column, $op, $value)
+	{	
+		$this->having->andHaving($column, $op, $value);
+		return $this;
+	}
 
 	/**
 	 * Sets the limit.
@@ -170,14 +185,7 @@ class Select extends \Peyote\Query
 	 */
 	public function getParams()
 	{
-		/**
-		 * Instead of writing some crazy magic foo to pull the params
-		 * automatically, I'm just overridding this function to get the where
-		 * params.
-		 *
-		 * Where is the only mixin that will have params anyway...
-		 */
-		return $this->where->getParams();
+		return array_merge($this->where->getParams(), $this->having->getParams());
 	}
 
 	/**
