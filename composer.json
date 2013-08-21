@@ -15,7 +15,18 @@
 	"require":{
 		"php": ">=5.3"
 	},
+
+	"require-dev":{
+		"phing/phing": "2.6.*",
+		"phpunit/phpunit": "3.7.*",
+		"phpdocumentor/phpdocumentor": "2.0.*"
+	},
+
 	"autoload": {
 		"psr-0": { "Peyote": "classes/" }
+	},
+
+	"config": {
+		"bin-dir": "bin"
 	}
 }

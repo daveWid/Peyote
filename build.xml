@@ -16,4 +16,13 @@
 			</fileset>
 		</zip>
 	</target>
+
+	<target name="tests" description="Run all of the unit tests (PHPUnit)">
+		<exec executable="${project.basedir}/bin/phpunit" passthru="true" checkreturn="true" escape="false" />
+	</target>
+
+	<target name="docs" description="Create phpDocs">
+		<exec executable="${project.basedir}/bin/phpdoc.php" passthru="true" checkreturn="true" escape="false" />
+	</target>
+
 </project>
