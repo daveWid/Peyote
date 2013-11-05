@@ -129,28 +129,30 @@ class Select extends \Peyote\Query
 	/**
 	 * Adds a WHERE clause.
 	 *
-	 * @param  string $column  The column name
-	 * @param  string $op      The comparison operator
-	 * @param  mixed  $value   The value to bind
+	 * @param  string  $column  The column name
+	 * @param  string  $op      The comparison operator
+	 * @param  mixed   $value   The value to bind
+	 * @param  boolean $isParam Is this a parameter (replace value with ? if true)
 	 * @return \Peyote\Select
 	 */
-	public function where($column, $op, $value)
+	public function where($column, $op, $value, $isParam = true)
 	{	
-		$this->where->andWhere($column, $op, $value);
+		$this->where->andWhere($column, $op, $value, $isParam);
 		return $this;
 	}
 	
 	/**
 	 * Adds a HAVING clause.
 	 *
-	 * @param  string $column  The column name
-	 * @param  string $op      The comparison operator
-	 * @param  mixed  $value   The value to bind
+	 * @param  string  $column  The column name
+	 * @param  string  $op      The comparison operator
+	 * @param  mixed   $value   The value to bind
+	 * @param  boolean $isParam Is this a parameter (replace value with ? if true)
 	 * @return \Peyote\Select
 	 */
-	public function having($column, $op, $value)
+	public function having($column, $op, $value, $isParam = true)
 	{	
-		$this->having->andHaving($column, $op, $value);
+		$this->having->andHaving($column, $op, $value, $isParam);
 		return $this;
 	}
 

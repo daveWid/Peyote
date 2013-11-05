@@ -52,9 +52,12 @@ abstract class Condition implements \Peyote\Builder
 		$sql = array();
 		foreach ($this->clauses as $clause)
 		{
-			list($type, $column, $op, $value) = $clause;
+			list($type, $column, $op, $value, $isParam) = $clause;
 			$sql[] = $type;
-			$sql[] = "{$column} {$op} ?";
+			$sql[] = "{$column} {$op}";
+
+			$sql[] = $isParam ? "?" : $value;
+
 			$this->params[] = $value;
 		}
 
