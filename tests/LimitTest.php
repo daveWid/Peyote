@@ -18,7 +18,7 @@ class LimitTest extends PHPUnit_Framework_TestCase
 	public function testLimit()
 	{
 		$this->query->setLimit(4);
-		$this->assertSame("LIMIT 0, 4", $this->query->compile());
+		$this->assertSame("LIMIT 4", $this->query->compile());
 	}
 	
 	public function testOffset()

@@ -43,7 +43,7 @@ class UpdateTest extends PHPUnit_Framework_TestCase
 	{
 		$this->query->limit(2);
 
-		$sql = "UPDATE user SET name = ? LIMIT 0, 2";
+		$sql = "UPDATE user SET name = ? LIMIT 2";
 		$this->assertSame($sql, $this->query->compile());
 	}
 
