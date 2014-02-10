@@ -26,10 +26,10 @@ class Limit implements \Peyote\Builder, \Peyote\Mixin
 	 * @param int $num  The number to limit the queries to
 	 * @param int $offset The offset of which row to start the results with
 	 */
-	public function setLimit($num, $offset = null)
+	public function setLimit($num, $offset = 0)
 	{
 		$this->limit = (int) $num;
-		if (isset($offset)) $this->offset = (int) $offset;
+		$this->offset = (int) $offset;
 	}
 
 	/**
@@ -42,11 +42,6 @@ class Limit implements \Peyote\Builder, \Peyote\Mixin
 		if ($this->limit === null)
 		{
 			return "";
-		}
-		
-		if ($this->offset === null)
-		{
-			return "LIMIT {$this->limit}";
 		}
 		
 		return "LIMIT {$this->offset}, {$this->limit}";

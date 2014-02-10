@@ -37,7 +37,7 @@ class DeleteTest extends PHPUnit_Framework_TestCase
 	{
 		$this->query->limit(2);
 
-		$sql = "DELETE FROM user LIMIT 2";
+		$sql = "DELETE FROM user LIMIT 0, 2";
 		$this->assertSame($sql, $this->query->compile());
 	}
 

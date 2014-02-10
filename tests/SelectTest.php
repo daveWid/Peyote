@@ -76,7 +76,7 @@ class SelectTest extends PHPUnit_Framework_TestCase
 	public function testLimit()
 	{
 		$this->query->limit(1);
-		$sql = 'SELECT * FROM user LIMIT 1';
+		$sql = 'SELECT * FROM user LIMIT 0, 1';
 		$this->assertSame($sql, $this->query->compile());
 	}
 
