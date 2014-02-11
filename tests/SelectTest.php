@@ -80,6 +80,13 @@ class SelectTest extends PHPUnit_Framework_TestCase
 		$this->assertSame($sql, $this->query->compile());
 	}
 
+	public function testLimitAndOffset()
+	{
+		$this->query->limit(1, 5);
+		$sql = 'SELECT * FROM user LIMIT 5, 1';
+		$this->assertSame($sql, $this->query->compile());
+	}
+
 	public function testOffset()
 	{
 		$this->query->offset(10);
