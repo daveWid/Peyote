@@ -30,6 +30,11 @@ class CreateTest extends PHPUnit_Framework_TestCase
 		$this->assertSame($expected, $this->create->compile());
 	}
 
+	public function testPrimaryKeyIsEmptyByDefault()
+	{
+		$this->assertEmpty($this->create->getPrimaryKey());
+	}
+
 	public function testDefaultCharset()
 	{
 		$this->assertSame("utf8", $this->create->getCharset());
@@ -62,6 +67,26 @@ class CreateTest extends PHPUnit_Framework_TestCase
 			'password varchar(100) NOT NULL, ' .
 			'create_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, ' .
 			'PRIMARY KEY (user_id, create_date) ' .
+			') ENGINE=MyISAM DEFAULT CHARSET=utf8';
+
+		$this->assertSame($expected, $this->create->compile());
+	}
+
+	public function testSetPrimaryKeyWithString()
+	{
+		$this->create->setPrimaryKey('create_date');
+		$this->assertSame(array('create_date'), $this->create->getPrimaryKey());
+	}
+
+	public function testIfExistsInCompile()
+	{
+		$this->create->setIfExists(true);
+
+		$expected = 'CREATE TABLE IF NOT EXISTS user ( user_id INT UNSIGNED NOT NULL AUTO_INCREMENT, '.
+			'name varchar(50) NOT NULL, ' .
+			'password varchar(100) NOT NULL, ' .
+			'create_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, ' .
+			'PRIMARY KEY (user_id) ' .
 			') ENGINE=MyISAM DEFAULT CHARSET=utf8';
 
 		$this->assertSame($expected, $this->create->compile());

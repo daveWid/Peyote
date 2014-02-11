@@ -61,6 +61,11 @@ class ModelTest extends PHPUnit_Framework_TestCase
 		$this->assertNull($this->model->get('author'));
 	}
 
+	public function testValidateIsEmptyArrayByDefault()
+	{
+		$this->assertEmpty($this->model->validate());
+	}
+
 	public function testClear()
 	{
 		$this->model->clear();
@@ -78,6 +83,7 @@ class ModelTest extends PHPUnit_Framework_TestCase
 	public function testToJson()
 	{
 		$this->assertSame('{"name":"Dave","author":true}', $this->model->toJSON());
+		$this->assertSame('{"name":"Dave","author":true}', $this->model->jsonSerialize());
 	}
 
 	public function testObjectAccess()
@@ -100,6 +106,11 @@ class ModelTest extends PHPUnit_Framework_TestCase
 	{
 		$this->model['extra'] = "Yes!";
 		$this->assertSame("Yes!", $this->model['extra']);
+	}
+
+	public function testObjectIsset()
+	{
+		$this->assertFalse(isset($this->model->nope));
 	}
 
 	public function testIteratorAggregate()

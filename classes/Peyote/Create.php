@@ -130,7 +130,7 @@ class Create extends Drop
 
 		if ($this->getIfExists() === true)
 		{
-			$query[] = "IF EXISTS";
+			$query[] = "IF NOT EXISTS";
 		}
 
 		$query[] = $this->getTable();

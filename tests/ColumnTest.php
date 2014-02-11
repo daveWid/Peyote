@@ -10,7 +10,12 @@ class ColumnTest extends PHPUnit_Framework_TestCase
 		$this->column = new \Peyote\Column('user_id', 'INT');
 	}
 
-	public function testDefault()
+	public function testType()
+	{
+		$this->assertSame('INT', $this->column->getType());
+	}
+
+	public function testCompile()
 	{
 		$this->runAssert('user_id INT');
 	}
@@ -18,19 +23,30 @@ class ColumnTest extends PHPUnit_Framework_TestCase
 	public function testIsNull()
 	{
 		$this->column->setIsNull(true);
+
+		$this->assertTrue($this->column->getIsNull());
 		$this->runAssert('user_id INT NULL');
 	}
 
 	public function testLength()
 	{
 		$this->column->setLength(5);
+
+		$this->assertSame(5, $this->column->getLength());
 		$this->runAssert('user_id INT(5)');
 	}
 
-	public function testSetOptions()
+	public function testOptions()
 	{
 		$this->column->addOption('UNSIGNED');
+
+		$this->assertSame(array('UNSIGNED'), $this->column->getOptions());
 		$this->runAssert('user_id INT UNSIGNED');
+	}
+
+	public function testAutoIncrementIsFalseByDefault()
+	{
+		$this->assertFalse($this->column->getAutoIncrement());
 	}
 
 	public function testAutoIncrement()
@@ -39,11 +55,13 @@ class ColumnTest extends PHPUnit_Framework_TestCase
 		$this->runAssert('user_id INT AUTO_INCREMENT');
 	}
 
-	public function testSetDefault()
+	public function testDefault()
 	{
 		$column = new \Peyote\Column('create_date', 'TIMESTAMP', array(
 			'default' => 'CURRENT_TIMESTAMP'
 		));
+
+		$this->assertSame('CURRENT_TIMESTAMP', $column->getDefault());
 		$this->runAssert('create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP', $column);
 	}
 

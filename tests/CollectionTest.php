@@ -78,6 +78,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 	{
 		$this->collection->add(array(4, 5, 6));
 		$this->assertSame("[4,5,6]", $this->collection->toJSON());
+		$this->assertSame("[4,5,6]", $this->collection->jsonSerialize());
 	}
 
 	public function testToJSONWithHash()
@@ -98,6 +99,14 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 	{
 		$this->collection[0] = 'Foo';
 		$this->assertSame('Foo', $this->collection[0]);
+
+		unset($this->collection[0]);
+		$this->assertFalse(isset($this->collection[0]));
+	}
+
+	public function testItererator()
+	{
+		$this->assertInstanceOf('ArrayIterator', $this->collection->getIterator());
 	}
 
 }

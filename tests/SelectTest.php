@@ -15,6 +15,12 @@ class SelectTest extends PHPUnit_Framework_TestCase
 		$this->assertSame("SELECT * FROM user", $this->query->compile());
 	}
 
+	public function testSetTable()
+	{
+		$this->query->table('test');
+		$this->assertSame('SELECT * FROM test', $this->query->compile());
+	}
+
 	public function testDistinct()
 	{
 		$this->query->distinct();

@@ -175,7 +175,7 @@ class Model implements \ArrayAccess, \IteratorAggregate
 	 */
 	public function jsonSerialize()
 	{
-		return $this->toJSON($this->data);
+		return $this->toJSON();
 	}
 
 /** ====================
