@@ -69,9 +69,9 @@ class Delete extends \Peyote\Query
 	 * @param  int $num  The number to limit the queries to
 	 * @return \Peyote\Select
 	 */
-	public function limit($num)
+	public function limit($num, $offset = 0)
 	{
-		$this->limit->setLimit($num);
+		$this->limit->setLimit($num, $offset);
 		return $this;
 	}
 
